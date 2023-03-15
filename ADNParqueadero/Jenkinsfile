@@ -7,13 +7,17 @@ pipeline {
         milestone label: '', ordinal:  Integer.parseInt(env.BUILD_ID)
       }
     }
-    stage('Run Tests') {
+    stage('Compile') {
       steps {
-        retry(count: 2) {
-          dir(path: 'ADNParqueadero') {
-            sh 'bundle exec fastlane start_tests'
-          }
-        }
+        echo "------------>Compile<------------"
+        #sh 'pod install' // Esta instrucción puede variar dependiendo del gestor de paquetes.
+        sh 'xcodebuild -scheme [ADNParqueadero] clean build CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED="NO"'
+      }
+    }
+    stage('Unit Tests') {
+      steps{
+        echo "------------>Unit Tests<------------"
+        sh 'xcodebuild test -scheme [ADNParqueaderoTest] -configuration "Debug"  -destination "platform=iOS Simulator,name=[iPhone 12 Pro],OS=[iOS 14.5]"'
       }
     }
     stage('Clean workplace') {
