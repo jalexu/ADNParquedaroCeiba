@@ -1,0 +1,25 @@
+pipeline {
+  agent any
+  stages {
+    stage('Cancel previous build') {
+      steps {
+        milestone label: '', ordinal:  Integer.parseInt(env.BUILD_ID) - 1
+        milestone label: '', ordinal:  Integer.parseInt(env.BUILD_ID)
+      }
+    }
+    stage('Run Tests') {
+      steps {
+        retry(count: 2) {
+          dir(path: 'ADNParqueadero') {
+            sh 'bundle exec fastlane start_tests'
+          }
+        }
+      }
+    }
+    stage('Clean workplace') {
+      steps {
+        deleteDir()
+      }
+    }
+  }
+}

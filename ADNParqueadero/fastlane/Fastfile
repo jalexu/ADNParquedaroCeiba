@@ -17,7 +17,7 @@ default_platform(:ios)
 
 platform :ios do
   desc "Run unit tests"
-  lane :tests do
+  lane :start_tests do
     run_tests(scheme: "ADNParqueaderoTests")
   end
 end
