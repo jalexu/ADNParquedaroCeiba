@@ -20,6 +20,15 @@ pipeline {
         sh 'xcodebuild test -scheme [ADNParqueaderoTest] -configuration "Debug"  -destination "platform=iOS Simulator,name=[iPhone 12 Pro],OS=[iOS 14.5]"'
       }
     }
+    stage('Static Code Analysis') {
+      steps{
+        echo '------------>Análisis de código estático<------------'
+        sh 'run-sonar-swift.sh -v'
+        withSonarQubeEnv('Sonar') {
+          sh "${tool name: 'SonarScanner-Mac', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+        }
+      }
+    }
     stage('Clean workplace') {
       steps {
         deleteDir()
