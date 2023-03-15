@@ -1,35 +1,35 @@
 pipeline {
-  agent any
+  agent {
+    label 'Slave_Mac'
+  }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '3'))
+ 		disableConcurrentBuilds()
+  }
+
   stages {
-    stage('Cancel previous build') {
-      steps {
-        milestone label: '', ordinal:  Integer.parseInt(env.BUILD_ID) - 1
-        milestone label: '', ordinal:  Integer.parseInt(env.BUILD_ID)
-      }
-    }
     stage('Compile') {
       steps {
         echo "------------>Compile<------------"
         sh 'pod install' // Esta instrucción puede variar dependiendo del gestor de paquetes.
-        sh 'xcodebuild -scheme [ADNParqueadero] clean build CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED="NO"'
+        sh 'xcodebuild -scheme ADNParqueadero clean build CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED="NO"'
       }
     }
     stage('Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-        sh 'xcodebuild test -scheme [ADNParqueaderoTest] -configuration "Debug"  -destination "platform=iOS Simulator,name=[iPhone 12 Pro],OS=[iOS 14.5]"'
+        sh 'xcodebuild test -scheme ADNParqueaderoTest -configuration "Debug"  -destination "platform=iOS Simulator,name=iPhone 14 Pro Max, OS=iOS 16.2"'
       }
     }
     stage('Static Code Analysis') {
       steps{
-        echo '------------>Análisis de código estático<------------'
-        sh 'run-sonar-swift.sh -v'
+        echo '------------>Análisis estático<------------'
         withSonarQubeEnv('Sonar') {
           sh "${tool name: 'SonarScanner-Mac', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
         }
       }
     }
-    stage('Clean workplace') {
+    stage('Clean workspace') {
       steps {
         deleteDir()
       }

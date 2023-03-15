@@ -1,8 +1,8 @@
 coverage_service: cobertura_xml
-xcodeproj: path/to/ADNParqueadero.xcodeproj
+xcodeproj: ADNParqueadero/ADNParqueadero.xcodeproj
 scheme: ADNParqueadero
 configuration: TestedConfiguration
-source_directory: path/to/sources/to/include
+source_directory: ADNParqueadero/ADNParquedero.xcworkspace
 output_directory: ./
 ignore:
   - ADNParqueaderoUITest/*
