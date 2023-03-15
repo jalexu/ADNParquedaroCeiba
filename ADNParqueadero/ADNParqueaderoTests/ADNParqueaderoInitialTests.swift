@@ -1,6 +1,5 @@
 //
-//  ADNParqueaderoTests.swift
-//  ADNParqueaderoTests
+//  ADNParqueaderoInitialTests.swift
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 14/03/23.
 //
@@ -8,7 +7,7 @@
 import XCTest
 @testable import ADNParqueadero
 
-final class ADNParqueaderoTests: XCTestCase {
+final class ADNParqueaderoInitialTests: XCTestCase {
     var isTestInitial: Bool!
 
     override func setUpWithError() throws {
@@ -24,6 +23,4 @@ final class ADNParqueaderoTests: XCTestCase {
     func testExample() throws {
         XCTAssertTrue(isTestInitial)
     }
-
-
 }

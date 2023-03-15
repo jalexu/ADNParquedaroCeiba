@@ -11,7 +11,7 @@
 		E4FA504229C12C1500A11573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA504129C12C1500A11573 /* ContentView.swift */; };
 		E4FA504429C12C1700A11573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FA504329C12C1700A11573 /* Assets.xcassets */; };
 		E4FA504729C12C1700A11573 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FA504629C12C1700A11573 /* Preview Assets.xcassets */; };
-		E4FA505129C12C1700A11573 /* ADNParqueaderoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505029C12C1700A11573 /* ADNParqueaderoTests.swift */; };
+		E4FA505129C12C1700A11573 /* ADNParqueaderoInitialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505029C12C1700A11573 /* ADNParqueaderoInitialTests.swift */; };
 		E4FA505B29C12C1700A11573 /* ADNParqueaderoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */; };
 		E4FA505D29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +40,7 @@
 		E4FA504329C12C1700A11573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4FA504629C12C1700A11573 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4FA504C29C12C1700A11573 /* ADNParqueaderoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNParqueaderoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4FA505029C12C1700A11573 /* ADNParqueaderoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoTests.swift; sourceTree = "<group>"; };
+		E4FA505029C12C1700A11573 /* ADNParqueaderoInitialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoInitialTests.swift; sourceTree = "<group>"; };
 		E4FA505629C12C1700A11573 /* ADNParqueaderoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNParqueaderoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITests.swift; sourceTree = "<group>"; };
 		E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		E4FA504F29C12C1700A11573 /* ADNParqueaderoTests */ = {
 			isa = PBXGroup;
 			children = (
-				E4FA505029C12C1700A11573 /* ADNParqueaderoTests.swift */,
+				E4FA505029C12C1700A11573 /* ADNParqueaderoInitialTests.swift */,
 			);
 			path = ADNParqueaderoTests;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FA505129C12C1700A11573 /* ADNParqueaderoTests.swift in Sources */,
+				E4FA505129C12C1700A11573 /* ADNParqueaderoInitialTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
