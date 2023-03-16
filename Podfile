@@ -5,7 +5,7 @@ target 'ADNParqueadero' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'SwiftLint', '= 0.50.3'
+pod 'SwiftLint'
 
   target 'ADNParqueaderoTests' do
     inherit! :search_paths
