@@ -8,16 +8,16 @@ pipeline {
   }
 
   stages {
-    stage('Compile') {
+    stage('Build') {
       steps {
         echo "------------>Compile<------------"
         sh 'pod install' // Esta instrucción puede variar dependiendo del gestor de paquetes.
+        sh 'xcodebuild -workspace ADNParqueadero.xcworkspace -scheme ADNParqueadero -destination "platform=iOS Simulator,name=iPhone 14 Pro Max" build'
       }
     }
     stage('Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-        sh 'pod install'
         sh 'xcodebuild -scheme ADNParqueadero -configuration "Debug" -destination "platform=iOS Simulator,name=iPhone 14 Pro Max" test'
       }
     }
