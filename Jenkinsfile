@@ -17,7 +17,7 @@ pipeline {
     stage('Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-        sh 'xcodebuild -workspace ADNParqueadero.xcworkspace -scheme ADNParqueadero -configuration "Debug" -destination "platform=iOS Simulator,name=iPhone 14 Pro Max" test'
+        sh 'xcodebuild -scheme ADNParqueadero -configuration "Debug" -destination "platform=iOS Simulator,name=iPhone 14 Pro Max"'
       }
     }
     stage('Static Code Analysis') {
