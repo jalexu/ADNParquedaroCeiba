@@ -11,9 +11,7 @@ pipeline {
     stage('Compile') {
       steps {
         echo "------------>Compile<------------"
-        sh 'pod --version'
         sh 'pod install' // Esta instrucción puede variar dependiendo del gestor de paquetes.
-        sh 'xcodebuild -scheme ADNParqueadero clean build CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED="NO"'
       }
     }
     stage('Unit Tests') {
