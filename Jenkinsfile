@@ -12,13 +12,13 @@ pipeline {
       steps {
         echo "------------>Compile<------------"
         sh 'pod install' // Esta instrucción puede variar dependiendo del gestor de paquetes.
-        sh 'xcodebuild -workspace ADNParqueadero.workspace -scheme ADNParqueadero'
+        sh 'xcodebuild -workspace ADNParqueadero.xcworkspace -scheme ADNParqueadero'
       }
     }
     stage('Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-        sh 'xcodebuild -workspace ADNParqueadero.workspace -scheme ADNParqueaderoTest -configuration "Debug" -destination "platform=iOS Simulator,name=iPhone 14 Pro Max, OS=iOS 16.2"'
+        sh 'xcodebuild -workspace ADNParqueadero.xcworkspace -scheme ADNParqueaderoTest -configuration "Debug" -destination "platform=iOS Simulator,name=iPhone 14 Pro Max, OS=iOS 16.2"'
       }
     }
     stage('Static Code Analysis') {
