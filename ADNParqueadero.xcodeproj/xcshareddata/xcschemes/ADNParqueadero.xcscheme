@@ -40,6 +40,16 @@
                ReferencedContainer = "container:ADNParqueadero.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E413879F29C493D8000A07CC"
+               BuildableName = "DomainTests.xctest"
+               BlueprintName = "DomainTests"
+               ReferencedContainer = "container:Domain/Domain.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

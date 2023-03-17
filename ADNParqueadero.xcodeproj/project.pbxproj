@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2396F23C08BFD49CCEBB6A5D /* Pods_ADNParqueaderoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1083F66FCA96C298BC87599 /* Pods_ADNParqueaderoTests.framework */; };
+		ADA8074EB1D7106F684860DE /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA639D75A6150AC7617AC96 /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework */; };
+		D25D7D4FBA3C480BF67024CD /* Pods_ADNParqueadero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE734DBD5F1AD9DF76318969 /* Pods_ADNParqueadero.framework */; };
+		E41387BA29C49538000A07CC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387B929C49538000A07CC /* Domain.framework */; };
+		E41387F629C4B5C4000A07CC /* Infraestructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387F529C4B5C4000A07CC /* Infraestructure.framework */; };
 		E4FA504029C12C1500A11573 /* ADNParqueaderoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA503F29C12C1500A11573 /* ADNParqueaderoApp.swift */; };
 		E4FA504229C12C1500A11573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA504129C12C1500A11573 /* ContentView.swift */; };
 		E4FA504429C12C1700A11573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FA504329C12C1700A11573 /* Assets.xcassets */; };
@@ -34,6 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0E39B2FC83E8A74FECD32C /* Pods-ADNParqueaderoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueaderoTests.debug.xcconfig"; path = "Target Support Files/Pods-ADNParqueaderoTests/Pods-ADNParqueaderoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A14774FD258145788D8733A /* Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ADNParqueadero-ADNParqueaderoUITests/Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9BF55E6A0DD93ECFA2E25A3B /* Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig"; path = "Target Support Files/Pods-ADNParqueadero-ADNParqueaderoUITests/Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A7106AB7AFB5B5362FE00E4F /* Pods-ADNParqueadero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueadero.debug.xcconfig"; path = "Target Support Files/Pods-ADNParqueadero/Pods-ADNParqueadero.debug.xcconfig"; sourceTree = "<group>"; };
+		B2EB77586621C30F590109B9 /* Pods-ADNParqueaderoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueaderoTests.release.xcconfig"; path = "Target Support Files/Pods-ADNParqueaderoTests/Pods-ADNParqueaderoTests.release.xcconfig"; sourceTree = "<group>"; };
+		E1083F66FCA96C298BC87599 /* Pods_ADNParqueaderoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNParqueaderoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41387B929C49538000A07CC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41387F529C4B5C4000A07CC /* Infraestructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infraestructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA503C29C12C1500A11573 /* ADNParqueadero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADNParqueadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA503F29C12C1500A11573 /* ADNParqueaderoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoApp.swift; sourceTree = "<group>"; };
 		E4FA504129C12C1500A11573 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +57,9 @@
 		E4FA505629C12C1700A11573 /* ADNParqueaderoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNParqueaderoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITests.swift; sourceTree = "<group>"; };
 		E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FCA639D75A6150AC7617AC96 /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNParqueadero_ADNParqueaderoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE24648E2204EEE654D2ED3 /* Pods-ADNParqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueadero.release.xcconfig"; path = "Target Support Files/Pods-ADNParqueadero/Pods-ADNParqueadero.release.xcconfig"; sourceTree = "<group>"; };
+		FE734DBD5F1AD9DF76318969 /* Pods_ADNParqueadero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNParqueadero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41387F629C4B5C4000A07CC /* Infraestructure.framework in Frameworks */,
+				E41387BA29C49538000A07CC /* Domain.framework in Frameworks */,
+				D25D7D4FBA3C480BF67024CD /* Pods_ADNParqueadero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2396F23C08BFD49CCEBB6A5D /* Pods_ADNParqueaderoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,15 +85,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA8074EB1D7106F684860DE /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75328F80CEC166342A4E505B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E41387F529C4B5C4000A07CC /* Infraestructure.framework */,
+				E41387B929C49538000A07CC /* Domain.framework */,
+				FE734DBD5F1AD9DF76318969 /* Pods_ADNParqueadero.framework */,
+				FCA639D75A6150AC7617AC96 /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework */,
+				E1083F66FCA96C298BC87599 /* Pods_ADNParqueaderoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A0E1853426F82A74A9B35C96 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				A7106AB7AFB5B5362FE00E4F /* Pods-ADNParqueadero.debug.xcconfig */,
+				FDE24648E2204EEE654D2ED3 /* Pods-ADNParqueadero.release.xcconfig */,
+				4A14774FD258145788D8733A /* Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig */,
+				9BF55E6A0DD93ECFA2E25A3B /* Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig */,
+				1A0E39B2FC83E8A74FECD32C /* Pods-ADNParqueaderoTests.debug.xcconfig */,
+				B2EB77586621C30F590109B9 /* Pods-ADNParqueaderoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -86,6 +125,7 @@
 				E4FA505929C12C1700A11573 /* ADNParqueaderoUITests */,
 				E4FA503D29C12C1500A11573 /* Products */,
 				A0E1853426F82A74A9B35C96 /* Pods */,
+				75328F80CEC166342A4E505B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +182,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4FA506029C12C1700A11573 /* Build configuration list for PBXNativeTarget "ADNParqueadero" */;
 			buildPhases = (
+				2E75F0E2850BB0E184F56662 /* [CP] Check Pods Manifest.lock */,
 				E4FA503829C12C1500A11573 /* Sources */,
 				E4FA503929C12C1500A11573 /* Frameworks */,
 				E4FA503A29C12C1500A11573 /* Resources */,
@@ -160,6 +201,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4FA506329C12C1700A11573 /* Build configuration list for PBXNativeTarget "ADNParqueaderoTests" */;
 			buildPhases = (
+				D80EC150427194753D22ADC9 /* [CP] Check Pods Manifest.lock */,
 				E4FA504829C12C1700A11573 /* Sources */,
 				E4FA504929C12C1700A11573 /* Frameworks */,
 				E4FA504A29C12C1700A11573 /* Resources */,
@@ -178,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4FA506629C12C1700A11573 /* Build configuration list for PBXNativeTarget "ADNParqueaderoUITests" */;
 			buildPhases = (
+				7346119817FADD415B9F9D95 /* [CP] Check Pods Manifest.lock */,
 				E4FA505229C12C1700A11573 /* Sources */,
 				E4FA505329C12C1700A11573 /* Frameworks */,
 				E4FA505429C12C1700A11573 /* Resources */,
@@ -262,6 +305,72 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E75F0E2850BB0E184F56662 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADNParqueadero-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7346119817FADD415B9F9D95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADNParqueadero-ADNParqueaderoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D80EC150427194753D22ADC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADNParqueaderoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E413878B29C228B7000A07CC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,7 +386,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -440,6 +550,7 @@
 		};
 		E4FA506129C12C1700A11573 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7106AB7AFB5B5362FE00E4F /* Pods-ADNParqueadero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +580,7 @@
 		};
 		E4FA506229C12C1700A11573 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDE24648E2204EEE654D2ED3 /* Pods-ADNParqueadero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -498,6 +610,7 @@
 		};
 		E4FA506429C12C1700A11573 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A0E39B2FC83E8A74FECD32C /* Pods-ADNParqueaderoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -517,6 +630,7 @@
 		};
 		E4FA506529C12C1700A11573 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2EB77586621C30F590109B9 /* Pods-ADNParqueaderoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +650,7 @@
 		};
 		E4FA506729C12C1700A11573 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A14774FD258145788D8733A /* Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -553,6 +668,7 @@
 		};
 		E4FA506829C12C1700A11573 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BF55E6A0DD93ECFA2E25A3B /* Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

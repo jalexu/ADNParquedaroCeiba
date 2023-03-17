@@ -5,6 +5,12 @@
       location = "group:ADNParqueadero.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Domain/Domain.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Infraestructure/Infraestructure.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
