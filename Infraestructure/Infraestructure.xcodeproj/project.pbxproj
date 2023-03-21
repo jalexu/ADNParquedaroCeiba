@@ -59,6 +59,7 @@
 		E41387CA29C4B55B000A07CC = {
 			isa = PBXGroup;
 			children = (
+				E4568C3629C9EE900055A8E7 /* Repository */,
 				E41387D629C4B55B000A07CC /* Infraestructure */,
 				E41387E029C4B55B000A07CC /* InfraestructureTests */,
 				E41387D529C4B55B000A07CC /* Products */,
@@ -106,6 +107,13 @@
 				E41387FF29C4B911000A07CC /* RegisterVehicleRealmModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E4568C3629C9EE900055A8E7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +390,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,6 +420,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

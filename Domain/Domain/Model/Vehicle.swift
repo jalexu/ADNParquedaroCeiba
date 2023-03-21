@@ -9,6 +9,7 @@ public class Vehicle {
     private var plaqueId: String
     private var vehicleType: VehicleType
     private var cylinderCapacity: Int?
+    private var exceptionMessagePlaqueA: String = "No está autorizado a ingresar."
     
     public init(plaque: String, vehicleType: VehicleType, cylinderCapacity: Int? = nil) {
         self.plaqueId = plaque
@@ -22,14 +23,14 @@ public class Vehicle {
     
     func validatePlaque() -> String {
         if plaqueId.first?.uppercased() == "A" {
-            return "No está autorizado a ingresar."
+            return exceptionMessagePlaqueA
         } else {
             return ""
         }
     }
 }
 
-public enum VehicleType: String {
+public enum VehicleType: String, CaseIterable {
     case car = "Car"
     case motocicle = "Motocicle"
     case other = "Other"

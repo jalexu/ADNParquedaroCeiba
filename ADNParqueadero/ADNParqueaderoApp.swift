@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct ADNParqueaderoApp: App {
+    private var viewModel = RegisterVehicleViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RegisterVehicleView(viewModel: viewModel)
         }
     }
 }

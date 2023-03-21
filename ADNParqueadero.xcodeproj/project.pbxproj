@@ -12,11 +12,14 @@
 		D25D7D4FBA3C480BF67024CD /* Pods_ADNParqueadero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE734DBD5F1AD9DF76318969 /* Pods_ADNParqueadero.framework */; };
 		E41387BA29C49538000A07CC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387B929C49538000A07CC /* Domain.framework */; };
 		E41387F629C4B5C4000A07CC /* Infraestructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387F529C4B5C4000A07CC /* Infraestructure.framework */; };
+		E4568C3129C9D9610055A8E7 /* RegisterVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */; };
+		E4568C3329C9DB750055A8E7 /* RegisterVehiculeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */; };
+		E4568C3529C9E1710055A8E7 /* RegisterVehiculeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3429C9E1710055A8E7 /* RegisterVehiculeContract.swift */; };
 		E4FA504029C12C1500A11573 /* ADNParqueaderoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA503F29C12C1500A11573 /* ADNParqueaderoApp.swift */; };
-		E4FA504229C12C1500A11573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA504129C12C1500A11573 /* ContentView.swift */; };
+		E4FA504229C12C1500A11573 /* RegisterVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA504129C12C1500A11573 /* RegisterVehicleView.swift */; };
 		E4FA504429C12C1700A11573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FA504329C12C1700A11573 /* Assets.xcassets */; };
 		E4FA504729C12C1700A11573 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FA504629C12C1700A11573 /* Preview Assets.xcassets */; };
-		E4FA505129C12C1700A11573 /* ADNParqueaderoInitialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505029C12C1700A11573 /* ADNParqueaderoInitialTests.swift */; };
+		E4FA505129C12C1700A11573 /* RegisterVehicleViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505029C12C1700A11573 /* RegisterVehicleViewModelTest.swift */; };
 		E4FA505B29C12C1700A11573 /* ADNParqueaderoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */; };
 		E4FA505D29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -47,13 +50,16 @@
 		E1083F66FCA96C298BC87599 /* Pods_ADNParqueaderoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNParqueaderoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41387B929C49538000A07CC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41387F529C4B5C4000A07CC /* Infraestructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infraestructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleViewModel.swift; sourceTree = "<group>"; };
+		E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehiculeState.swift; sourceTree = "<group>"; };
+		E4568C3429C9E1710055A8E7 /* RegisterVehiculeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehiculeContract.swift; sourceTree = "<group>"; };
 		E4FA503C29C12C1500A11573 /* ADNParqueadero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADNParqueadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA503F29C12C1500A11573 /* ADNParqueaderoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoApp.swift; sourceTree = "<group>"; };
-		E4FA504129C12C1500A11573 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E4FA504129C12C1500A11573 /* RegisterVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleView.swift; sourceTree = "<group>"; };
 		E4FA504329C12C1700A11573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4FA504629C12C1700A11573 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4FA504C29C12C1700A11573 /* ADNParqueaderoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNParqueaderoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4FA505029C12C1700A11573 /* ADNParqueaderoInitialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoInitialTests.swift; sourceTree = "<group>"; };
+		E4FA505029C12C1700A11573 /* RegisterVehicleViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleViewModelTest.swift; sourceTree = "<group>"; };
 		E4FA505629C12C1700A11573 /* ADNParqueaderoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNParqueaderoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITests.swift; sourceTree = "<group>"; };
 		E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -117,6 +123,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E413880329C4E7FE000A07CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4FA504129C12C1500A11573 /* RegisterVehicleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E4568C2F29C9D8DD0055A8E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */,
+				E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */,
+				E4568C3429C9E1710055A8E7 /* RegisterVehiculeContract.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E4FA503329C12C1500A11573 = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +166,9 @@
 		E4FA503E29C12C1500A11573 /* ADNParqueadero */ = {
 			isa = PBXGroup;
 			children = (
+				E4568C2F29C9D8DD0055A8E7 /* ViewModel */,
+				E413880329C4E7FE000A07CC /* View */,
 				E4FA503F29C12C1500A11573 /* ADNParqueaderoApp.swift */,
-				E4FA504129C12C1500A11573 /* ContentView.swift */,
 				E4FA504329C12C1700A11573 /* Assets.xcassets */,
 				E4FA504529C12C1700A11573 /* Preview Content */,
 			);
@@ -161,7 +186,7 @@
 		E4FA504F29C12C1700A11573 /* ADNParqueaderoTests */ = {
 			isa = PBXGroup;
 			children = (
-				E4FA505029C12C1700A11573 /* ADNParqueaderoInitialTests.swift */,
+				E4FA505029C12C1700A11573 /* RegisterVehicleViewModelTest.swift */,
 			);
 			path = ADNParqueaderoTests;
 			sourceTree = "<group>";
@@ -396,7 +421,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FA504229C12C1500A11573 /* ContentView.swift in Sources */,
+				E4FA504229C12C1500A11573 /* RegisterVehicleView.swift in Sources */,
+				E4568C3529C9E1710055A8E7 /* RegisterVehiculeContract.swift in Sources */,
+				E4568C3329C9DB750055A8E7 /* RegisterVehiculeState.swift in Sources */,
+				E4568C3129C9D9610055A8E7 /* RegisterVehicleViewModel.swift in Sources */,
 				E4FA504029C12C1500A11573 /* ADNParqueaderoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FA505129C12C1700A11573 /* ADNParqueaderoInitialTests.swift in Sources */,
+				E4FA505129C12C1700A11573 /* RegisterVehicleViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
