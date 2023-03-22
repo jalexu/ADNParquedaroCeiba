@@ -10,13 +10,16 @@ import XCTest
 
 final class MotocicleTests: XCTestCase {
     private var sut: Motocicle!
+    private var date: Date!
 
     override func setUpWithError() throws {
-        sut = Motocicle(plaque: "AHDF124", vehicleType: .motocicle, cylinderCapacity: 150)
+        date = DomainTestMock.getDateMock()
+        sut = Motocicle(plaque: "AHDF124", vehicleType: .motocicle, cylinderCapacity: "150", registerDate: date)
         try super.setUpWithError()
     }
 
     override func tearDownWithError() throws {
+        date = nil
         sut = nil
         try super.tearDownWithError()
     }
@@ -35,7 +38,7 @@ final class MotocicleTests: XCTestCase {
     func test_validatePlaque_whenMotociclePlaqueInitOtherLetter_ThenMessageIsEmpty() throws {
         // Arrange
         var resultado: String = ""
-        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: 150)
+        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: "150", registerDate: date)
         
         // Act
         resultado = sut.validatePlaque()
@@ -47,7 +50,7 @@ final class MotocicleTests: XCTestCase {
     func test_getPriceForCylinderCapacity_whenMotocicleHas150CC_ThenReturnValue0() throws {
         // Arrange
         var resultado: Int = 50
-        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: 150)
+        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: "150", registerDate: date)
         
         // Act
         resultado = sut.getPriceForCylinderCapacity()
@@ -59,7 +62,7 @@ final class MotocicleTests: XCTestCase {
     func test_getPriceForCylinderCapacity_whenMotocicleHas200CC_ThenReturnValue2000() throws {
         // Arrange
         var resultado: Int = 0
-        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: 500)
+        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: "500", registerDate: date)
         
         // Act
         resultado = sut.getPriceForCylinderCapacity()
@@ -67,5 +70,4 @@ final class MotocicleTests: XCTestCase {
         // Assert
         XCTAssertEqual(resultado, 2000)
     }
-
 }

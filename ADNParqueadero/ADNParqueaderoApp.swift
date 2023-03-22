@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import Resolver
 
 @main
 struct ADNParqueaderoApp: App {
-    private var viewModel = RegisterVehicleViewModel()
+    private let viewModel = Resolver.resolve(RegisterVehicleViewModel.self)
     var body: some Scene {
         WindowGroup {
-            RegisterVehicleView(viewModel: viewModel)
+            //RegisterVehicleView(viewModel: viewModel)
+            InitialPageView()
         }
     }
 }

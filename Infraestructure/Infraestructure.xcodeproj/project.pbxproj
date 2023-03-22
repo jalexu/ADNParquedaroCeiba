@@ -10,10 +10,14 @@
 		E41387DD29C4B55B000A07CC /* Infraestructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387D429C4B55B000A07CC /* Infraestructure.framework */; };
 		E41387E229C4B55B000A07CC /* InfraestructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387E129C4B55B000A07CC /* InfraestructureTests.swift */; };
 		E41387E329C4B55B000A07CC /* Infraestructure.h in Headers */ = {isa = PBXBuildFile; fileRef = E41387D729C4B55B000A07CC /* Infraestructure.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E41387F929C4B730000A07CC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E41387F829C4B730000A07CC /* Realm */; };
-		E41387FB29C4B730000A07CC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E41387FA29C4B730000A07CC /* RealmSwift */; };
-		E413880029C4B911000A07CC /* RegisterVehicleRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387FF29C4B911000A07CC /* RegisterVehicleRealmModel.swift */; };
-		E413880229C4CABF000A07CC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413880129C4CABF000A07CC /* RealmManager.swift */; };
+		E4568C4C29CA05910055A8E7 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C4B29CA05910055A8E7 /* CoreDataService.swift */; };
+		E4568C4E29CA08450055A8E7 /* CoreDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C4D29CA08450055A8E7 /* CoreDataManagerProtocol.swift */; };
+		E4568C5029CA09470055A8E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C4F29CA09470055A8E7 /* CoreDataManager.swift */; };
+		E4568C5529CA2BB50055A8E7 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C5429CA2BB50055A8E7 /* CoreDataRepository.swift */; };
+		E4568C5D29CA344A0055A8E7 /* CoreData+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C5C29CA344A0055A8E7 /* CoreData+Inject.swift */; };
+		E4568C6329CA38970055A8E7 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = E4568C6229CA38970055A8E7 /* Resolver */; };
+		E4568C6829CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4568C6629CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodeld */; };
+		E4568C6A29CA56B20055A8E7 /* VehicleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C6929CA56B20055A8E7 /* VehicleWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +35,15 @@
 		E41387D729C4B55B000A07CC /* Infraestructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infraestructure.h; sourceTree = "<group>"; };
 		E41387DC29C4B55B000A07CC /* InfraestructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraestructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41387E129C4B55B000A07CC /* InfraestructureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfraestructureTests.swift; sourceTree = "<group>"; };
-		E41387FF29C4B911000A07CC /* RegisterVehicleRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleRealmModel.swift; sourceTree = "<group>"; };
-		E413880129C4CABF000A07CC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		E4568C3A29C9FBA30055A8E7 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4568C3E29C9FE3E0055A8E7 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4568C4B29CA05910055A8E7 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		E4568C4D29CA08450055A8E7 /* CoreDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerProtocol.swift; sourceTree = "<group>"; };
+		E4568C4F29CA09470055A8E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E4568C5429CA2BB50055A8E7 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		E4568C5C29CA344A0055A8E7 /* CoreData+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+Inject.swift"; sourceTree = "<group>"; };
+		E4568C6729CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RegisterVehiclesDB.xcdatamodel; sourceTree = "<group>"; };
+		E4568C6929CA56B20055A8E7 /* VehicleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,8 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E41387FB29C4B730000A07CC /* RealmSwift in Frameworks */,
-				E41387F929C4B730000A07CC /* Realm in Frameworks */,
+				E4568C6329CA38970055A8E7 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,10 +69,10 @@
 		E41387CA29C4B55B000A07CC = {
 			isa = PBXGroup;
 			children = (
-				E4568C3629C9EE900055A8E7 /* Repository */,
 				E41387D629C4B55B000A07CC /* Infraestructure */,
 				E41387E029C4B55B000A07CC /* InfraestructureTests */,
 				E41387D529C4B55B000A07CC /* Products */,
+				E4568C3929C9FBA30055A8E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +88,9 @@
 		E41387D629C4B55B000A07CC /* Infraestructure */ = {
 			isa = PBXGroup;
 			children = (
-				E41387FC29C4B8D4000A07CC /* Realm */,
+				E4568C5129CA15280055A8E7 /* UseCase */,
+				E4568C4729CA03F20055A8E7 /* CoreData */,
+				E4568C3629C9EE900055A8E7 /* Repository */,
 				E41387D729C4B55B000A07CC /* Infraestructure.h */,
 			);
 			path = Infraestructure;
@@ -92,28 +104,41 @@
 			path = InfraestructureTests;
 			sourceTree = "<group>";
 		};
-		E41387FC29C4B8D4000A07CC /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				E413880129C4CABF000A07CC /* RealmManager.swift */,
-				E41387FD29C4B8E3000A07CC /* Model */,
-			);
-			path = Realm;
-			sourceTree = "<group>";
-		};
-		E41387FD29C4B8E3000A07CC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E41387FF29C4B911000A07CC /* RegisterVehicleRealmModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E4568C3629C9EE900055A8E7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E4568C5429CA2BB50055A8E7 /* CoreDataRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		E4568C3929C9FBA30055A8E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4568C3E29C9FE3E0055A8E7 /* RealmSwift.framework */,
+				E4568C3A29C9FBA30055A8E7 /* Realm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4568C4729CA03F20055A8E7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E4568C4B29CA05910055A8E7 /* CoreDataService.swift */,
+				E4568C4D29CA08450055A8E7 /* CoreDataManagerProtocol.swift */,
+				E4568C4F29CA09470055A8E7 /* CoreDataManager.swift */,
+				E4568C5C29CA344A0055A8E7 /* CoreData+Inject.swift */,
+				E4568C6629CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodeld */,
+				E4568C6929CA56B20055A8E7 /* VehicleWrapper.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		E4568C5129CA15280055A8E7 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +170,7 @@
 			);
 			name = Infraestructure;
 			packageProductDependencies = (
-				E41387F829C4B730000A07CC /* Realm */,
-				E41387FA29C4B730000A07CC /* RealmSwift */,
+				E4568C6229CA38970055A8E7 /* Resolver */,
 			);
 			productName = Infraestructure;
 			productReference = E41387D429C4B55B000A07CC /* Infraestructure.framework */;
@@ -199,7 +223,7 @@
 			);
 			mainGroup = E41387CA29C4B55B000A07CC;
 			packageReferences = (
-				E41387F729C4B730000A07CC /* XCRemoteSwiftPackageReference "realm-swift" */,
+				E4568C6129CA38970055A8E7 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = E41387D529C4B55B000A07CC /* Products */;
 			projectDirPath = "";
@@ -233,8 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E413880029C4B911000A07CC /* RegisterVehicleRealmModel.swift in Sources */,
-				E413880229C4CABF000A07CC /* RealmManager.swift in Sources */,
+				E4568C6A29CA56B20055A8E7 /* VehicleWrapper.swift in Sources */,
+				E4568C4E29CA08450055A8E7 /* CoreDataManagerProtocol.swift in Sources */,
+				E4568C5D29CA344A0055A8E7 /* CoreData+Inject.swift in Sources */,
+				E4568C4C29CA05910055A8E7 /* CoreDataService.swift in Sources */,
+				E4568C5029CA09470055A8E7 /* CoreDataManager.swift in Sources */,
+				E4568C6829CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodeld in Sources */,
+				E4568C5529CA2BB50055A8E7 /* CoreDataRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,28 +530,36 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E41387F729C4B730000A07CC /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		E4568C6129CA38970055A8E7 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E41387F829C4B730000A07CC /* Realm */ = {
+		E4568C6229CA38970055A8E7 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E41387F729C4B730000A07CC /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		E41387FA29C4B730000A07CC /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E41387F729C4B730000A07CC /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
+			package = E4568C6129CA38970055A8E7 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		E4568C6629CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E4568C6729CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodel */,
+			);
+			currentVersion = E4568C6729CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodel */;
+			path = RegisterVehiclesDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E41387CB29C4B55B000A07CC /* Project object */;
 }

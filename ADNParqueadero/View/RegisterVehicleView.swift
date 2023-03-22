@@ -10,10 +10,10 @@ import Domain
 import Combine
 
 
-struct RegisterVehicleView<ViewModelProtocol>: View where ViewModelProtocol: RegisterVehicleProtocol {
-    @ObservedObject private var viewModel: ViewModelProtocol
+struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProtocol {
+    @ObservedObject private var viewModel: ViewModel
     
-    init(viewModel: ViewModelProtocol) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
    
@@ -38,6 +38,25 @@ struct RegisterVehicleView<ViewModelProtocol>: View where ViewModelProtocol: Reg
         } label: {
             HStack(alignment: .center, spacing: 6) {
                 Text("Registar vehículo")
+                    .fontWeight(.bold)
+                    .foregroundColor(.gray)
+            }
+            .padding()
+            .background(Color.white.cornerRadius(12))
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+        }
+        
+    }
+    
+    var retrieveVehiclesButtonView: some View {
+        Button {
+            viewModel.retrieveVehicle()
+        } label: {
+            HStack(alignment: .center, spacing: 6) {
+                Text("Obtener vehículos")
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
             }
@@ -87,9 +106,17 @@ struct RegisterVehicleView<ViewModelProtocol>: View where ViewModelProtocol: Reg
                     
                     registerButtonView
                     
+                    retrieveVehiclesButtonView
+                    
+                }
+                .alert(isPresented: $viewModel.state.showMessagePlaqueA) {
+                    Alert(
+                        title: Text("No se puede parquear"),
+                        message: Text(viewModel.state.messagePlaqueA),
+                        dismissButton: .cancel(Text("OK"))
+                    )
                 }
                 .padding(.bottom, 50)
-                
                 
             }
             .background(Color("ColorBackground").ignoresSafeArea(.all,edges: .all))
@@ -97,13 +124,3 @@ struct RegisterVehicleView<ViewModelProtocol>: View where ViewModelProtocol: Reg
         .ignoresSafeArea(.all)
     }
 }
-
-#if DEBUG
-struct ContentView_Previews: PreviewProvider {
-    
-    static var viewModel = RegisterVehicleViewModel()
-    static var previews: some View {
-        RegisterVehicleView(viewModel: viewModel)
-    }
-}
-#endif

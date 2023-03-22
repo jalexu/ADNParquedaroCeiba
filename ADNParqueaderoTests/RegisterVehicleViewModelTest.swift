@@ -13,7 +13,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
 
     override func setUpWithError() throws {
         isTestInitial = true
-        sut = RegisterVehicleViewModel()
+        //sut = RegisterVehicleViewModel()
         try super.setUpWithError()
     }
 

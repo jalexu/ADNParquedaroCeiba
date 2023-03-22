@@ -8,12 +8,15 @@
 public class Motocicle: Vehicle {
     private let extraPay: Int = 2000
     
-    public init(plaque: String, vehicleType: VehicleType, cylinderCapacity: Int) {
-        super.init(plaque: plaque, vehicleType: vehicleType, cylinderCapacity: cylinderCapacity)
+    public init(plaque: String,
+                vehicleType: VehicleType,
+                cylinderCapacity: String,
+                registerDate: Date) {
+        super.init(plaque: plaque, vehicleType: vehicleType, cylinderCapacity: cylinderCapacity, registerDate: registerDate)
     }
     
-    func getPriceForCylinderCapacity() -> Int {
-        guard let capacity = getCylinderCapacity(), capacity >= 500 else {
+    public func getPriceForCylinderCapacity() -> Int {
+        guard let capacity = Int(getCylinderCapacity()), capacity >= 500 else {
             return 0
         }
         
