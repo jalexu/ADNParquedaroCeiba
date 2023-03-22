@@ -23,7 +23,7 @@ public class Vehicle {
         plaqueId
     }
     
-    public func getVehicleType() ->VehicleType {
+    public func getVehicleType() -> VehicleType {
         vehicleType
     }
     
@@ -59,16 +59,13 @@ public class Vehicle {
 public enum VehicleType: String, CaseIterable {
     case car = "Car"
     case motocicle = "Motocicle"
-    case other = "Other"
     
     public init?(rawValue: String) {
         switch rawValue.lowercased() {
         case "car":
             self = .car
-        case "motocicle":
-            self = .motocicle
         default:
-            self = .other
+            self = .motocicle
         }
     }
 }

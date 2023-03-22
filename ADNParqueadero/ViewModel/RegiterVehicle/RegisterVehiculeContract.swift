@@ -10,6 +10,7 @@ import Combine
 protocol RegisterVehicleProtocol: ObservableObject {
     var state: RegisterVehiculeState { get set }
     func registerVehicle()
-    func retrieveVehicle()
+    func onAppear()
+    func onDisappear()
 }
 

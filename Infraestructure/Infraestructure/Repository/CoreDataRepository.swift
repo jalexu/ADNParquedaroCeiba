@@ -9,10 +9,10 @@ import Combine
 import Domain
 
 public protocol CoreDataRepositoryProtocol {
-    func save(with data: Domain.Vehicle) -> Future<Bool, Error>
-    func retrieveObjects() -> Future<[Domain.Vehicle], Error>
-    func retrieveObject(numerPlaque: String) -> Future<Domain.Vehicle?, Error>
-    func delete(numerPlaque: String) -> Future<Bool, Error>
+    func save(with data: Domain.Vehicle) -> AnyPublisher<Bool, Error>
+    func retrieveObjects() -> AnyPublisher<[Domain.Vehicle], Error>
+    func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.Vehicle?, Error>
+    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error>
 }
 
 public class CoreDataRepository: CoreDataRepositoryProtocol {
@@ -22,19 +22,19 @@ public class CoreDataRepository: CoreDataRepositoryProtocol {
         self.coreDataManager = coreDataManager
     }
     
-    public func save(with data: Domain.Vehicle) -> Future<Bool, Error> {
+    public func save(with data: Domain.Vehicle) -> AnyPublisher<Bool, Error> {
         coreDataManager.save(with: data)
     }
     
-    public func retrieveObjects() -> Future<[Domain.Vehicle], Error> {
+    public func retrieveObjects() -> AnyPublisher<[Domain.Vehicle], Error> {
         coreDataManager.retrieveObjects()
     }
     
-    public func delete(numerPlaque: String) -> Future<Bool, Error> {
+    public func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         coreDataManager.delete(numerPlaque: numerPlaque)
     }
     
-    public func retrieveObject(numerPlaque: String) -> Future<Domain.Vehicle?, Error> {
+    public func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.Vehicle?, Error> {
         coreDataManager.retrieveObject(numerPlaque: numerPlaque)
     }
 }

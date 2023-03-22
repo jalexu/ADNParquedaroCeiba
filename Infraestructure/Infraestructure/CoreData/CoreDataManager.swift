@@ -13,8 +13,8 @@ public final class CoreDataManager: CoreDataManagerProtocol {
     
     public init() {}
     
-    public func save(with data: Domain.Vehicle) -> Future<Bool, Error> {
-        Future<Bool, Error> { promise in
+    public func save(with data: Domain.Vehicle) -> AnyPublisher<Bool, Error> {
+        return Future { promise in
             let context = CoreDataService.context
             let entity = NSEntityDescription.entity(forEntityName: "Vehicle", in: context)!
             let table = NSManagedObject(entity: entity, insertInto: context)
@@ -32,12 +32,11 @@ public final class CoreDataManager: CoreDataManagerProtocol {
                 debugPrint("Realm has error whent try to save data")
                 promise(.failure(error))
             }
-            
-        }
+        }.eraseToAnyPublisher()
     }
     
-    public func retrieveObjects() -> Future<[Domain.Vehicle], Error> {
-        Future<[Domain.Vehicle], Error> { promise in
+    public func retrieveObjects() -> AnyPublisher<[Domain.Vehicle], Error> {
+        return Future { promise in
             let context = CoreDataService.context
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vehicle")
             
@@ -48,11 +47,11 @@ public final class CoreDataManager: CoreDataManagerProtocol {
             } catch {
                 promise(.failure(error))
             }
-        }
+        }.eraseToAnyPublisher()
     }
     
-    public func retrieveObject(numerPlaque: String) -> Future<Domain.Vehicle?, Error> {
-        Future<Domain.Vehicle?, Error> { promise in
+    public func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.Vehicle?, Error> {
+        return Future { promise in
             let context = CoreDataService.context
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vehicle")
             
@@ -64,11 +63,11 @@ public final class CoreDataManager: CoreDataManagerProtocol {
             } catch {
                 promise(.failure(error))
             }
-        }
+        }.eraseToAnyPublisher()
     }
     
-    public func delete(numerPlaque: String) -> Future<Bool, Error> {
-        Future<Bool, Error> { promise in
+    public func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+        return Future { promise in
             let context = CoreDataService.context
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vehicle")
             
@@ -86,6 +85,6 @@ public final class CoreDataManager: CoreDataManagerProtocol {
             } catch {
                 promise(.failure(error))
             }
-        }
+        }.eraseToAnyPublisher()
     }
 }

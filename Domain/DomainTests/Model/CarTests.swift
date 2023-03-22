@@ -14,7 +14,7 @@ final class CarTests: XCTestCase {
 
     override func setUpWithError() throws {
         date = DomainTestMock.getDateMock()
-        sut = Car(plaque: "AHDF123", vehicleType: .car, registerDate: getDate())
+        sut = Car(plaque: "AHDF123", vehicleType: .car, registerDate: DomainTestMock.getDateWithMondayMock())
         try super.setUpWithError()
     }
 
@@ -38,19 +38,12 @@ final class CarTests: XCTestCase {
     func test_validatePlaque_whenCarPlaqueInitOtherLetter_ThenMessageIsEmpty() throws {
         // Arrange
         var resultado: String = ""
-        sut = Car(plaque: "HDF123", vehicleType: .car, registerDate: getDate())
+        sut = Car(plaque: "HDF123", vehicleType: .car, registerDate: DomainTestMock.getDateMock())
         
         // Act
         resultado = sut.validatePlaque()
         
         // Assert
         XCTAssertTrue(resultado.isEmpty)
-    }
-    
-    private func getDate() -> Date {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        let someDateTime = formatter.date(from: "2023/04/22 22:31") ?? Date()
-        return someDateTime
     }
 }

@@ -50,25 +50,6 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
         }
         
     }
-    
-    var retrieveVehiclesButtonView: some View {
-        Button {
-            viewModel.retrieveVehicle()
-        } label: {
-            HStack(alignment: .center, spacing: 6) {
-                Text("Obtener vehículos")
-                    .fontWeight(.bold)
-                    .foregroundColor(.gray)
-            }
-            .padding()
-            .background(Color.white.cornerRadius(12))
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color.gray, lineWidth: 1)
-            )
-        }
-        
-    }
     var body: some View {
         ZStack{
             VStack {
@@ -78,7 +59,36 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                     .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y:5)
+                VStack(spacing: 5) {
+                    HStack(spacing: 5) {
+                        Text("Cantidad carros parqueados:")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 14))
+                            .foregroundColor(.black)
+                        Text(String(viewModel.state.numersOfCars))
+                            .fontWeight(.bold)
+                            .font(.system(size: 14))
+                            .foregroundColor(.gray)
+                    }
+                    
+                    HStack(spacing: 5) {
+                        Text("Catidad motos parqueadas:")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 14))
+                            .foregroundColor(.black)
+                        Text(String(viewModel.state.numersOfMotocicles))
+                            .fontWeight(.bold)
+                            .font(.system(size: 14))
+                            .foregroundColor(.gray)
+                    }
+                }
+                .padding([.top, .trailing, .leading], 20)
                 
+                Text("Ingrese datos del vehículo")
+                    .fontWeight(.black)
+                    .font(.system(size: 16))
+                    .foregroundColor(.black)
+                    .padding([.top, .trailing, .leading], 20)
                 
                 VStack(spacing: 20) {
                     TextField("Ingresa la placa", text: $viewModel.state.inputPlaque)
@@ -106,13 +116,17 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                     
                     registerButtonView
                     
-                    retrieveVehiclesButtonView
-                    
                 }
-                .alert(isPresented: $viewModel.state.showMessagePlaqueA) {
+                .onAppear {
+                    viewModel.onAppear()
+                }
+                .onDisappear {
+                    viewModel.onDisappear()
+                }
+                .alert(isPresented: $viewModel.state.showAlert) {
                     Alert(
                         title: Text("No se puede parquear"),
-                        message: Text(viewModel.state.messagePlaqueA),
+                        message: Text(viewModel.state.message),
                         dismissButton: .cancel(Text("OK"))
                     )
                 }

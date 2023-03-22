@@ -27,8 +27,9 @@ final class MotocicleTests: XCTestCase {
     func test_validatePlaque_whenMotociclePlaqueInitForA_ThenMessage() throws {
         // Arrange
         var resultado: String = ""
-        
+        sut = Motocicle(plaque: "AHDF124", vehicleType: .motocicle, cylinderCapacity: "150", registerDate:  DomainTestMock.getDateWithMondayMock())
         // Act
+        
         resultado = sut.validatePlaque()
         
         // Assert

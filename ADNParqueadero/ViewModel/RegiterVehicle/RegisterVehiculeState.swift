@@ -19,7 +19,9 @@ final class RegisterVehiculeState: ObservableObject {
     var seletedVehicleType: VehicleType = VehicleType.car
     var inputVehicleType: String = ""
     var inputCylinderCapacity: String = ""
-    var messagePlaqueA: String = ""
-    var showMessagePlaqueA: Bool = false
+    var message: String = ""
+    var showAlert: Bool = false
+    var numersOfCars: Int = 0
+    var numersOfMotocicles: Int = 0
 }
 

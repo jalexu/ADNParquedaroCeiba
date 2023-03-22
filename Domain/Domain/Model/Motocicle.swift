@@ -7,6 +7,7 @@
 
 public class Motocicle: Vehicle {
     private let extraPay: Int = 2000
+    private let motorCapacity: Int = 500
     
     public init(plaque: String,
                 vehicleType: VehicleType,
@@ -16,7 +17,7 @@ public class Motocicle: Vehicle {
     }
     
     public func getPriceForCylinderCapacity() -> Int {
-        guard let capacity = Int(getCylinderCapacity()), capacity >= 500 else {
+        guard let capacity = Int(getCylinderCapacity()), capacity >= motorCapacity else {
             return 0
         }
         

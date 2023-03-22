@@ -9,8 +9,8 @@ import Combine
 import Domain
 
 public protocol CoreDataManagerProtocol {
-    func save(with data: Domain.Vehicle) -> Future<Bool, Error>
-    func retrieveObjects() -> Future<[Domain.Vehicle], Error>
-    func retrieveObject(numerPlaque: String) -> Future<Domain.Vehicle?, Error>
-    func delete(numerPlaque: String) -> Future<Bool, Error>
+    func save(with data: Domain.Vehicle) -> AnyPublisher<Bool, Error>
+    func retrieveObjects() -> AnyPublisher<[Domain.Vehicle], Error>
+    func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.Vehicle?, Error>
+    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error>
 }

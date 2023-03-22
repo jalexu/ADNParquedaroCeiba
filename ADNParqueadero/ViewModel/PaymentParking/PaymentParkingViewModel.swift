@@ -100,7 +100,7 @@ final class PaymentParkingViewModel: BaseViewModel {
 extension PaymentParkingViewModel: PaymentParkingProtocol {
     func searchVehicle(numberPlaque: String) {
         self.loading = true
-        coreDataRepository.retrieveObject(numerPlaque: numberPlaque)
+        coreDataRepository.retrieveObject(numerPlaque: numberPlaque.uppercased())
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
@@ -109,7 +109,7 @@ extension PaymentParkingViewModel: PaymentParkingProtocol {
                 [weak self] response in
                 self?.loading = false
                 if let vehicule = response {
-                    if vehicule is Motocicle {
+                    if vehicule.getVehicleType() == .motocicle {
                         self?.motocicle = response as? Motocicle
                         self?.storedData = self?.motocicle?.getRegisterDate()
                         self?.isAmotocicle = true

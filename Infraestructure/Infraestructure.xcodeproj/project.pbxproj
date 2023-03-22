@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E404FD2129CB7E1B00DB4F7F /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD2029CB7E1B00DB4F7F /* CustomErrors.swift */; };
 		E41387DD29C4B55B000A07CC /* Infraestructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387D429C4B55B000A07CC /* Infraestructure.framework */; };
 		E41387E229C4B55B000A07CC /* InfraestructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387E129C4B55B000A07CC /* InfraestructureTests.swift */; };
 		E41387E329C4B55B000A07CC /* Infraestructure.h in Headers */ = {isa = PBXBuildFile; fileRef = E41387D729C4B55B000A07CC /* Infraestructure.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E404FD2029CB7E1B00DB4F7F /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		E41387D429C4B55B000A07CC /* Infraestructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infraestructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41387D729C4B55B000A07CC /* Infraestructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infraestructure.h; sourceTree = "<group>"; };
 		E41387DC29C4B55B000A07CC /* InfraestructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraestructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +90,7 @@
 		E41387D629C4B55B000A07CC /* Infraestructure */ = {
 			isa = PBXGroup;
 			children = (
-				E4568C5129CA15280055A8E7 /* UseCase */,
+				E4568C5129CA15280055A8E7 /* Errors */,
 				E4568C4729CA03F20055A8E7 /* CoreData */,
 				E4568C3629C9EE900055A8E7 /* Repository */,
 				E41387D729C4B55B000A07CC /* Infraestructure.h */,
@@ -134,11 +136,12 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		E4568C5129CA15280055A8E7 /* UseCase */ = {
+		E4568C5129CA15280055A8E7 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
+				E404FD2029CB7E1B00DB4F7F /* CustomErrors.swift */,
 			);
-			path = UseCase;
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +265,7 @@
 				E4568C5D29CA344A0055A8E7 /* CoreData+Inject.swift in Sources */,
 				E4568C4C29CA05910055A8E7 /* CoreDataService.swift in Sources */,
 				E4568C5029CA09470055A8E7 /* CoreDataManager.swift in Sources */,
+				E404FD2129CB7E1B00DB4F7F /* CustomErrors.swift in Sources */,
 				E4568C6829CA49BD0055A8E7 /* RegisterVehiclesDB.xcdatamodeld in Sources */,
 				E4568C5529CA2BB50055A8E7 /* CoreDataRepository.swift in Sources */,
 			);

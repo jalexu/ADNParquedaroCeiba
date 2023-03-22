@@ -14,8 +14,6 @@ import Infraestructure
 class RegisterVehicleViewModel: BaseViewModel {
     private let textLimit = 6
     private let coreDataRepository: CoreDataRepositoryProtocol
-    private var numersOfCars: Int = 0
-    private var numersOfMotocicles: Int = 0
     
     private var subscribers: Set<AnyCancellable> = []
     
@@ -37,10 +35,22 @@ class RegisterVehicleViewModel: BaseViewModel {
         return hourDate
     }
     
-    private func showAlert(messagePlaqueA: String) {
+    private func showAlert(message: String) {
         updateState {
-            state.messagePlaqueA = messagePlaqueA
-            state.showMessagePlaqueA = true
+            state.message = message
+            state.showAlert = true
+        }
+    }
+    
+    private func numbersOfVehicles(vehicles: [Domain.Vehicle]) {
+        for vehicle in vehicles {
+            updateState {
+                if vehicle.getVehicleType() == .motocicle {
+                    state.numersOfMotocicles += 1
+                } else {
+                    state.numersOfCars += 1
+                }
+            }
         }
     }
     
@@ -49,6 +59,13 @@ class RegisterVehicleViewModel: BaseViewModel {
 extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     func registerVehicle() {
         self.loading = true
+        
+        guard !state.inputPlaque.isEmpty else {
+            self.loading = false
+            showAlert(message: "Debe ingresar un número de placa.")
+            return
+        }
+        
         let vehicle = Vehicle(plaque: state.inputPlaque,
                               vehicleType: state.seletedVehicleType,
                               cylinderCapacity: state.inputCylinderCapacity.isEmpty ? "0" : state.inputCylinderCapacity,
@@ -61,17 +78,18 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
                     guard case .failure(let error) = completion else { return }
                     debugPrint(error.localizedDescription)
                     self?.loading = false
+                    self?.showAlert(message: "Error al guardar")
                 }, receiveValue: { [weak self] response in
                     debugPrint(response)
                     self?.loading = false
                 })
                 .store(in: &subscribers)
         } else {
-            showAlert(messagePlaqueA: messagePlaqueA)
+            showAlert(message: messagePlaqueA)
         }
     }
     
-    func retrieveVehicle() {
+    func onAppear() {
         self.loading = true
         coreDataRepository.retrieveObjects()
             .sink(receiveCompletion: { [weak self] completion in
@@ -79,16 +97,15 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
                 debugPrint(error.localizedDescription)
                 self?.loading = false
             }, receiveValue: { [weak self] response in
-                for vehicle in response {
-                    if vehicle is Motocicle {
-                        self?.numersOfMotocicles += 1
-                    } else {
-                        self?.numersOfCars += 1
-                    }
-                }
+                self?.numbersOfVehicles(vehicles: response)
                 self?.loading = false
-                self?.registerVehicle()
             })
             .store(in: &subscribers)
+    }
+    
+    func onDisappear() {
+        state.numersOfCars = 0
+        state.numersOfMotocicles = 0
+        state.showAlert = false
     }
 }

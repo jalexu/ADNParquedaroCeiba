@@ -36,8 +36,8 @@ struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtoc
     var valuesFieldsView: some View {
         VStack {
             HStack(spacing: 10) {
-                Text("Dias:")
-                    .fontWeight(.black)
+                Text("Días:")
+                    .fontWeight(.semibold)
                     .font(.system(size: 20))
                     .foregroundColor(.black)
                     .padding([.top, .trailing, .leading], 20)
@@ -50,7 +50,7 @@ struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtoc
             
             HStack(spacing: 10) {
                 Text("Horas:")
-                    .fontWeight(.black)
+                    .fontWeight(.semibold)
                     .font(.system(size: 20))
                     .foregroundColor(.black)
                     .padding([.top, .trailing, .leading], 20)
