@@ -6,12 +6,13 @@
 //
 
 import Resolver
-import Infraestructure
+import Domain
 
 extension Resolver {
     public static func registerPaymentParkingViewModel() {
         register(PaymentParkingViewModel.self) { resolver in
-            PaymentParkingViewModel(coreDataRepository: resolver.resolve(CoreDataRepositoryProtocol.self))
+            PaymentParkingViewModel(carService: resolver.resolve(CarServiceProtocol.self),
+                                    motocicleService: resolver.resolve(MotocicleServiceProtocol.self))
         }
     }
 }

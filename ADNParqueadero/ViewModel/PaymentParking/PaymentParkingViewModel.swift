@@ -10,14 +10,10 @@ import Domain
 import Infraestructure
 
 final class PaymentParkingViewModel: BaseViewModel {
-    private let coreDataRepository: CoreDataRepositoryProtocol
+    private let carService: CarServiceProtocol
+    private let motocicleService: MotocicleServiceProtocol
     private var subscribers: Set<AnyCancellable> = []
-    private var motocicle: Motocicle?
-    private var isAmotocicle: Bool = false
-    private var car: Car?
-    private var isAcar: Bool = false
 
-    
     private var storedData: Date?
     private var currentData: Date = Date()
     
@@ -32,8 +28,10 @@ final class PaymentParkingViewModel: BaseViewModel {
     
     @Published var state = PaymentParkingState()
     
-    init(coreDataRepository: CoreDataRepositoryProtocol) {
-        self.coreDataRepository = coreDataRepository
+    init(carService: CarServiceProtocol,
+         motocicleService: MotocicleServiceProtocol) {
+        self.carService = carService
+        self.motocicleService = motocicleService
     }
     
     private func updateState(updater: () -> Void) {
@@ -41,88 +39,25 @@ final class PaymentParkingViewModel: BaseViewModel {
         objectWillChange.send()
     }
     
-    private func showValuesToPay() {
-       
-        let hoursParking = getHoursAndDaysOfParking()
-        
-        if hoursParking.hours <= 9 {
-            if isAmotocicle {
-                let extraPay = motocicle?.getPriceForCylinderCapacity() ?? 0
-                totalToPay = valueHourMotocicle * hoursParking.hours
-                totalToPay += extraPay
-            } else {
-                totalToPay = valueHourCar * hoursParking.hours
-            }
-        } else {
-            if hoursParking.days == 0 {
-                if isAmotocicle {
-                    let extraPay = motocicle?.getPriceForCylinderCapacity() ?? 0
-                    totalToPay = valueDayMotocicle
-                    totalToPay += extraPay
-                } else {
-                    totalToPay = valueDayCar
-                }
-            } else {
-                if isAmotocicle {
-                    let extraPay = motocicle?.getPriceForCylinderCapacity() ?? 0
-                    totalToPay = valueDayMotocicle * hoursParking.days
-                    totalToPay += extraPay
-                } else {
-                    totalToPay = valueDayCar * hoursParking.days
-                }
-            }
-
-        }
-        
-        updateState {
-            state.hoursToPay = hoursParking.hours
-            state.daysToPay = hoursParking.days
-            state.valueToPay = totalToPay
-        }
-    }
-    
-    private func getHoursAndDaysOfParking() -> (hours: Int, days: Int) {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.hour, .day], from: storedData!, to: currentData)
-        let hours = components.hour ?? 0
-        let days = components.day ?? 0
-        return (hours, days)
-    }
-    
-    private func getDaysOfParking() -> Int {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: storedData!, to: currentData)
-        let days = components.day ?? 0
-        return days
-    }
-}
-
-extension PaymentParkingViewModel: PaymentParkingProtocol {
-    func searchVehicle(numberPlaque: String) {
+    private func searchCar(numberPlaque: String) {
         self.loading = true
-        coreDataRepository.retrieveObject(numerPlaque: numberPlaque.uppercased())
+        carService.retrieveObject(numerPlaque: numberPlaque.uppercased())
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
+                self?.state.showError = true
                 self?.loading = false
-            }, receiveValue: {
-                [weak self] response in
+            }, receiveValue: { [weak self] response in
                 self?.loading = false
-                if let vehicule = response {
-                    if vehicule.getVehicleType() == .motocicle {
-                        self?.motocicle = response as? Motocicle
-                        self?.storedData = self?.motocicle?.getRegisterDate()
-                        self?.isAmotocicle = true
-                    } else {
-                        self?.car = response as? Car
-                        self?.storedData = self?.car?.getRegisterDate()
-                        self?.isAcar = true
-                    }
-                    self?.showValuesToPay()
+                
+                if let carResponse = response {
+                    let hoursAndDaysToPay = carResponse.getHoursAndDaysOfParking()
                     self?.updateState {
+                        self?.state.hoursToPay = hoursAndDaysToPay.hours
+                        self?.state.daysToPay = hoursAndDaysToPay.days
+                        self?.state.valueToPay = carResponse.totalToPay()
                         self?.state.showFildsPay = true
                     }
-                    
                 } else {
                     self?.updateState {
                         self?.state.showMessage = true
@@ -132,8 +67,51 @@ extension PaymentParkingViewModel: PaymentParkingProtocol {
             .store(in: &subscribers)
     }
     
+    private func searchMotocicle(numberPlaque: String) {
+        self.loading = true
+        motocicleService.retrieveObject(numerPlaque: numberPlaque.uppercased())
+            .sink(receiveCompletion: { [weak self] completion in
+                guard case .failure(let error) = completion else { return }
+                debugPrint(error.localizedDescription)
+                self?.state.showError = true
+                self?.loading = false
+            }, receiveValue: { [weak self] response in
+                self?.loading = false
+                
+                if let motocicleResponse = response {
+                    let hoursAndDaysToPay = motocicleResponse.getHoursAndDaysOfParking()
+                    self?.updateState {
+                        self?.state.hoursToPay = hoursAndDaysToPay.hours
+                        self?.state.daysToPay = hoursAndDaysToPay.days
+                        self?.state.valueToPay = motocicleResponse.totalToPay()
+                        self?.state.showFildsPay = true
+                    }
+                } else {
+                    self?.updateState {
+                        self?.state.showMessage = true
+                    }
+                }
+            })
+            .store(in: &subscribers)
+    }
+
+}
+
+extension PaymentParkingViewModel: PaymentParkingProtocol {
+    func searchVehicle(numberPlaque: String) {
+        if state.seletedVehicleType == .car {
+            searchCar(numberPlaque: numberPlaque)
+        } else {
+            searchMotocicle(numberPlaque: numberPlaque)
+        }
+    }
+    
     func paymentVehicle() {
-        
+        if state.seletedVehicleType == .car {
+            
+        } else {
+            
+        }
     }
     
     func deleteVehicle() {

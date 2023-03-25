@@ -10,40 +10,25 @@ import XCTest
 
 final class CarTests: XCTestCase {
     private var sut: Car!
-    private var date: Date!
 
     override func setUpWithError() throws {
-        date = DomainTestMock.getDateMock()
-        sut = Car(plaque: "AHDF123", vehicleType: .car, registerDate: DomainTestMock.getDateWithMondayMock())
+        sut = try Car(plaqueId: "AHU990")
         try super.setUpWithError()
     }
 
     override func tearDownWithError() throws {
-        date = nil
         sut = nil
         try super.tearDownWithError()
     }
 
-    func test_validatePlaque_whenCarPlaqueInitForA_ThenMessage() throws {
+    func test_getPlaqueId_whenCreatedCar_ThenReturnPlaqueId() throws {
         // Arrange
         var resultado: String = ""
         
         // Act
-        resultado = sut.validatePlaque()
+        resultado = sut.getPlaqueId()
         
         // Assert
-        XCTAssertEqual(resultado, "No está autorizado a ingresar.")
-    }
-    
-    func test_validatePlaque_whenCarPlaqueInitOtherLetter_ThenMessageIsEmpty() throws {
-        // Arrange
-        var resultado: String = ""
-        sut = Car(plaque: "HDF123", vehicleType: .car, registerDate: DomainTestMock.getDateMock())
-        
-        // Act
-        resultado = sut.validatePlaque()
-        
-        // Assert
-        XCTAssertTrue(resultado.isEmpty)
+        XCTAssertEqual(resultado, "AHU990")
     }
 }

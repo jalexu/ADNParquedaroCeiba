@@ -93,7 +93,40 @@ struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtoc
                     .stroke(Color.gray, lineWidth: 1)
             )
         }
-        
+    }
+    
+    var payButtonView: some View {
+        Button {
+            viewModel.searchVehicle(numberPlaque: inputNumberPlaque)
+        } label: {
+            HStack(alignment: .center, spacing: 6) {
+                Text("Pargar")
+                    .fontWeight(.bold)
+                    .foregroundColor(.gray)
+            }
+            .padding()
+            .background(Color.white.cornerRadius(12))
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+        }
+    }
+    
+    var typeVehiclePickerView: some View {
+            VStack(spacing: 0) {
+                Text("Seleccione el tipo de vehículo a pagar")
+                    .foregroundColor(.gray)
+                
+                Picker("Tipo de vehículo", selection: $viewModel.state.seletedVehicleType) {
+                    ForEach(VehicleType.allCases, id: \.self) {
+                        Text($0.rawValue)
+                            .font(.system(size: 24))
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
+            .padding([.top ,.trailing, .leading], 20)
     }
     
     var body: some View {
@@ -105,33 +138,41 @@ struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtoc
                     .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y:5)
-                
-                
-                VStack(alignment: .center, spacing: 20) {
-                    TextField("Ingresa la placa", text: $inputNumberPlaque)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding([.top, .trailing, .leading], 20)
+                    .frame(maxWidth: .infinity)
+                    .alert(isPresented: $viewModel.state.showMessage) {
+                        Alert(
+                            title: Text("NO REGISTRA"),
+                            message: Text("Por favor intenta con otra placa."),
+                            dismissButton: .cancel(Text("OK"))
+                        )
+                    }
+                    .padding(.bottom, 50)
                     
+                if !viewModel.state.showFildsPay {
+                    typeVehiclePickerView
+                    VStack(alignment: .center, spacing: 20) {
+                        TextField("Ingresa la placa", text: $inputNumberPlaque)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding([.top, .trailing, .leading], 20)
+                            .font(.system(size: 24))
+                        
+                        Spacer()
+                        
+                        searchButtonView
+                            .padding(.bottom, 50)
+                    }
+                } else {
                     valuesFieldsView
-                        .opacity(viewModel.state.showFildsPay ? 1 : 0)
-                    
                     Spacer()
                     
-                    searchButtonView
-                    
+                    payButtonView
+                        .padding(.bottom, 50)
                 }
-                .alert(isPresented: $viewModel.state.showMessage) {
-                    Alert(
-                        title: Text("NO REGISTRA"),
-                        message: Text("Por favor intenta con otra placa."),
-                        dismissButton: .cancel(Text("OK"))
-                    )
-                }
-                .padding(.bottom, 50)
                 
             }
             .background(Color("ColorBackground").ignoresSafeArea(.all,edges: .all))
         }
+        
         .ignoresSafeArea(.all)
     }
 }

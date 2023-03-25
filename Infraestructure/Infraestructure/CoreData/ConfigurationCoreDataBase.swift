@@ -1,5 +1,5 @@
 //
-//  CoreDataService.swift
+//  ConfigurationCoreDataBase.swift
 //  Infraestructure
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 21/03/23.
@@ -8,16 +8,15 @@
 import Foundation
 import CoreData
 
-final class CoreDataService {
+final class ConfigurationCoreDataBase {
     static var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
-    
     // MARK: Find CoreData
     static var objectModel: NSManagedObjectModel = {
         let messageKitBundle = Bundle(identifier: "com.jaime.uribe.Infraestructure")
-        guard let modelURL = messageKitBundle!.url(forResource: "RegisterVehiclesDB" , withExtension: "momd") else {
+        guard let modelURL = messageKitBundle!.url(forResource: "RegisterVehiclesDB" , withExtension: "momd")else {
             preconditionFailure("No found database")
         }
         

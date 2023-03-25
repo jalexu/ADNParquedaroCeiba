@@ -25,3 +25,18 @@ final class RegisterVehiculeState: ObservableObject {
     var numersOfMotocicles: Int = 0
 }
 
+public enum VehicleType: String, CaseIterable {
+    case car = "Car"
+    case motocicle = "Motocicle"
+    
+    public init?(rawValue: String) {
+        switch rawValue.lowercased() {
+        case "car":
+            self = .car
+        default:
+            self = .motocicle
+        }
+    }
+}
+
+

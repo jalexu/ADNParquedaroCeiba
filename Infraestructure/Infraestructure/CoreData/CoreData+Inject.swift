@@ -2,24 +2,37 @@
 //  CoreData+Inject.swift
 //  Infraestructure
 //
-//  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 21/03/23.
+//  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 24/03/23.
 //
 
 import Resolver
+import Domain
 
 extension Resolver {
     public static func registerCoreDataDependencies() {
-        registerCoreDataRepository()
+        registerCarRepository()
+        registerMotocicleRepository()
     }
     
-    private static func registerCoreDataRepository() {
-        register(CoreDataManagerProtocol.self) {
-            return CoreDataManager()
+    private static func registerCarRepository() {
+        register(CarRepository.self) {
+            return CarRepositoryCoreData()
         }
         
-        register(CoreDataRepositoryProtocol.self) { resolver in
-            return CoreDataRepository(coreDataManager: resolver.resolve(CoreDataManagerProtocol.self))
+        register(CarServiceProtocol.self) { resolver in
+            return CarService(carRepository: resolver.resolve(CarRepository.self))
+        }
+    }
+    
+    private static func registerMotocicleRepository() {
+        register(MotocicleRepository.self) {
+            return MotocicleRepositoryCoreData()
+        }
+        
+        register(MotocicleServiceProtocol.self) { resolver in
+            return MotocicleService(motocicleService: resolver.resolve(MotocicleRepository.self))
         }
     }
     
 }
+

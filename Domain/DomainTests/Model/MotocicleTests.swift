@@ -10,65 +10,37 @@ import XCTest
 
 final class MotocicleTests: XCTestCase {
     private var sut: Motocicle!
-    private var date: Date!
 
     override func setUpWithError() throws {
-        date = DomainTestMock.getDateMock()
-        sut = Motocicle(plaque: "AHDF124", vehicleType: .motocicle, cylinderCapacity: "150", registerDate: date)
+        sut = try Motocicle(plaqueId: "HJU908", cylinderCapacity: "500")
         try super.setUpWithError()
     }
 
     override func tearDownWithError() throws {
-        date = nil
         sut = nil
         try super.tearDownWithError()
     }
-
-    func test_validatePlaque_whenMotociclePlaqueInitForA_ThenMessage() throws {
+    
+    func test_getPlaqueId_whenCreatedMotocicle_ThenReturnPlaqueId() throws {
         // Arrange
         var resultado: String = ""
-        sut = Motocicle(plaque: "AHDF124", vehicleType: .motocicle, cylinderCapacity: "150", registerDate:  DomainTestMock.getDateWithMondayMock())
-        // Act
         
-        resultado = sut.validatePlaque()
+        // Act
+        resultado = sut.getPlaqueId()
         
         // Assert
-        XCTAssertEqual(resultado, "No está autorizado a ingresar.")
+        XCTAssertEqual(resultado, "HJU908")
     }
     
-    func test_validatePlaque_whenMotociclePlaqueInitOtherLetter_ThenMessageIsEmpty() throws {
+    func test_getCylinderCapacity_whenCreatedMotocicle_ThenReturnCylinderCapacity() throws {
         // Arrange
         var resultado: String = ""
-        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: "150", registerDate: date)
         
         // Act
-        resultado = sut.validatePlaque()
+        resultado = sut.getCylinderCapacity()
         
         // Assert
-        XCTAssertTrue(resultado.isEmpty)
+        XCTAssertEqual(resultado, "500")
     }
-    
-    func test_getPriceForCylinderCapacity_whenMotocicleHas150CC_ThenReturnValue0() throws {
-        // Arrange
-        var resultado: Int = 50
-        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: "150", registerDate: date)
-        
-        // Act
-        resultado = sut.getPriceForCylinderCapacity()
-        
-        // Assert
-        XCTAssertEqual(resultado, 0)
-    }
-    
-    func test_getPriceForCylinderCapacity_whenMotocicleHas200CC_ThenReturnValue2000() throws {
-        // Arrange
-        var resultado: Int = 0
-        sut = Motocicle(plaque: "HDF124", vehicleType: .motocicle, cylinderCapacity: "500", registerDate: date)
-        
-        // Act
-        resultado = sut.getPriceForCylinderCapacity()
-        
-        // Assert
-        XCTAssertEqual(resultado, 2000)
-    }
+     
 }

@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Vehicle" representedClassName="Vehicle" syncable="YES" codeGenerationType="class">
+    <entity name="CarEntity" representedClassName=".CarEntity" syncable="YES">
+        <attribute name="plaqueId" optional="YES" attributeType="String"/>
+        <relationship name="resgisterCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RegisterCarEntity" inverseName="cars" inverseEntity="RegisterCarEntity"/>
+    </entity>
+    <entity name="MotocicleEntity" representedClassName=".MotocicleEntity" syncable="YES">
         <attribute name="cylinderCapacity" optional="YES" attributeType="String"/>
         <attribute name="plaqueId" optional="YES" attributeType="String"/>
-        <attribute name="registerDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="vehicleType" optional="YES" attributeType="String"/>
+        <relationship name="registerMotocicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RegisterMotocicleEntity" inverseName="motocicles" inverseEntity="RegisterMotocicleEntity"/>
+    </entity>
+    <entity name="RegisterCarEntity" representedClassName=".RegisterCarEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="plaqueId" optional="YES" attributeType="String"/>
+        <attribute name="registerDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="cars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CarEntity" inverseName="resgisterCar" inverseEntity="CarEntity"/>
+    </entity>
+    <entity name="RegisterMotocicleEntity" representedClassName=".RegisterMotocicleEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="plaqueId" optional="YES" attributeType="String"/>
+        <attribute name="registerDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="motocicles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MotocicleEntity" inverseName="registerMotocicle" inverseEntity="MotocicleEntity"/>
     </entity>
 </model>
