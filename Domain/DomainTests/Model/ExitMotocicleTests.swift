@@ -14,7 +14,7 @@ final class ExitMotocicleTests: XCTestCase {
     private var exitDate: Date!
 
     override func setUpWithError() throws {
-        registerDay = DomainTestMock.getDateMock()
+        registerDay = DomainTestMock.getRegisterDayMock()
         exitDate = Date()
         sut = ExitMotocicle(plaqueId: "ADFF", registerDay: registerDay, exitDate: exitDate, cylinderCapacity: "200")
         try super.setUpWithError()

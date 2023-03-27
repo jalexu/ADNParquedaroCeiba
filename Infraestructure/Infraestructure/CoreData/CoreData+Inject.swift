@@ -30,7 +30,7 @@ extension Resolver {
         }
         
         register(MotocicleServiceProtocol.self) { resolver in
-            return MotocicleService(motocicleService: resolver.resolve(MotocicleRepository.self))
+            return MotocicleService(motocicleRepository: resolver.resolve(MotocicleRepository.self))
         }
     }
     

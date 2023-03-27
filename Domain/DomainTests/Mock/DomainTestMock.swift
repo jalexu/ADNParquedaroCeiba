@@ -9,7 +9,7 @@ import Foundation
 @testable import Domain
 
 class DomainTestMock {
-    static func getDateMock() -> Date {
+    static func getRegisterDayMock() -> Date {
         let today: Date = Date()
         return today.addingTimeInterval(-7200)
     }
@@ -41,4 +41,14 @@ class DomainTestMock {
         let someDateTime = formatter.date(from: "2023/03/20 22:31") ?? Date()
         return someDateTime
     }
+    
+    static let registerCarMock: RegisterCar = {
+        try! RegisterCar(car: carMock,
+                         registerDay: getRegisterDayMock(),
+                         numberCars: 0)
+    }()
+    
+    static let errorMock: Error = {
+        NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+    }()
 }

@@ -30,6 +30,8 @@
 		E41387C129C499AD000A07CC /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387C029C499AD000A07CC /* Car.swift */; };
 		E41387C629C4A8AB000A07CC /* CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387C529C4A8AB000A07CC /* CarTests.swift */; };
 		E41387C929C4A979000A07CC /* MotocicleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387C829C4A979000A07CC /* MotocicleTests.swift */; };
+		E4B5F47329D219E5002BDB13 /* CarServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F47229D219E5002BDB13 /* CarServiceTest.swift */; };
+		E4B5F47729D21AEF002BDB13 /* CarRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F47629D21AEF002BDB13 /* CarRepositoryStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		E41387C029C499AD000A07CC /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		E41387C529C4A8AB000A07CC /* CarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTests.swift; sourceTree = "<group>"; };
 		E41387C829C4A979000A07CC /* MotocicleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotocicleTests.swift; sourceTree = "<group>"; };
+		E4B5F47229D219E5002BDB13 /* CarServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarServiceTest.swift; sourceTree = "<group>"; };
+		E4B5F47629D21AEF002BDB13 /* CarRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepositoryStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 		E41387A429C493D8000A07CC /* DomainTests */ = {
 			isa = PBXGroup;
 			children = (
+				E4B5F47529D21A70002BDB13 /* Stub */,
+				E4B5F47429D21A23002BDB13 /* Service */,
 				E404FD1A29CB601B00DB4F7F /* Mock */,
 				E41387C429C4A887000A07CC /* Model */,
 			);
@@ -204,6 +210,22 @@
 				E404FD5D29CDFC2F00DB4F7F /* ExitMotocicleTests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E4B5F47429D21A23002BDB13 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5F47229D219E5002BDB13 /* CarServiceTest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E4B5F47529D21A70002BDB13 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5F47629D21AEF002BDB13 /* CarRepositoryStub.swift */,
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +364,8 @@
 				E404FD5A29CDF58000DB4F7F /* RegisterMotocicleTests.swift in Sources */,
 				E404FD5C29CDF81800DB4F7F /* ExitCarTests.swift in Sources */,
 				E404FD5829CDF10F00DB4F7F /* RegisterCarTests.swift in Sources */,
+				E4B5F47329D219E5002BDB13 /* CarServiceTest.swift in Sources */,
+				E4B5F47729D21AEF002BDB13 /* CarRepositoryStub.swift in Sources */,
 				E404FD5E29CDFC2F00DB4F7F /* ExitMotocicleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

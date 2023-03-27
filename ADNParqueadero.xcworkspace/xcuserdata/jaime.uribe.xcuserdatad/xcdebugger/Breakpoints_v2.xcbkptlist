@@ -744,5 +744,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F45C733-8943-4190-A86D-C64184686966"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Domain/DomainTests/Stub/MotocicleRepositoryStub.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "saveCar(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9409BC6-D327-4C37-B098-78A3C0920C16"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Domain/DomainTests/Service/CarServiceTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "test_saveCar_ThenFailure()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9409BC6-D327-4C37-B098-78A3C0920C16 - f8144b1a8d27d995"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Bool) -&gt; () in DomainTests.CarServiceTest.test_saveCar_ThenFailure() -&gt; ()"
+                  moduleName = "DomainTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/DomainTests/Service/CarServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "167">
+               </Location>
+               <Location
+                  uuid = "C9409BC6-D327-4C37-B098-78A3C0920C16 - f8144b1a8d27d9f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Bool) -&gt; () in DomainTests.CarServiceTest.test_saveCar_ThenFailure() -&gt; ()"
+                  moduleName = "DomainTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/DomainTests/Service/CarServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "167">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

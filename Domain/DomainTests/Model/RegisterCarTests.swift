@@ -15,7 +15,7 @@ final class RegisterCarTests: XCTestCase {
 
     override func setUpWithError() throws {
         car = DomainTestMock.carMock
-        registerDay = DomainTestMock.getDateMock()
+        registerDay = DomainTestMock.getRegisterDayMock()
         sut = try RegisterCar(car: car, registerDay: registerDay, numberCars: 0)
         try super.setUpWithError()
     }

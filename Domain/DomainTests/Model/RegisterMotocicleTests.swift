@@ -15,7 +15,7 @@ final class RegisterMotocicleTests: XCTestCase {
 
     override func setUpWithError() throws {
         motocicle = DomainTestMock.motocicleMock
-        registerDay = DomainTestMock.getDateMock()
+        registerDay = DomainTestMock.getRegisterDayMock()
         sut = try RegisterMotocicle(motocicle: motocicle, registerDay: registerDay, numberMotocicle: 0)
         try super.setUpWithError()
     }

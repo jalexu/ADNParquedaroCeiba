@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23A75034C8B9D38BBFFB9D83 /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9024A8696CA307781D46FA53 /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework */; };
-		4B55A96091D1071DCC6F9F71 /* Pods_ADNParqueaderoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3979B4C7F402088AC89A3C /* Pods_ADNParqueaderoTests.framework */; };
-		C66F42F8BA3579FE52E9806B /* Pods_ADNParqueadero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5942D788B8E71F983E2DC2 /* Pods_ADNParqueadero.framework */; };
 		E404FD1729CB303000DB4F7F /* ADNParqueadero+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD1629CB303000DB4F7F /* ADNParqueadero+Inject.swift */; };
 		E404FD1929CB307F00DB4F7F /* PaymentParking+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD1829CB307F00DB4F7F /* PaymentParking+Inject.swift */; };
 		E404FD1F29CB7C7800DB4F7F /* CarServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD1E29CB7C7800DB4F7F /* CarServiceStub.swift */; };
@@ -57,14 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		292BD858E49DADB1B0393610 /* Pods-ADNParqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueadero.release.xcconfig"; path = "Target Support Files/Pods-ADNParqueadero/Pods-ADNParqueadero.release.xcconfig"; sourceTree = "<group>"; };
-		296557AB6E66CE92BFB5F087 /* Pods-ADNParqueadero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueadero.debug.xcconfig"; path = "Target Support Files/Pods-ADNParqueadero/Pods-ADNParqueadero.debug.xcconfig"; sourceTree = "<group>"; };
-		544B7CCCDE0D7EAC265DFE90 /* Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig"; path = "Target Support Files/Pods-ADNParqueadero-ADNParqueaderoUITests/Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7014B4248FAB0E13AB9E3EBE /* Pods-ADNParqueaderoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueaderoTests.debug.xcconfig"; path = "Target Support Files/Pods-ADNParqueaderoTests/Pods-ADNParqueaderoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9024A8696CA307781D46FA53 /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNParqueadero_ADNParqueaderoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9399020D000B22F914F2948D /* Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ADNParqueadero-ADNParqueaderoUITests/Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A2B868BE1752CBEDA026DCF4 /* Pods-ADNParqueaderoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADNParqueaderoTests.release.xcconfig"; path = "Target Support Files/Pods-ADNParqueaderoTests/Pods-ADNParqueaderoTests.release.xcconfig"; sourceTree = "<group>"; };
-		AF3979B4C7F402088AC89A3C /* Pods_ADNParqueaderoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNParqueaderoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E404FD1629CB303000DB4F7F /* ADNParqueadero+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ADNParqueadero+Inject.swift"; sourceTree = "<group>"; };
 		E404FD1829CB307F00DB4F7F /* PaymentParking+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentParking+Inject.swift"; sourceTree = "<group>"; };
 		E404FD1E29CB7C7800DB4F7F /* CarServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarServiceStub.swift; sourceTree = "<group>"; };
@@ -95,7 +84,6 @@
 		E4FA505629C12C1700A11573 /* ADNParqueaderoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNParqueaderoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITests.swift; sourceTree = "<group>"; };
 		E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FC5942D788B8E71F983E2DC2 /* Pods_ADNParqueadero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADNParqueadero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +95,6 @@
 				E41387BA29C49538000A07CC /* Domain.framework in Frameworks */,
 				E4568C7929CA80C00055A8E7 /* RappleProgressHUD in Frameworks */,
 				E4568C6029CA387C0055A8E7 /* Resolver in Frameworks */,
-				C66F42F8BA3579FE52E9806B /* Pods_ADNParqueadero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B55A96091D1071DCC6F9F71 /* Pods_ADNParqueaderoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23A75034C8B9D38BBFFB9D83 /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,9 +121,6 @@
 				E404FDBB29CE419400DB4F7F /* Infraestructure.framework */,
 				E41387F529C4B5C4000A07CC /* Infraestructure.framework */,
 				E41387B929C49538000A07CC /* Domain.framework */,
-				FC5942D788B8E71F983E2DC2 /* Pods_ADNParqueadero.framework */,
-				9024A8696CA307781D46FA53 /* Pods_ADNParqueadero_ADNParqueaderoUITests.framework */,
-				AF3979B4C7F402088AC89A3C /* Pods_ADNParqueaderoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,12 +128,6 @@
 		A0E1853426F82A74A9B35C96 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				296557AB6E66CE92BFB5F087 /* Pods-ADNParqueadero.debug.xcconfig */,
-				292BD858E49DADB1B0393610 /* Pods-ADNParqueadero.release.xcconfig */,
-				9399020D000B22F914F2948D /* Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig */,
-				544B7CCCDE0D7EAC265DFE90 /* Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig */,
-				7014B4248FAB0E13AB9E3EBE /* Pods-ADNParqueaderoTests.debug.xcconfig */,
-				A2B868BE1752CBEDA026DCF4 /* Pods-ADNParqueaderoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -294,7 +270,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4FA506029C12C1700A11573 /* Build configuration list for PBXNativeTarget "ADNParqueadero" */;
 			buildPhases = (
-				1FD16DC2CBB318911197C49D /* [CP] Check Pods Manifest.lock */,
 				E4FA503829C12C1500A11573 /* Sources */,
 				E4FA503929C12C1500A11573 /* Frameworks */,
 				E4FA503A29C12C1500A11573 /* Resources */,
@@ -317,7 +292,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4FA506329C12C1700A11573 /* Build configuration list for PBXNativeTarget "ADNParqueaderoTests" */;
 			buildPhases = (
-				D811200DBD4A03DC0404DB6F /* [CP] Check Pods Manifest.lock */,
 				E4FA504829C12C1700A11573 /* Sources */,
 				E4FA504929C12C1700A11573 /* Frameworks */,
 				E4FA504A29C12C1700A11573 /* Resources */,
@@ -336,7 +310,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4FA506629C12C1700A11573 /* Build configuration list for PBXNativeTarget "ADNParqueaderoUITests" */;
 			buildPhases = (
-				1847639744D9C071157FA768 /* [CP] Check Pods Manifest.lock */,
 				E4FA505229C12C1700A11573 /* Sources */,
 				E4FA505329C12C1700A11573 /* Frameworks */,
 				E4FA505429C12C1700A11573 /* Resources */,
@@ -425,72 +398,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1847639744D9C071157FA768 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ADNParqueadero-ADNParqueaderoUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1FD16DC2CBB318911197C49D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ADNParqueadero-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D811200DBD4A03DC0404DB6F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ADNParqueaderoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E413878B29C228B7000A07CC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -685,7 +592,6 @@
 		};
 		E4FA506129C12C1700A11573 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 296557AB6E66CE92BFB5F087 /* Pods-ADNParqueadero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -716,7 +622,6 @@
 		};
 		E4FA506229C12C1700A11573 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 292BD858E49DADB1B0393610 /* Pods-ADNParqueadero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -747,7 +652,6 @@
 		};
 		E4FA506429C12C1700A11573 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7014B4248FAB0E13AB9E3EBE /* Pods-ADNParqueaderoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -767,7 +671,6 @@
 		};
 		E4FA506529C12C1700A11573 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2B868BE1752CBEDA026DCF4 /* Pods-ADNParqueaderoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -787,7 +690,6 @@
 		};
 		E4FA506729C12C1700A11573 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9399020D000B22F914F2948D /* Pods-ADNParqueadero-ADNParqueaderoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -805,7 +707,6 @@
 		};
 		E4FA506829C12C1700A11573 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 544B7CCCDE0D7EAC265DFE90 /* Pods-ADNParqueadero-ADNParqueaderoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

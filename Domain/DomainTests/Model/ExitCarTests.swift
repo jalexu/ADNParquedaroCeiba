@@ -16,7 +16,7 @@ final class ExitCarTests: XCTestCase {
 
     override func setUpWithError() throws {
         car = DomainTestMock.carMock
-        registerDay = DomainTestMock.getDateMock()
+        registerDay = DomainTestMock.getRegisterDayMock()
         exitDate = Date()
         sut = ExitCar(plaqueId: car.getPlaqueId(), registerDay: registerDay, exitDate: exitDate)
         try super.setUpWithError()
