@@ -9,7 +9,8 @@ import Combine
 
 protocol RegisterVehicleProtocol: ObservableObject {
     var state: RegisterVehiculeState { get set }
-    func registerVehicle()
+    func registerCar(completion: @escaping () -> Void)
+    func registerMotocicle(completion: @escaping () -> Void)
     func onAppear()
     func onDisappear()
 }

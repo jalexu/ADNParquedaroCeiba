@@ -11,9 +11,16 @@ public class Motocicle: Vehicle {
     public init(plaqueId: String, cylinderCapacity: String) throws {
         self.cylinderCapacity = cylinderCapacity
         try super.init(plaqueId: plaqueId)
+        try self.validateCylinderCapacity()
     }
     
     public func getCylinderCapacity()-> String {
         cylinderCapacity
+    }
+    
+    private func validateCylinderCapacity() throws {
+        if cylinderCapacity.isEmpty {
+            throw VehicleError.cylinderCapacity("Debes ingresar el cilindraje de la motocicleta.")
+        }
     }
 }

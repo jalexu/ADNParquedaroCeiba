@@ -619,22 +619,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "03D4C87C-F418-4DC6-9A26-6A1D7234D907"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ADNParqueadero/ViewModel/RegiterVehicle/RegisterVehicleViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "numberCars(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A66CAB3B-3744-4B1E-9390-84CA86B6904D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -642,74 +626,10 @@
             filePath = "ADNParqueadero/ViewModel/RegiterVehicle/RegisterVehicleViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "saveCar(with:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "saveCar(with:completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6D09F899-1B3E-49C4-A3C6-578683DDC5D5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ADNParqueadero/ViewModel/PaymentParking/PaymentParkingViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "searchCar(numberPlaque:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B10E25DA-0A91-48E6-BE74-C071EFA62D58"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ADNParqueadero/ViewModel/PaymentParking/PaymentParkingViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "searchCar(numberPlaque:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B10E25DA-0A91-48E6-BE74-C071EFA62D58 - 833d770c6c73da97"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Domain.ExitCar&gt;) -&gt; () in ADNParqueadero.PaymentParkingViewModel.searchCar(numberPlaque: Swift.String) -&gt; ()"
-                  moduleName = "ADNParqueadero"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/ADNParqueadero/ViewModel/PaymentParking/PaymentParkingViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "283">
-               </Location>
-               <Location
-                  uuid = "B10E25DA-0A91-48E6-BE74-C071EFA62D58 - 833d770c6c73da97"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Domain.ExitCar&gt;) -&gt; () in ADNParqueadero.PaymentParkingViewModel.searchCar(numberPlaque: Swift.String) -&gt; ()"
-                  moduleName = "ADNParqueadero"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/ADNParqueadero/ViewModel/PaymentParking/PaymentParkingViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "399">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -747,64 +667,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "01D14F3E-1107-48E0-BD4D-66198E018FBA"
+            uuid = "252D6170-122D-4EA9-8FE9-82588FFE78CA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADNParqueadero/ViewModel/PaymentParking/PaymentParkingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "searchCar(numberPlaque:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "deleteMotocicle()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BEA25166-BF73-48F9-9594-679C4CE9ECD6"
+            uuid = "CBAEC860-EB8A-473C-8425-C567EB6E46C6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADNParqueadero/ViewModel/PaymentParking/PaymentParkingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "searchCar(numberPlaque:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "deleteMotocicle()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "73C5C5DC-8D60-4DCE-A0FE-B7321FA00C8A"
+            uuid = "C8366E50-760A-4F50-8E5C-F8D0638A810F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Infraestructure/Infraestructure/Repository/MotocicleRepositoryCoreData.swift"
+            filePath = "ADNParqueadero/ViewModel/RegiterVehicle/RegisterVehicleViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "retrieveObjects()"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "registerMotocicle(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A74E9E2-408C-423B-8F24-095EF970C68E"
+            uuid = "A74FAD71-03DD-49FC-B736-144E22FC9F55"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Infraestructure/Infraestructure/Repository/MotocicleRepositoryCoreData.swift"
+            filePath = "ADNParqueadero/ViewModel/RegiterVehicle/RegisterVehicleViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "retrieveObjects()"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "saveMotocicle(with:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5420FB4-3F4C-4DA2-918C-4B037977E33C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ADNParqueadero/ViewModel/RegiterVehicle/RegisterVehicleViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "saveMotocicle(with:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

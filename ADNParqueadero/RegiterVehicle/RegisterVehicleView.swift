@@ -13,28 +13,23 @@ import Combine
 struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProtocol {
     @ObservedObject private var viewModel: ViewModel
     
+    @Environment(\.presentationMode) var presentation
+    
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
-    }
-   
-    var navigationTitleView: some View {
-        HStack(spacing: 4) {
-            Spacer()
-            Text("Parqueadero ADN")
-                .font(.title3)
-                .fontWeight(.black)
-                .foregroundColor(.black)
-            Image(systemName: "flag.2.crossed")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30, height: 10, alignment: .center)
-            Spacer()
-        }
     }
     
     var registerButtonView: some View {
         Button {
-            viewModel.registerVehicle()
+            if viewModel.state.seletedVehicleType == .car {
+                viewModel.registerCar {
+                    presentation.wrappedValue.dismiss()
+                }
+            } else {
+                viewModel.registerMotocicle {
+                    presentation.wrappedValue.dismiss()
+                }
+            }
         } label: {
             HStack(alignment: .center, spacing: 6) {
                 Text("Registar vehículo")
@@ -53,12 +48,6 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
     var body: some View {
         ZStack{
             VStack {
-                navigationTitleView
-                    .padding(.bottom)
-                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                    .background(Color.white)
-                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y:5)
-                    .frame(maxWidth: .infinity)
                 ScrollView {
                     VStack(spacing: 5) {
                         HStack(spacing: 5) {
@@ -90,6 +79,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                         .font(.system(size: 16))
                         .foregroundColor(.black)
                         .padding([.top, .trailing, .leading], 20)
+                    
                     
                     VStack(spacing: 20) {
                         TextField("Ingresa la placa", text: $viewModel.state.inputPlaque)
@@ -139,8 +129,8 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                 .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom)
                 
             }
-            .background(Color("ColorBackground").ignoresSafeArea(.all,edges: .all))
+            .background(Color("ColorBackground").ignoresSafeArea(.all,edges: [.bottom, .leading, .trailing]))
         }
-        .ignoresSafeArea(.all)
+        .navigationTitle("Parqueadero ADN")
     }
 }

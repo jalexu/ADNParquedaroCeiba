@@ -9,10 +9,10 @@ import Foundation
 import Combine
 
 public protocol CarServiceProtocol {
-    func save(with data: RegisterCar) -> AnyPublisher<Bool, Error>
-    func retrieveObjects() -> AnyPublisher<Int, Error>
-    func retrieveObject(numerPlaque: String) -> AnyPublisher<ExitCar?, Error>
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error>
+    func saveCar(with data: RegisterCar) -> AnyPublisher<Bool, Error>
+    func retrieveCarObjects() -> AnyPublisher<Int, Error>
+    func retrieveCarObject(numerPlaque: String) -> AnyPublisher<ExitCar?, Error>
+    func deleteCar(numerPlaque: String) -> AnyPublisher<Bool, Error>
 }
 
 public class CarService: CarServiceProtocol {
@@ -22,19 +22,19 @@ public class CarService: CarServiceProtocol {
         self.carRepository = carRepository
     }
     
-    public func save(with data: RegisterCar) -> AnyPublisher<Bool, Error> {
-        carRepository.save(with: data)
+    public func saveCar(with data: RegisterCar) -> AnyPublisher<Bool, Error> {
+        carRepository.saveCar(with: data)
     }
     
-    public func retrieveObjects() -> AnyPublisher<Int, Error> {
-        carRepository.retrieveObjects()
+    public func retrieveCarObjects() -> AnyPublisher<Int, Error> {
+        carRepository.retrieveCarObjects()
     }
     
-    public func retrieveObject(numerPlaque: String) -> AnyPublisher<ExitCar?, Error> {
-        carRepository.retrieveObject(numerPlaque: numerPlaque)
+    public func retrieveCarObject(numerPlaque: String) -> AnyPublisher<ExitCar?, Error> {
+        carRepository.retrieveCarObject(numerPlaque: numerPlaque)
     }
     
-    public func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
-        carRepository.delete(numerPlaque: numerPlaque)
+    public func deleteCar(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+        carRepository.deleteCar(numerPlaque: numerPlaque)
     }
 }

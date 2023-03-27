@@ -13,7 +13,6 @@ struct ADNParqueaderoApp: App {
     private let viewModel = Resolver.resolve(RegisterVehicleViewModel.self)
     var body: some Scene {
         WindowGroup {
-            //RegisterVehicleView(viewModel: viewModel)
             InitialPageView()
         }
     }

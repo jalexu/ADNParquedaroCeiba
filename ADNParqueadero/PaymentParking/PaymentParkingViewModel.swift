@@ -13,7 +13,7 @@ final class PaymentParkingViewModel: BaseViewModel {
     private let carService: CarServiceProtocol
     private let motocicleService: MotocicleServiceProtocol
     private var subscribers: Set<AnyCancellable> = []
-
+    
     private var storedData: Date?
     private var currentData: Date = Date()
     
@@ -39,9 +39,54 @@ final class PaymentParkingViewModel: BaseViewModel {
         objectWillChange.send()
     }
     
-    private func searchCar(numberPlaque: String) {
+    private func deleteCar() {
         self.loading = true
-        carService.retrieveObject(numerPlaque: numberPlaque.uppercased())
+        carService.deleteCar(numerPlaque: state.inputNumberPlaque.uppercased())
+            .sink(receiveCompletion: { [weak self] completion in
+                guard case .failure(let error) = completion else { return }
+                debugPrint(error.localizedDescription)
+                self?.state.showError = true
+                self?.loading = false
+            }, receiveValue: { [weak self] _ in
+                self?.resetState()
+                self?.loading = false
+            })
+            .store(in: &subscribers)
+    }
+    
+    private func deleteMotocicle() {
+        self.loading = true
+        motocicleService.deleteMotocicle(numerPlaque: state.inputNumberPlaque.uppercased())
+            .sink(receiveCompletion: { [weak self] completion in
+                guard case .failure(let error) = completion else { return }
+                debugPrint(error.localizedDescription)
+                self?.state.showError = true
+                self?.loading = false
+            }, receiveValue: { [weak self] _ in
+                self?.resetState()
+                self?.loading = false
+            })
+            .store(in: &subscribers)
+    }
+    
+    private func resetState() {
+        updateState {
+            state.showError = false
+            state.valueToPay = 0
+            state.showFildsPay = false
+            state.hoursToPay = 0
+            state.daysToPay = 0
+            state.inputNumberPlaque = ""
+        }
+    }
+    
+}
+
+extension PaymentParkingViewModel: PaymentParkingProtocol {
+    func searchCar() {
+        self.loading = true
+        carService.retrieveCarObject(numerPlaque: state.inputNumberPlaque.uppercased())
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
@@ -67,9 +112,9 @@ final class PaymentParkingViewModel: BaseViewModel {
             .store(in: &subscribers)
     }
     
-    private func searchMotocicle(numberPlaque: String) {
+    func searchMotocicle() {
         self.loading = true
-        motocicleService.retrieveObject(numerPlaque: numberPlaque.uppercased())
+        motocicleService.retrieveMotocicleObject(numerPlaque: state.inputNumberPlaque.uppercased())
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
@@ -94,28 +139,13 @@ final class PaymentParkingViewModel: BaseViewModel {
             })
             .store(in: &subscribers)
     }
-
-}
-
-extension PaymentParkingViewModel: PaymentParkingProtocol {
-    func searchVehicle(numberPlaque: String) {
-        if state.seletedVehicleType == .car {
-            searchCar(numberPlaque: numberPlaque)
-        } else {
-            searchMotocicle(numberPlaque: numberPlaque)
-        }
+    
+    func paymentCar() {
+        deleteCar()
     }
     
-    func paymentVehicle() {
-        if state.seletedVehicleType == .car {
-            
-        } else {
-            
-        }
-    }
-    
-    func deleteVehicle() {
-        
+    func paymentMotocicle() {
+        deleteMotocicle()
     }
 }
 

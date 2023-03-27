@@ -42,5 +42,20 @@ final class MotocicleTests: XCTestCase {
         // Assert
         XCTAssertEqual(resultado, "500")
     }
+    
+    func test_initMotocicle_whenCylinderCapacityIsEpty_ThenReturnException() throws {
+        // Arrange
+        var resultado: String = ""
+        
+        // Act
+        do {
+            sut = try Motocicle(plaqueId: "HJU908", cylinderCapacity: "")
+        } catch VehicleError.cylinderCapacity(let error) {
+            resultado = error
+        }
+        
+        // Assert
+        XCTAssertEqual(resultado, "Debes ingresar el cilindraje de la motocicleta.")
+    }
      
 }

@@ -49,7 +49,40 @@ class RegisterVehicleViewModel: BaseViewModel {
         self.loading = false
     }
     
-    private func registerCar() {
+    private func saveCar(with data: RegisterCar, completion: @escaping () -> Void) {
+        carService.saveCar(with: data)
+            .sink(receiveCompletion: { [weak self] completion in
+                guard case .failure(let error) = completion else { return }
+                debugPrint(error.localizedDescription)
+                self?.hiddeLoading()
+                self?.showAlert(message: "Error al guardar")
+            }, receiveValue: { [weak self] response in
+                debugPrint(response)
+                self?.hiddeLoading()
+                completion()
+            })
+            .store(in: &subscribers)
+    }
+    
+    private func saveMotocicle(with data: RegisterMotocicle, completion: @escaping () -> Void) {
+        motocicleService.saveMotocicle(with: data)
+            .sink(receiveCompletion: { [weak self] completion in
+                guard case .failure(let error) = completion else { return }
+                debugPrint(error.localizedDescription)
+                self?.hiddeLoading()
+                self?.showAlert(message: "Error al guardar")
+            }, receiveValue: { [weak self] response in
+                debugPrint(response)
+                self?.hiddeLoading()
+                completion()
+            })
+            .store(in: &subscribers)
+    }
+    
+}
+
+extension RegisterVehicleViewModel: RegisterVehicleProtocol {
+    func registerCar(completion: @escaping () -> Void) {
         self.loading = true
         
         guard !state.inputPlaque.isEmpty else {
@@ -63,7 +96,9 @@ class RegisterVehicleViewModel: BaseViewModel {
             let car = try Car(plaqueId: state.inputPlaque)
             let registerCar = try RegisterCar(car: car, registerDay: registerDay, numberCars: state.numersOfCars)
             
-            saveCar(with: registerCar)
+            saveCar(with: registerCar) {
+                completion()
+            }
             
         } catch VehicleError.plaqueAError(let error) {
             hiddeLoading()
@@ -80,21 +115,7 @@ class RegisterVehicleViewModel: BaseViewModel {
         }
     }
     
-    private func saveCar(with data: RegisterCar) {
-        carService.save(with: data)
-            .sink(receiveCompletion: { [weak self] completion in
-                guard case .failure(let error) = completion else { return }
-                debugPrint(error.localizedDescription)
-                self?.hiddeLoading()
-                self?.showAlert(message: "Error al guardar")
-            }, receiveValue: { [weak self] response in
-                debugPrint(response)
-                self?.hiddeLoading()
-            })
-            .store(in: &subscribers)
-    }
-    
-    private func registerMotocicle() {
+    func registerMotocicle(completion: @escaping () -> Void) {
         self.loading = true
         
         guard !state.inputPlaque.isEmpty else {
@@ -111,7 +132,9 @@ class RegisterVehicleViewModel: BaseViewModel {
                 registerDay: registerDay,
                 numberMotocicle: state.numersOfMotocicles)
             
-            saveMotocicle(with: registerMotocicle)
+            saveMotocicle(with: registerMotocicle) {
+                completion()
+            }
             
         } catch VehicleError.plaqueAError(let error) {
             hiddeLoading()
@@ -122,34 +145,12 @@ class RegisterVehicleViewModel: BaseViewModel {
         } catch VehicleError.fieldPlaqueError(let error) {
             hiddeLoading()
             showAlert(message: error)
+        } catch VehicleError.cylinderCapacity(let error) {
+            hiddeLoading()
+            showAlert(message: error)
         } catch {
             hiddeLoading()
             debugPrint("Error general al registrar Vehiculo")
-        }
-    }
-    
-    private func saveMotocicle(with data: RegisterMotocicle) {
-        motocicleService.save(with: data)
-            .sink(receiveCompletion: { [weak self] completion in
-                guard case .failure(let error) = completion else { return }
-                debugPrint(error.localizedDescription)
-                self?.hiddeLoading()
-                self?.showAlert(message: "Error al guardar")
-            }, receiveValue: { [weak self] response in
-                debugPrint(response)
-                self?.hiddeLoading()
-            })
-            .store(in: &subscribers)
-    }
-    
-}
-
-extension RegisterVehicleViewModel: RegisterVehicleProtocol {
-    func registerVehicle() {
-        if state.seletedVehicleType == .car {
-            registerCar()
-        } else {
-            registerMotocicle()
         }
     }
     
@@ -162,7 +163,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     
     func numberMoticicles() {
         self.loading = true
-        motocicleService.retrieveObjects()
+        motocicleService.retrieveMotocicleObjects()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
@@ -177,7 +178,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     }
     
     func numberCars(completion: @escaping () -> Void) {
-        carService.retrieveObjects()
+        carService.retrieveCarObjects()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
@@ -195,6 +196,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
         state.numersOfCars = 0
         state.numersOfMotocicles = 0
         state.inputPlaque = ""
+        state.inputCylinderCapacity = ""
         state.showAlert = false
     }
 }

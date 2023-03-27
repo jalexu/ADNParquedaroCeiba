@@ -14,7 +14,7 @@ final class CarRepositoryCoreData: CarRepository {
     
     init() {}
     
-    func save(with data: Domain.RegisterCar) -> AnyPublisher<Bool, Error> {
+    func saveCar(with data: Domain.RegisterCar) -> AnyPublisher<Bool, Error> {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
             
@@ -39,7 +39,7 @@ final class CarRepositoryCoreData: CarRepository {
         }.eraseToAnyPublisher()
     }
     
-    func retrieveObjects() -> AnyPublisher<Int, Error> {
+    func retrieveCarObjects() -> AnyPublisher<Int, Error> {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterCarEntity")
@@ -54,7 +54,7 @@ final class CarRepositoryCoreData: CarRepository {
         }.eraseToAnyPublisher()
     }
     
-    func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.ExitCar?, Error> {
+    func retrieveCarObject(numerPlaque: String) -> AnyPublisher<Domain.ExitCar?, Error> {
         
         return Future { promise in
             DispatchQueue.global().async {
@@ -74,7 +74,7 @@ final class CarRepositoryCoreData: CarRepository {
         }.eraseToAnyPublisher()
     }
     
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+    func deleteCar(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterCarEntity")

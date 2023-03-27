@@ -152,21 +152,9 @@
 		E413880329C4E7FE000A07CC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E4FA504129C12C1500A11573 /* RegisterVehicleView.swift */,
-				E4568C6B29CA7D490055A8E7 /* PaymentParkingView.swift */,
 				E4568C7D29CA82E80055A8E7 /* InitialPageView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E4568C2F29C9D8DD0055A8E7 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				E4568C7A29CA817F0055A8E7 /* BaseModel */,
-				E4568C7029CA7E9D0055A8E7 /* PaymentParking */,
-				E4568C6F29CA7E7F0055A8E7 /* RegiterVehicle */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E4568C5629CA33000055A8E7 /* ADNParqueadero+Inject */ = {
@@ -182,6 +170,7 @@
 		E4568C6F29CA7E7F0055A8E7 /* RegiterVehicle */ = {
 			isa = PBXGroup;
 			children = (
+				E4FA504129C12C1500A11573 /* RegisterVehicleView.swift */,
 				E4568C3429C9E1710055A8E7 /* RegisterVehiculeContract.swift */,
 				E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */,
 				E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */,
@@ -192,6 +181,7 @@
 		E4568C7029CA7E9D0055A8E7 /* PaymentParking */ = {
 			isa = PBXGroup;
 			children = (
+				E4568C6B29CA7D490055A8E7 /* PaymentParkingView.swift */,
 				E4568C6D29CA7E430055A8E7 /* PaymentParkingViewModel.swift */,
 				E4568C7129CA7EF70055A8E7 /* PaymentParkingState.swift */,
 				E4568C7329CA7F2A0055A8E7 /* PaymentParkingContract.swift */,
@@ -234,7 +224,9 @@
 			children = (
 				E4568C6529CA475D0055A8E7 /* Info.plist */,
 				E4568C5629CA33000055A8E7 /* ADNParqueadero+Inject */,
-				E4568C2F29C9D8DD0055A8E7 /* ViewModel */,
+				E4568C7A29CA817F0055A8E7 /* BaseModel */,
+				E4568C7029CA7E9D0055A8E7 /* PaymentParking */,
+				E4568C6F29CA7E7F0055A8E7 /* RegiterVehicle */,
 				E413880329C4E7FE000A07CC /* View */,
 				E4FA503F29C12C1500A11573 /* ADNParqueaderoApp.swift */,
 				E4FA504329C12C1700A11573 /* Assets.xcassets */,

@@ -10,10 +10,10 @@ import Foundation
 
 public struct ConstantsMock {
     static let registerCars: [Domain.RegisterCar] = [
-        try! RegisterCar(car: Car(plaqueId: "ASF890"),
+        try! RegisterCar(car: Car(plaqueId: "LSF890"),
                     registerDay: getDateMock(),
                     numberCars: 0),
-        try! RegisterCar(car: Car(plaqueId: "ATTF890"),
+        try! RegisterCar(car: Car(plaqueId: "TTF890"),
                     registerDay: getDateMock(),
                     numberCars: 1)
         

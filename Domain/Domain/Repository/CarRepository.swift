@@ -8,8 +8,8 @@
 import Combine
 
 public protocol CarRepository {
-    func save(with data: RegisterCar) -> AnyPublisher<Bool, Error>
-    func retrieveObjects() -> AnyPublisher<Int, Error>
-    func retrieveObject(numerPlaque: String) -> AnyPublisher<ExitCar?, Error>
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error>
+    func saveCar(with data: RegisterCar) -> AnyPublisher<Bool, Error>
+    func retrieveCarObjects() -> AnyPublisher<Int, Error>
+    func retrieveCarObject(numerPlaque: String) -> AnyPublisher<ExitCar?, Error>
+    func deleteCar(numerPlaque: String) -> AnyPublisher<Bool, Error>
 }

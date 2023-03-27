@@ -26,7 +26,7 @@ final class CarServiceStub: CarServiceProtocol {
         })
     }
     
-    func save(with data: Domain.RegisterCar) -> AnyPublisher<Bool, Error> {
+    func saveCar(with data: Domain.RegisterCar) -> AnyPublisher<Bool, Error> {
         var publisher = CurrentValueSubject<Bool, Error>(true)
         switch responseHandler {
         case .success(_):
@@ -38,7 +38,7 @@ final class CarServiceStub: CarServiceProtocol {
         return publisher.eraseToAnyPublisher()
     }
     
-    func retrieveObjects() -> AnyPublisher<Int, Error> {
+    func retrieveCarObjects() -> AnyPublisher<Int, Error> {
         var publisher = CurrentValueSubject<Int, Error>(vehicleObjects.count)
         switch responseHandler {
         case .success(_):
@@ -50,7 +50,7 @@ final class CarServiceStub: CarServiceProtocol {
         return publisher.eraseToAnyPublisher()
     }
     
-    func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.ExitCar?, Error> {
+    func retrieveCarObject(numerPlaque: String) -> AnyPublisher<Domain.ExitCar?, Error> {
         var publisher = CurrentValueSubject<Domain.ExitCar?, Error>(exitCarObject)
         switch responseHandler {
         case .success(_):
@@ -62,7 +62,7 @@ final class CarServiceStub: CarServiceProtocol {
         return publisher.eraseToAnyPublisher()
     }
     
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+    func deleteCar(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         var publisher = CurrentValueSubject<Bool, Error>(true)
         switch responseHandler {
         case .success(_):

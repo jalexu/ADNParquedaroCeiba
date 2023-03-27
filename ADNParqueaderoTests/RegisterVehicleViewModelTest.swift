@@ -120,7 +120,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsACar_ThenIsSuccess() {
+    func test_registerCar_WhenDBResponse_ThenIsSuccess() {
         // Arrange
         let expectation = XCTestExpectation(description: "Register has success")
         sut.state.inputPlaque = "AHN657"
@@ -131,7 +131,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
         
         // Act
-        sut.registerVehicle()
+        sut.registerCar { }
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -142,10 +142,10 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsACar_ThenIsError() {
+    func test_registerCar_WhenDBHasError_ThenIsError() {
         // Arrange
         let expectation = XCTestExpectation(description: "Register has error")
-        sut.state.inputPlaque = "AHN657"
+        sut.state.inputPlaque = "BHN657"
         sut.state.seletedVehicleType = .car
         
         carService.responseHandler = .failure({
@@ -153,7 +153,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         })
         
         // Act
-        sut.registerVehicle()
+        sut.registerCar { }
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -164,7 +164,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsAMotocicle_ThenIsSuccess() {
+    func test_registerMotocicle_WhenDBResponse_ThenIsSuccess() {
         // Arrange
         let expectation = XCTestExpectation(description: "Register has success")
         sut.state.inputPlaque = "AHN657"
@@ -175,7 +175,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
         
         // Act
-        sut.registerVehicle()
+        sut.registerMotocicle { }
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -186,18 +186,19 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsAMotocicle_ThenIsError() {
+    func test_registerMotocicle_WhenDBHasError_ThenIsError() {
         // Arrange
         let expectation = XCTestExpectation(description: "Register has error")
-        sut.state.inputPlaque = "AHN657"
+        sut.state.inputPlaque = "PHN657"
         sut.state.seletedVehicleType = .motocicle
+        sut.state.inputCylinderCapacity = "200"
         
         motocicleService.responseHandler = .failure({
             NSError(domain:"Data does't exist", code: 500, userInfo:nil)
         })
         
         // Act
-        sut.registerVehicle()
+        sut.registerMotocicle(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -208,13 +209,13 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsCarAndInputPlaqueIsEmpty_ThenShowAlert() {
+    func test_registerCar_WhenInputPlaqueIsEmpty_ThenShowAlert() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show alert")
         sut.state.inputPlaque = ""
         
         // Act
-        sut.registerVehicle()
+        sut.registerCar(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -225,14 +226,15 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsCarAndParkingIsFull_ThenShowAlert() {
+    
+    func test_registerCar_WhenParkingIsFull_ThenShowAlert() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show alert")
         sut.state.numersOfCars = 20
         sut.state.inputPlaque = "LFG678"
         
         // Act
-        sut.registerVehicle()
+        sut.registerCar(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -243,14 +245,14 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsCarAndInputPlaqueIsIncompleted_ThenShowAlert() {
+    func test_registerCar_WhenInputPlaqueIsIncompleted_ThenShowAlert() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show alert")
         sut.state.inputPlaque = "ASD"
         sut.state.seletedVehicleType = .car
         
         // Act
-        sut.registerVehicle()
+        sut.registerCar(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -261,7 +263,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsMotocicleAndParkingIsFull_ThenShowAlert() {
+    func test_registerMotocicle_WhenParkingIsFull_ThenShowAlert() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show alert")
         sut.state.numersOfMotocicles = 10
@@ -269,7 +271,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .motocicle
         
         // Act
-        sut.registerVehicle()
+        sut.registerMotocicle(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -280,7 +282,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsMotocicleAndInputPlaqueIsEmpty_ThenShowAlert() {
+    func test_registerMotocicle_WhenInputPlaqueIsEmpty_ThenShowAlert() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show alert")
         sut.state.inputPlaque = ""
@@ -291,7 +293,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
         
         // Act
-        sut.registerVehicle()
+        sut.registerMotocicle(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -302,7 +304,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
     }
     
-    func test_registerVehicle_WhenIsMotocicleAndInputPlaqueIsIncompleted_ThenShowAlert() {
+    func test_registerMotocicle_WhenIsInputPlaqueIsIncompleted_ThenShowAlert() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show alert")
         sut.state.inputPlaque = "ALK"
@@ -313,7 +315,26 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
         
         // Act
-        sut.registerVehicle()
+        sut.registerMotocicle(completion: {})
+        
+        // Assert
+        let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
+        if result == XCTWaiter.Result.timedOut {
+            XCTAssertTrue(sut.state.showAlert)
+        } else {
+            XCTFail("Delay interrupted")
+        }
+    }
+    
+    func test_registerMotocicle_WhenCilynderCapacityIsEmpty_ThenShowAlert() {
+        // Arrange
+        let expectation = XCTestExpectation(description: "Show alert")
+        sut.state.numersOfMotocicles = 10
+        sut.state.inputPlaque = "GFG678"
+        sut.state.seletedVehicleType = .motocicle
+        
+        // Act
+        sut.registerMotocicle(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)

@@ -29,10 +29,11 @@ final class PaymentParkingViewModelTest: XCTestCase {
         try super.tearDownWithError()
     }
     
-    func test_searchVehicle_WhenRetrieveCarObjectIsSuccess_ThenShowValue() {
+    func test_searchCar_WhenRetrieveCarObjectIsSuccess_ThenShowValue() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show value to pay")
         sut.state.seletedVehicleType = .car
+        sut.state.inputNumberPlaque = "ASF890"
         
         carService.responseHandler = .success {
             ConstantsMock.registerCars
@@ -43,7 +44,7 @@ final class PaymentParkingViewModelTest: XCTestCase {
                                            exitDate: Date())
          
         // Act
-        sut.searchVehicle(numberPlaque: "ASF890")
+        sut.searchCar()
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -54,17 +55,18 @@ final class PaymentParkingViewModelTest: XCTestCase {
         }
     }
     
-    func test_searchVehicle_WhenRetrieveCarObjectIsError_ThenShowError() {
+    func test_searchCar_WhenRetrieveCarObjectIsError_ThenShowError() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show value to pay")
         sut.state.seletedVehicleType = .car
+        sut.state.inputNumberPlaque = "ASF890"
         
         carService.responseHandler = .failure({
             NSError(domain:"Data does't exist", code: 500, userInfo:nil)
         })
         
         // Act
-        sut.searchVehicle(numberPlaque: "ASF890")
+        sut.searchCar()
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -75,10 +77,11 @@ final class PaymentParkingViewModelTest: XCTestCase {
         }
     }
     
-    func test_searchVehicle_WhenRetrieveMotocicleObjectIsSuccess_ThenShowValue() {
+    func test_searchMotocicle_WhenRetrieveMotocicleObjectIsSuccess_ThenShowValue() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show value to pay")
         sut.state.seletedVehicleType = .motocicle
+        sut.state.inputNumberPlaque = "THD785"
         
         motocicleService.responseHandler = .success {
             ConstantsMock.registerMotocicles
@@ -91,7 +94,7 @@ final class PaymentParkingViewModelTest: XCTestCase {
             cylinderCapacity: "200")
         
         // Act
-        sut.searchVehicle(numberPlaque: "THD785")
+        sut.searchMotocicle()
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -102,10 +105,11 @@ final class PaymentParkingViewModelTest: XCTestCase {
         }
     }
     
-    func test_searchVehicle_WhenRetrieveMotocicleObjectWith600CCIsSuccess_ThenShowValue() {
+    func test_searchMotocicle_WhenRetrieveMotocicleObjectWith600CCIsSuccess_ThenShowValue() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show value to pay")
         sut.state.seletedVehicleType = .motocicle
+        sut.state.inputNumberPlaque = "THD785"
         
         motocicleService.responseHandler = .success {
             ConstantsMock.registerMotocicles
@@ -118,7 +122,7 @@ final class PaymentParkingViewModelTest: XCTestCase {
             cylinderCapacity: "600")
         
         // Act
-        sut.searchVehicle(numberPlaque: "FHD785")
+        sut.searchMotocicle()
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -129,17 +133,18 @@ final class PaymentParkingViewModelTest: XCTestCase {
         }
     }
     
-    func test_searchVehicle_WhenRetrieveMotocicleObjectIsError_ThenShowError() {
+    func test_searchMotocicle_WhenRetrieveMotocicleObjectIsError_ThenShowError() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show value to pay")
         sut.state.seletedVehicleType = .motocicle
+        sut.state.inputNumberPlaque = "ASF890"
         
         motocicleService.responseHandler = .failure({
             NSError(domain:"Data does't exist", code: 500, userInfo:nil)
         })
         
         // Act
-        sut.searchVehicle(numberPlaque: "ASF890")
+        sut.searchMotocicle()
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -149,4 +154,96 @@ final class PaymentParkingViewModelTest: XCTestCase {
             XCTFail("Delay interrupted")
         }
     }
+    
+     func test_paymentMotocicle_WhenDBResponseSuccess_ThenResetData() {
+        // Arrange
+        let expectation = XCTestExpectation(description: "Reset state")
+        sut.state.seletedVehicleType = .motocicle
+        sut.state.inputNumberPlaque = "THD785"
+        sut.state.hoursToPay = 2
+        
+        motocicleService.responseHandler = .success {
+            ConstantsMock.registerMotocicles
+        }
+        
+        // Act
+        sut.paymentMotocicle()
+        
+        // Assert
+        let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
+        if result == XCTWaiter.Result.timedOut {
+            XCTAssertEqual(sut.state.hoursToPay, 0)
+        } else {
+            XCTFail("Delay interrupted")
+        }
+    }
+    
+    func test_paymentMotocicle_WhenDBResponseError_ThenDoesnotResetData() {
+       // Arrange
+       let expectation = XCTestExpectation(description: "Does not reset state")
+       sut.state.seletedVehicleType = .motocicle
+       sut.state.inputNumberPlaque = "THD785"
+       sut.state.hoursToPay = 2
+       
+       motocicleService.responseHandler = .failure {
+           NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+       }
+       
+       // Act
+       sut.paymentMotocicle()
+       
+       // Assert
+       let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
+       if result == XCTWaiter.Result.timedOut {
+           XCTAssertTrue(!sut.state.inputNumberPlaque.isEmpty)
+       } else {
+           XCTFail("Delay interrupted")
+       }
+   }
+    
+    func test_paymentCar_WhenDBResponseSuccess_ThenResetData() {
+       // Arrange
+       let expectation = XCTestExpectation(description: "Reset state")
+       sut.state.seletedVehicleType = .motocicle
+       sut.state.inputNumberPlaque = "BHD985"
+       sut.state.hoursToPay = 1
+       
+       carService.responseHandler = .success {
+           ConstantsMock.registerCars
+       }
+       
+       // Act
+       sut.paymentCar()
+       
+       // Assert
+       let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
+       if result == XCTWaiter.Result.timedOut {
+           XCTAssertEqual(sut.state.hoursToPay, 0)
+       } else {
+           XCTFail("Delay interrupted")
+       }
+   }
+    
+    func test_paymentCar_WhenDBResponseError_ThenResetData() {
+       // Arrange
+       let expectation = XCTestExpectation(description: "Does not reset state")
+       sut.state.seletedVehicleType = .motocicle
+       sut.state.inputNumberPlaque = "BHD985"
+       sut.state.hoursToPay = 1
+       
+       carService.responseHandler = .failure {
+           NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+       }
+       
+       // Act
+       sut.paymentCar()
+       
+       // Assert
+       let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
+       if result == XCTWaiter.Result.timedOut {
+           XCTAssertTrue(!sut.state.inputNumberPlaque.isEmpty)
+       } else {
+           XCTFail("Delay interrupted")
+       }
+   }
 }

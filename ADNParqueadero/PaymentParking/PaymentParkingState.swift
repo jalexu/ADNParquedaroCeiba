@@ -15,5 +15,6 @@ final class PaymentParkingState: ObservableObject {
     var showFildsPay: Bool = false
     var showMessage: Bool = false
     var showError: Bool = false
+    var inputNumberPlaque: String = ""
     var seletedVehicleType: VehicleType = VehicleType.car
 }

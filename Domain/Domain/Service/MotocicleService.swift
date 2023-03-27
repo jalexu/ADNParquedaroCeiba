@@ -8,10 +8,10 @@
 import Combine
 
 public protocol MotocicleServiceProtocol {
-    func save(with data: RegisterMotocicle) -> AnyPublisher<Bool, Error>
-    func retrieveObjects() -> AnyPublisher<Int, Error>
-    func retrieveObject(numerPlaque: String) -> AnyPublisher<ExitMotocicle?, Error>
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error>
+    func saveMotocicle(with data: RegisterMotocicle) -> AnyPublisher<Bool, Error>
+    func retrieveMotocicleObjects() -> AnyPublisher<Int, Error>
+    func retrieveMotocicleObject(numerPlaque: String) -> AnyPublisher<ExitMotocicle?, Error>
+    func deleteMotocicle(numerPlaque: String) -> AnyPublisher<Bool, Error>
 }
 
 public class MotocicleService: MotocicleServiceProtocol {
@@ -21,19 +21,19 @@ public class MotocicleService: MotocicleServiceProtocol {
         self.motocicleService = motocicleService
     }
     
-    public func save(with data: RegisterMotocicle) -> AnyPublisher<Bool, Error> {
-        motocicleService.save(with: data)
+    public func saveMotocicle(with data: RegisterMotocicle) -> AnyPublisher<Bool, Error> {
+        motocicleService.saveMotocicle(with: data)
     }
     
-    public func retrieveObjects() -> AnyPublisher<Int, Error> {
-        motocicleService.retrieveObjects()
+    public func retrieveMotocicleObjects() -> AnyPublisher<Int, Error> {
+        motocicleService.retrieveMotocicleObjects()
     }
     
-    public func retrieveObject(numerPlaque: String) -> AnyPublisher<ExitMotocicle?, Error> {
-        motocicleService.retrieveObject(numerPlaque: numerPlaque)
+    public func retrieveMotocicleObject(numerPlaque: String) -> AnyPublisher<ExitMotocicle?, Error> {
+        motocicleService.retrieveMotocicleObject(numerPlaque: numerPlaque)
     }
     
-    public func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
-        motocicleService.delete(numerPlaque: numerPlaque)
+    public func deleteMotocicle(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+        motocicleService.deleteMotocicle(numerPlaque: numerPlaque)
     }
 }

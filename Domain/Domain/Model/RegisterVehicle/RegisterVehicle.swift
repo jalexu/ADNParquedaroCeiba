@@ -9,6 +9,7 @@ public enum VehicleError: Error {
     case plaqueAError(String)
     case exceedNumberVehicles(String)
     case fieldPlaqueError(String)
+    case cylinderCapacity(String)
 }
 
 

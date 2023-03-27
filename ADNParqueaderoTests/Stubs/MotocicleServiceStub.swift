@@ -27,7 +27,7 @@ final class MotocicleServiceStub: MotocicleServiceProtocol {
         })
     }
     
-    func save(with data: Domain.RegisterMotocicle) -> AnyPublisher<Bool, Error> {
+    func saveMotocicle(with data: Domain.RegisterMotocicle) -> AnyPublisher<Bool, Error> {
         var publisher = CurrentValueSubject<Bool, Error>(true)
         switch responseHandler {
         case .success(_):
@@ -39,7 +39,7 @@ final class MotocicleServiceStub: MotocicleServiceProtocol {
         return publisher.eraseToAnyPublisher()
     }
     
-    func retrieveObjects() -> AnyPublisher<Int, Error> {
+    func retrieveMotocicleObjects() -> AnyPublisher<Int, Error> {
         var publisher = CurrentValueSubject<Int, Error>(vehicleObjects.count)
         switch responseHandler {
         case .success(_):
@@ -51,7 +51,7 @@ final class MotocicleServiceStub: MotocicleServiceProtocol {
         return publisher.eraseToAnyPublisher()
     }
     
-    func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.ExitMotocicle?, Error> {
+    func retrieveMotocicleObject(numerPlaque: String) -> AnyPublisher<Domain.ExitMotocicle?, Error> {
         var publisher = CurrentValueSubject<Domain.ExitMotocicle?, Error>(exitMotocicleObject)
         switch responseHandler {
         case .success(_):
@@ -64,7 +64,7 @@ final class MotocicleServiceStub: MotocicleServiceProtocol {
     }
    
 
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+    func deleteMotocicle(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         var publisher = CurrentValueSubject<Bool, Error>(true)
         switch responseHandler {
         case .success(_):

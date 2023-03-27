@@ -13,7 +13,7 @@ final class MotocicleRepositoryCoreData: MotocicleRepository {
     
     init() {}
     
-    func save(with data: Domain.RegisterMotocicle) -> AnyPublisher<Bool, Error> {
+    func saveMotocicle(with data: Domain.RegisterMotocicle) -> AnyPublisher<Bool, Error> {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
             
@@ -39,7 +39,7 @@ final class MotocicleRepositoryCoreData: MotocicleRepository {
         }.eraseToAnyPublisher()
     }
     
-    func retrieveObjects() -> AnyPublisher<Int, Error> {
+    func retrieveMotocicleObjects() -> AnyPublisher<Int, Error> {
         return Future { promise in
             DispatchQueue.global().async {
                 let context = ConfigurationCoreDataBase.context
@@ -56,7 +56,7 @@ final class MotocicleRepositoryCoreData: MotocicleRepository {
         }.eraseToAnyPublisher()
     }
     
-    func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.ExitMotocicle?, Error> {
+    func retrieveMotocicleObject(numerPlaque: String) -> AnyPublisher<Domain.ExitMotocicle?, Error> {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterMotocicleEntity")
@@ -72,7 +72,7 @@ final class MotocicleRepositoryCoreData: MotocicleRepository {
         }.eraseToAnyPublisher()
     }
     
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+    func deleteMotocicle(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterMotocicleEntity")

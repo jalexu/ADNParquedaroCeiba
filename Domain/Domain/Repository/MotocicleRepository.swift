@@ -8,8 +8,8 @@
 import Combine
 
 public protocol MotocicleRepository {
-    func save(with data: RegisterMotocicle) -> AnyPublisher<Bool, Error>
-    func retrieveObjects() -> AnyPublisher<Int, Error>
-    func retrieveObject(numerPlaque: String) -> AnyPublisher<ExitMotocicle?, Error>
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error>
+    func saveMotocicle(with data: RegisterMotocicle) -> AnyPublisher<Bool, Error>
+    func retrieveMotocicleObjects() -> AnyPublisher<Int, Error>
+    func retrieveMotocicleObject(numerPlaque: String) -> AnyPublisher<ExitMotocicle?, Error>
+    func deleteMotocicle(numerPlaque: String) -> AnyPublisher<Bool, Error>
 }
