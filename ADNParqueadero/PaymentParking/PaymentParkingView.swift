@@ -129,6 +129,7 @@ struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtoc
                         typeVehiclePickerView
                         VStack(alignment: .center, spacing: 20) {
                             TextField("Ingresa la placa", text: $viewModel.state.inputNumberPlaque)
+                                .keyboardType(.asciiCapable)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding([.top, .trailing, .leading], 20)
                                 .font(.system(size: 24))

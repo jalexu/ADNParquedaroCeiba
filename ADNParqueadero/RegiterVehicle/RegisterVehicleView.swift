@@ -86,6 +86,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding([.top, .trailing, .leading], 20)
                             .font(.system(size: 24))
+                            .keyboardType(.asciiCapable)
                         
                         VStack(spacing: 0) {
                             Text("Seleccione el tipo de vehículo a ingresar")

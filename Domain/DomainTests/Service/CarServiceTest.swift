@@ -137,6 +137,7 @@ final class CarServiceTest: XCTestCase {
                 XCTFail(error.localizedDescription)
                 failureExpectation.fulfill()
             }, receiveValue: { response in
+                
                 // Assert
                 XCTAssertEqual(response?.getHoursAndDaysOfParking().hours, 2)
                 successExpectation.fulfill()
@@ -159,8 +160,8 @@ final class CarServiceTest: XCTestCase {
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
                 response = error
-                // Assert
                 
+                // Assert
                 XCTAssertNotNil(response)
                 failureExpectation.fulfill()
             }, receiveValue: { response in
@@ -185,6 +186,7 @@ final class CarServiceTest: XCTestCase {
                 XCTFail(error.localizedDescription)
                 failureExpectation.fulfill()
             }, receiveValue: { response in
+                
                 // Assert
                 XCTAssertTrue(response)
                 successExpectation.fulfill()
@@ -207,8 +209,8 @@ final class CarServiceTest: XCTestCase {
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
                 response = error
-                // Assert
                 
+                // Assert
                 XCTAssertNotNil(response)
                 failureExpectation.fulfill()
             }, receiveValue: { response in
