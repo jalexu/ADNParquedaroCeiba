@@ -614,38 +614,6 @@
             endingLineNumber = "33"
             landmarkName = "totalToPay()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4DDB5169-4DEF-4BEC-8A8A-C84C93DA368A - 31951787ad3cd44a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Domain.ExitVehicle.totalToPay() -&gt; Swift.Int"
-                  moduleName = "Domain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/Domain/Model/ExitVehicle/ExitVehicle.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "199">
-               </Location>
-               <Location
-                  uuid = "4DDB5169-4DEF-4BEC-8A8A-C84C93DA368A - 31951787ad3cd46b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Domain.ExitVehicle.totalToPay() -&gt; Swift.Int"
-                  moduleName = "Domain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/Domain/Model/ExitVehicle/ExitVehicle.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -658,8 +626,8 @@
             filePath = "ADNParqueadero/ViewModel/RegiterVehicle/RegisterVehicleViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "numberCars(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -712,7 +680,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B10E25DA-0A91-48E6-BE74-C071EFA62D58 - 833d770c6c73dab6"
+                  uuid = "B10E25DA-0A91-48E6-BE74-C071EFA62D58 - 833d770c6c73da97"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -722,12 +690,12 @@
                   urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/ADNParqueadero/ViewModel/PaymentParking/PaymentParkingViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
                   offsetFromSymbolStart = "283">
                </Location>
                <Location
-                  uuid = "B10E25DA-0A91-48E6-BE74-C071EFA62D58 - 833d770c6c73dab6"
+                  uuid = "B10E25DA-0A91-48E6-BE74-C071EFA62D58 - 833d770c6c73da97"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -737,8 +705,8 @@
                   urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/ADNParqueadero/ViewModel/PaymentParking/PaymentParkingViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
                   offsetFromSymbolStart = "399">
                </Location>
             </Locations>
@@ -805,6 +773,38 @@
             startingLineNumber = "56"
             endingLineNumber = "56"
             landmarkName = "searchCar(numberPlaque:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73C5C5DC-8D60-4DCE-A0FE-B7321FA00C8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Infraestructure/Infraestructure/Repository/MotocicleRepositoryCoreData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "retrieveObjects()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A74E9E2-408C-423B-8F24-095EF970C68E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Infraestructure/Infraestructure/Repository/MotocicleRepositoryCoreData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "retrieveObjects()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -5,6 +5,7 @@
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 23/03/23.
 //
 
+import Foundation
 import CoreData
 import Domain
 import Combine
@@ -54,18 +55,21 @@ final class CarRepositoryCoreData: CarRepository {
     }
     
     func retrieveObject(numerPlaque: String) -> AnyPublisher<Domain.ExitCar?, Error> {
+        
         return Future { promise in
-            let context = ConfigurationCoreDataBase.context
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterCarEntity")
-            
-            do {
-                let registerCarEntities = try context.fetch(fetchRequest) as? [RegisterCarEntity] ?? []
-                let registerCarEntity = registerCarEntities.first(where: { $0.plaqueId == numerPlaque })
+            DispatchQueue.global().async {
+                let context = ConfigurationCoreDataBase.context
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterCarEntity")
                 
-                let vehicleData = CarTraslator.mapCar(registerCarEntity)
-                promise(.success(vehicleData))
-            } catch {
-                promise(.failure(error))
+                do {
+                    let registerCarEntities = try context.fetch(fetchRequest) as? [RegisterCarEntity] ?? []
+                    let registerCarEntity = registerCarEntities.first(where: { $0.plaqueId == numerPlaque })
+                    
+                    let vehicleData = CarTraslator.mapCar(registerCarEntity)
+                    promise(.success(vehicleData))
+                } catch {
+                    promise(.failure(error))
+                }
             }
         }.eraseToAnyPublisher()
     }

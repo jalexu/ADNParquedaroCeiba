@@ -41,15 +41,17 @@ final class MotocicleRepositoryCoreData: MotocicleRepository {
     
     func retrieveObjects() -> AnyPublisher<Int, Error> {
         return Future { promise in
-            let context = ConfigurationCoreDataBase.context
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterMotocicleEntity")
-            
-            do {
-                let result = try context.fetch(fetchRequest)
-                let vehicleData = result.count
-                promise(.success(vehicleData))
-            } catch {
-                promise(.failure(error))
+            DispatchQueue.global().async {
+                let context = ConfigurationCoreDataBase.context
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterMotocicleEntity")
+                
+                do {
+                    let result = try context.fetch(fetchRequest)
+                    let vehicleData = result.count
+                    promise(.success(vehicleData))
+                } catch {
+                    promise(.failure(error))
+                }
             }
         }.eraseToAnyPublisher()
     }

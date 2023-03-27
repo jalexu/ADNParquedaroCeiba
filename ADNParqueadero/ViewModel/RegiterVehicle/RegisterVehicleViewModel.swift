@@ -5,7 +5,7 @@
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 21/03/23.
 //
 
-
+import Foundation
 import SwiftUI
 import Combine
 import Domain
@@ -163,6 +163,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     func numberMoticicles() {
         self.loading = true
         motocicleService.retrieveObjects()
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
@@ -177,6 +178,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     
     func numberCars(completion: @escaping () -> Void) {
         carService.retrieveObjects()
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
