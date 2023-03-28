@@ -11,13 +11,13 @@ import XCTest
 
 final class RegisterVehicleViewModelTest: XCTestCase {
     private var sut: RegisterVehicleViewModel!
-    private var carService: CarServiceStub!
-    private var motocicleService: MotocicleServiceStub!
+    private var carService: RegisterCarServiceStub!
+    private var motocicleService: RegisterMotorcycleServiceStub!
     
     override func setUpWithError() throws {
-        carService = CarServiceStub(vehicleObjects: ConstantsMock.registerCars)
-        motocicleService = MotocicleServiceStub(vehicleObjects: ConstantsMock.registerMotocicles)
-        sut = RegisterVehicleViewModel(carService: carService, motocicleService: motocicleService)
+        carService = RegisterCarServiceStub(vehicles: ConstantsMock.registerVehiclesWithCarMock)
+        motocicleService = RegisterMotorcycleServiceStub(vehicles: ConstantsMock.registerVehiclesWithMotorcycles)
+        sut = RegisterVehicleViewModel(registerCarService: carService, registerMotocicleService: motocicleService)
         try super.setUpWithError()
     }
     
@@ -33,7 +33,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Get vehicles from coreData")
         
         carService.responseHandler = .success {
-            ConstantsMock.registerCars
+            ConstantsMock.registerVehiclesWithCarMock
         }
         
         sut.state.seletedVehicleType = .car
@@ -77,11 +77,11 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Get vehicles from coreData")
         
         carService.responseHandler = .success {
-            ConstantsMock.registerCars
+            ConstantsMock.registerVehiclesWithCarMock
         }
         
         motocicleService.responseHandler = .success {
-            ConstantsMock.registerMotocicles
+            ConstantsMock.registerVehiclesWithMotorcycles
         }
         
         sut.state.seletedVehicleType = .motocicle
@@ -127,7 +127,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .car
         
         carService.responseHandler = .success {
-            ConstantsMock.registerCars
+            ConstantsMock.registerVehiclesWithCarMock
         }
         
         // Act
@@ -171,7 +171,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .motocicle
         
         motocicleService.responseHandler = .success {
-            ConstantsMock.registerMotocicles
+            ConstantsMock.registerVehiclesWithMotorcycles
         }
         
         // Act
@@ -289,7 +289,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .motocicle
         
         motocicleService.responseHandler = .success {
-            ConstantsMock.registerMotocicles
+            ConstantsMock.registerVehiclesWithMotorcycles
         }
         
         // Act
@@ -311,7 +311,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .motocicle
         
         motocicleService.responseHandler = .success {
-            ConstantsMock.registerMotocicles
+            ConstantsMock.registerVehiclesWithMotorcycles
         }
         
         // Act

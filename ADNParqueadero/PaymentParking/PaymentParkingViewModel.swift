@@ -10,8 +10,8 @@ import Domain
 import Infraestructure
 
 final class PaymentParkingViewModel: BaseViewModel {
-    private let carService: CarServiceProtocol
-    private let motocicleService: MotocicleServiceProtocol
+    private let carService: ExitCarServiceProtocol
+    private let motocicleService: ExitMotorcycleServiceProtocol
     private var subscribers: Set<AnyCancellable> = []
     
     private var storedData: Date?
@@ -28,8 +28,8 @@ final class PaymentParkingViewModel: BaseViewModel {
     
     @Published var state = PaymentParkingState()
     
-    init(carService: CarServiceProtocol,
-         motocicleService: MotocicleServiceProtocol) {
+    init(carService: ExitCarServiceProtocol,
+         motocicleService: ExitMotorcycleServiceProtocol) {
         self.carService = carService
         self.motocicleService = motocicleService
     }
@@ -56,7 +56,7 @@ final class PaymentParkingViewModel: BaseViewModel {
     
     private func deleteMotocicle() {
         self.loading = true
-        motocicleService.deleteMotocicle(numerPlaque: state.inputNumberPlaque.uppercased())
+        motocicleService.deleteMotorcycle(numerPlaque: state.inputNumberPlaque.uppercased())
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
@@ -85,7 +85,7 @@ final class PaymentParkingViewModel: BaseViewModel {
 extension PaymentParkingViewModel: PaymentParkingProtocol {
     func searchCar() {
         self.loading = true
-        carService.retrieveCarObject(numerPlaque: state.inputNumberPlaque.uppercased())
+        carService.retrieveExitCar(numerPlaque: state.inputNumberPlaque.uppercased())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
@@ -114,7 +114,7 @@ extension PaymentParkingViewModel: PaymentParkingProtocol {
     
     func searchMotocicle() {
         self.loading = true
-        motocicleService.retrieveMotocicleObject(numerPlaque: state.inputNumberPlaque.uppercased())
+        motocicleService.retrieveMotocycle(numerPlaque: state.inputNumberPlaque.uppercased())
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
@@ -146,6 +146,10 @@ extension PaymentParkingViewModel: PaymentParkingProtocol {
     
     func paymentMotocicle() {
         deleteMotocicle()
+    }
+    
+    func onDisappear() {
+        resetState()
     }
 }
 

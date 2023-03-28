@@ -22,12 +22,12 @@ class DomainTestMock {
         try! Car(plaqueId: "AIO789")
     }()
     
-    static let motociclePlaqueAMock: Motocicle = {
-        try! Motocicle(plaqueId: "ADIO99", cylinderCapacity: "200")
+    static let motorcyclePlaqueAMock: Motorcycle = {
+        try! Motorcycle(plaqueId: "ADIO99", cylinderCapacity: "200")
     }()
     
-    static let motocicleMock: Motocicle = {
-        try! Motocicle(plaqueId: "LFG567", cylinderCapacity: "600")
+    static let motorcycleMock: Motorcycle = {
+        try! Motorcycle(plaqueId: "LFG567", cylinderCapacity: "600")
     }()
     
     static func getregisterWithDaysMock() -> Date {
@@ -42,10 +42,12 @@ class DomainTestMock {
         return someDateTime
     }
     
-    static let registerCarMock: RegisterCar = {
-        try! RegisterCar(car: carMock,
-                         registerDay: getRegisterDayMock(),
-                         numberCars: 0)
+    static let registerVehicleCarMock: RegisterVehicle = {
+        try! RegisterVehicle(vehicle: carMock, registerDay: getRegisterDayMock())
+    }()
+    
+    static let registerVehicleMotorcycleMock: RegisterVehicle = {
+        try! RegisterVehicle(vehicle: motorcycleMock, registerDay: getRegisterDayMock())
     }()
     
     static let errorMock: Error = {

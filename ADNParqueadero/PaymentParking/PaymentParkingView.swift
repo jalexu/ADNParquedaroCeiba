@@ -88,7 +88,7 @@ struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtoc
             if viewModel.state.seletedVehicleType == .car {
                 viewModel.paymentCar()
             } else {
-                viewModel.searchMotocicle()
+                viewModel.paymentMotocicle()
             }
         } label: {
             HStack(alignment: .center, spacing: 6) {
@@ -150,6 +150,9 @@ struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtoc
                             .frame(width: 180)
                             .padding(.top, 100)
                     }
+                }
+                .onDisappear {
+                    viewModel.onDisappear()
                 }
                 
             }

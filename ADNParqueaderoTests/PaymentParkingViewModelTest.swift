@@ -12,19 +12,19 @@ import XCTest
 
 final class PaymentParkingViewModelTest: XCTestCase {
     private var sut: PaymentParkingViewModel!
-    private var carService: CarServiceStub!
-    private var motocicleService: MotocicleServiceStub!
+    private var exitCarService: ExitCarServiceStub!
+    private var exitMotorcycleService: ExitMotorcycleServiceStub!
     
     override func setUpWithError() throws {
-        carService = CarServiceStub(vehicleObjects: ConstantsMock.registerCars)
-        motocicleService = MotocicleServiceStub(vehicleObjects: ConstantsMock.registerMotocicles)
-        sut = PaymentParkingViewModel(carService: carService, motocicleService: motocicleService)
+        exitCarService = ExitCarServiceStub(exitCar: ConstantsMock.exitCarMock)
+        exitMotorcycleService = ExitMotorcycleServiceStub(exitMotorcycle: ConstantsMock.exitMotorcycle)
+        sut = PaymentParkingViewModel(carService: exitCarService, motocicleService: exitMotorcycleService)
         try super.setUpWithError()
     }
     
     override func tearDownWithError() throws {
-        carService = nil
-        motocicleService = nil
+        exitCarService = nil
+        exitMotorcycleService = nil
         sut = nil
         try super.tearDownWithError()
     }
@@ -35,13 +35,9 @@ final class PaymentParkingViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .car
         sut.state.inputNumberPlaque = "ASF890"
         
-        carService.responseHandler = .success {
-            ConstantsMock.registerCars
+        exitCarService.responseHandler = .success {
+            ConstantsMock.registerVehiclesWithCarMock
         }
-        
-        carService.exitCarObject = ExitCar(plaqueId: "ASF890",
-                                           registerDay: ConstantsMock.getDateMock(),
-                                           exitDate: Date())
          
         // Act
         sut.searchCar()
@@ -61,7 +57,7 @@ final class PaymentParkingViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .car
         sut.state.inputNumberPlaque = "ASF890"
         
-        carService.responseHandler = .failure({
+        exitCarService.responseHandler = .failure({
             NSError(domain:"Data does't exist", code: 500, userInfo:nil)
         })
         
@@ -83,15 +79,9 @@ final class PaymentParkingViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .motocicle
         sut.state.inputNumberPlaque = "THD785"
         
-        motocicleService.responseHandler = .success {
-            ConstantsMock.registerMotocicles
+        exitMotorcycleService.responseHandler = .success {
+            ConstantsMock.registerVehiclesWithMotorcycles
         }
-        
-        motocicleService.exitMotocicleObject = .init(
-            plaqueId: "THD785",
-            registerDay: ConstantsMock.getDateMock(),
-            exitDate: Date(),
-            cylinderCapacity: "200")
         
         // Act
         sut.searchMotocicle()
@@ -105,21 +95,22 @@ final class PaymentParkingViewModelTest: XCTestCase {
         }
     }
     
-    func test_searchMotocicle_WhenRetrieveMotocicleObjectWith600CCIsSuccess_ThenShowValue() {
+    func test_searchMotocicle_WhenRetrieveMotocicleWith600CCIsSuccess_ThenShowValue() {
         // Arrange
         let expectation = XCTestExpectation(description: "Show value to pay")
         sut.state.seletedVehicleType = .motocicle
         sut.state.inputNumberPlaque = "THD785"
+        let motorcycle = ExitMotorcycle(plaqueId: "FHD785",
+                                             registerDay: ConstantsMock.getDateMock(),
+                                             exitDate: Date(),
+                                             cylinderCapacity: "600")
         
-        motocicleService.responseHandler = .success {
-            ConstantsMock.registerMotocicles
+        exitMotorcycleService = ExitMotorcycleServiceStub(exitMotorcycle: motorcycle)
+        sut = PaymentParkingViewModel(carService: exitCarService, motocicleService: exitMotorcycleService)
+        
+        exitMotorcycleService.responseHandler = .success {
+            ConstantsMock.registerVehiclesWithMotorcycles
         }
-        
-        motocicleService.exitMotocicleObject = .init(
-            plaqueId: "FHD785",
-            registerDay: ConstantsMock.getDateMock(),
-            exitDate: Date(),
-            cylinderCapacity: "600")
         
         // Act
         sut.searchMotocicle()
@@ -139,7 +130,7 @@ final class PaymentParkingViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .motocicle
         sut.state.inputNumberPlaque = "ASF890"
         
-        motocicleService.responseHandler = .failure({
+        exitMotorcycleService.responseHandler = .failure({
             NSError(domain:"Data does't exist", code: 500, userInfo:nil)
         })
         
@@ -162,8 +153,8 @@ final class PaymentParkingViewModelTest: XCTestCase {
         sut.state.inputNumberPlaque = "THD785"
         sut.state.hoursToPay = 2
         
-        motocicleService.responseHandler = .success {
-            ConstantsMock.registerMotocicles
+        exitMotorcycleService.responseHandler = .success {
+            ConstantsMock.registerVehiclesWithMotorcycles
         }
         
         // Act
@@ -185,7 +176,7 @@ final class PaymentParkingViewModelTest: XCTestCase {
        sut.state.inputNumberPlaque = "THD785"
        sut.state.hoursToPay = 2
        
-       motocicleService.responseHandler = .failure {
+       exitMotorcycleService.responseHandler = .failure {
            NSError(domain:"Data does't exist", code: 500, userInfo:nil)
        }
        
@@ -208,8 +199,8 @@ final class PaymentParkingViewModelTest: XCTestCase {
        sut.state.inputNumberPlaque = "BHD985"
        sut.state.hoursToPay = 1
        
-       carService.responseHandler = .success {
-           ConstantsMock.registerCars
+       exitCarService.responseHandler = .success {
+           ConstantsMock.registerVehiclesWithCarMock
        }
        
        // Act
@@ -231,7 +222,7 @@ final class PaymentParkingViewModelTest: XCTestCase {
        sut.state.inputNumberPlaque = "BHD985"
        sut.state.hoursToPay = 1
        
-       carService.responseHandler = .failure {
+       exitCarService.responseHandler = .failure {
            NSError(domain:"Data does't exist", code: 500, userInfo:nil)
        }
        

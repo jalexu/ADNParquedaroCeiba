@@ -14,5 +14,6 @@ protocol PaymentParkingProtocol: ObservableObject {
     func searchMotocicle()
     func paymentCar()
     func paymentMotocicle()
+    func onDisappear()
 }
 

@@ -9,24 +9,34 @@ import Foundation
 @testable import Domain
 
 public struct ConstantsMock {
-    static let registerCars: [Domain.RegisterCar] = [
-        try! RegisterCar(car: Car(plaqueId: "LSF890"),
-                    registerDay: getDateMock(),
-                    numberCars: 0),
-        try! RegisterCar(car: Car(plaqueId: "TTF890"),
-                    registerDay: getDateMock(),
-                    numberCars: 1)
-        
+    static let registerVehiclesWithCarMock: [Domain.RegisterVehicle] = [
+        try! RegisterVehicle(
+            vehicle: Car(plaqueId: "LSF890"),
+            registerDay: getDateMock()),
+        try!RegisterVehicle(
+            vehicle: Car(plaqueId: "TFD890"),
+            registerDay: getDateMock())
     ]
     
-    static let registerMotocicles: [Domain.RegisterMotocicle] = [
-        try! RegisterMotocicle(motocicle: Motocicle(plaqueId: "UIU908", cylinderCapacity: "200"),
-                               registerDay: getDateMock(),
-                               numberMotocicle: 0),
-        try! RegisterMotocicle(motocicle: Motocicle(plaqueId: "KLM567", cylinderCapacity: "600"),
-                               registerDay: getDateMock(),
-                               numberMotocicle: 1)
+    static let registerVehiclesWithMotorcycles: [Domain.RegisterVehicle] = [
+        try! RegisterVehicle(vehicle: Motorcycle(plaqueId: "UIU908", cylinderCapacity: "200"),
+                             registerDay: getDateMock()),
+        try!RegisterVehicle(vehicle: Motorcycle(plaqueId: "KLM567", cylinderCapacity: "600"),
+                            registerDay: getDateMock())
     ]
+    
+    static let exitCarMock: ExitCar = {
+        return ExitCar(plaqueId: "ASF890",
+                       registerDay: ConstantsMock.getDateMock(),
+                       exitDate: Date())
+    }()
+    
+    static let exitMotorcycle: ExitMotorcycle = {
+        return ExitMotorcycle(plaqueId: "ASF890",
+                              registerDay: ConstantsMock.getDateMock(),
+                              exitDate: Date(),
+                              cylinderCapacity: "200")
+    }()
     
     static func getDateMock() -> Date {
         let today: Date = Date()
