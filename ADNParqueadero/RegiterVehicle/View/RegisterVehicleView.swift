@@ -51,7 +51,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                 ScrollView {
                     VStack(spacing: 5) {
                         HStack(spacing: 5) {
-                            Text("Cantidad carros parqueados:")
+                            Text("Cantidad carros parqueados: ")
                                 .fontWeight(.semibold)
                                 .font(.system(size: 14))
                                 .foregroundColor(.black)
@@ -82,16 +82,16 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                     
                     
                     VStack(spacing: 20) {
-                        TextField("Ingresa la placa", text: $viewModel.state.inputPlaque)
+                        TextField(Constants.Labels.enterPlaque, text: $viewModel.state.inputPlaque)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding([.top, .trailing, .leading], 20)
                             .font(.system(size: 24))
                             .keyboardType(.asciiCapable)
                         
                         VStack(spacing: 0) {
-                            Text("Seleccione el tipo de vehículo a ingresar")
+                            Text(Constants.Labels.selectTypeVehicle)
                                 .foregroundColor(.gray)
-                            Picker("Tipo de vehículo", selection: $viewModel.state.seletedVehicleType) {
+                            Picker(Constants.Labels.typeVehicle, selection: $viewModel.state.seletedVehicleType) {
                                 ForEach(VehicleType.allCases, id: \.self) {
                                     Text($0.rawValue)
                                 }
@@ -121,7 +121,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                     }
                     .alert(isPresented: $viewModel.state.showAlert) {
                         Alert(
-                            title: Text("No se puede parquear"),
+                            title: Text(Constants.Labels.noParkingMessage),
                             message: Text(viewModel.state.message),
                             dismissButton: .cancel(Text("OK"))
                         )

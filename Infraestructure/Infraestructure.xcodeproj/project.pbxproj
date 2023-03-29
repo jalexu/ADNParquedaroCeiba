@@ -24,10 +24,12 @@
 		E404FDE329CE492700DB4F7F /* RegisterMotocicleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FDE129CE492700DB4F7F /* RegisterMotocicleEntity+CoreDataProperties.swift */; };
 		E404FDE629CE499100DB4F7F /* MotocicleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FDE429CE499100DB4F7F /* MotocicleEntity+CoreDataClass.swift */; };
 		E404FDE729CE499100DB4F7F /* MotocicleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FDE529CE499100DB4F7F /* MotocicleEntity+CoreDataProperties.swift */; };
-		E404FDE929CE4A3800DB4F7F /* CoreData+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FDE829CE4A3800DB4F7F /* CoreData+Inject.swift */; };
+		E404FDE929CE4A3800DB4F7F /* ExitVehicle+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FDE829CE4A3800DB4F7F /* ExitVehicle+Inject.swift */; };
 		E41387DD29C4B55B000A07CC /* Infraestructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387D429C4B55B000A07CC /* Infraestructure.framework */; };
-		E41387E229C4B55B000A07CC /* InfraestructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387E129C4B55B000A07CC /* InfraestructureTests.swift */; };
 		E41387E329C4B55B000A07CC /* Infraestructure.h in Headers */ = {isa = PBXBuildFile; fileRef = E41387D729C4B55B000A07CC /* Infraestructure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E42BF07429D463A0008B5F45 /* ExitMotorcycleTraslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF07329D463A0008B5F45 /* ExitMotorcycleTraslator.swift */; };
+		E42BF08529D48120008B5F45 /* RegisterVehicle+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08429D48120008B5F45 /* RegisterVehicle+Inject.swift */; };
+		E42BF08929D483A3008B5F45 /* CarRepositoryCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */; };
 		E4568C6329CA38970055A8E7 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = E4568C6229CA38970055A8E7 /* Resolver */; };
 		E4B5F4A329D34E52002BDB13 /* ExitCarRepositoryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4A229D34E52002BDB13 /* ExitCarRepositoryCoreData.swift */; };
 		E4B5F4A529D34EEB002BDB13 /* ExitMotocycleRepositoryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4A429D34EEB002BDB13 /* ExitMotocycleRepositoryCoreData.swift */; };
@@ -75,11 +77,13 @@
 		E404FDE129CE492700DB4F7F /* RegisterMotocicleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterMotocicleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E404FDE429CE499100DB4F7F /* MotocicleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MotocicleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E404FDE529CE499100DB4F7F /* MotocicleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MotocicleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E404FDE829CE4A3800DB4F7F /* CoreData+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+Inject.swift"; sourceTree = "<group>"; };
+		E404FDE829CE4A3800DB4F7F /* ExitVehicle+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExitVehicle+Inject.swift"; sourceTree = "<group>"; };
 		E41387D429C4B55B000A07CC /* Infraestructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infraestructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41387D729C4B55B000A07CC /* Infraestructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infraestructure.h; sourceTree = "<group>"; };
 		E41387DC29C4B55B000A07CC /* InfraestructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraestructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E41387E129C4B55B000A07CC /* InfraestructureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfraestructureTests.swift; sourceTree = "<group>"; };
+		E42BF07329D463A0008B5F45 /* ExitMotorcycleTraslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitMotorcycleTraslator.swift; sourceTree = "<group>"; };
+		E42BF08429D48120008B5F45 /* RegisterVehicle+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterVehicle+Inject.swift"; sourceTree = "<group>"; };
+		E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepositoryCoreDataTest.swift; sourceTree = "<group>"; };
 		E4568C3A29C9FBA30055A8E7 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4568C3E29C9FE3E0055A8E7 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B5F4A229D34E52002BDB13 /* ExitCarRepositoryCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCarRepositoryCoreData.swift; sourceTree = "<group>"; };
@@ -151,9 +155,33 @@
 		E41387E029C4B55B000A07CC /* InfraestructureTests */ = {
 			isa = PBXGroup;
 			children = (
-				E41387E129C4B55B000A07CC /* InfraestructureTests.swift */,
+				E42BF08729D48371008B5F45 /* RegisterVehicle */,
 			);
 			path = InfraestructureTests;
+			sourceTree = "<group>";
+		};
+		E42BF08329D480F9008B5F45 /* Inject */ = {
+			isa = PBXGroup;
+			children = (
+				E42BF08429D48120008B5F45 /* RegisterVehicle+Inject.swift */,
+			);
+			path = Inject;
+			sourceTree = "<group>";
+		};
+		E42BF08629D481DE008B5F45 /* Inject */ = {
+			isa = PBXGroup;
+			children = (
+				E404FDE829CE4A3800DB4F7F /* ExitVehicle+Inject.swift */,
+			);
+			path = Inject;
+			sourceTree = "<group>";
+		};
+		E42BF08729D48371008B5F45 /* RegisterVehicle */ = {
+			isa = PBXGroup;
+			children = (
+				E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */,
+			);
+			path = RegisterVehicle;
 			sourceTree = "<group>";
 		};
 		E4568C3929C9FBA30055A8E7 /* Frameworks */ = {
@@ -242,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				E404FD9029CE2A4500DB4F7F /* ConfigurationCoreDataBase.swift */,
-				E404FDE829CE4A3800DB4F7F /* CoreData+Inject.swift */,
 				E404FD9229CE3C7500DB4F7F /* RegisterVehiclesDB.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -251,8 +278,9 @@
 		E4B5F49C29D3171D002BDB13 /* RegisterVehicle */ = {
 			isa = PBXGroup;
 			children = (
-				E404FD3529CC9F1300DB4F7F /* Anticorruption */,
 				E4B5F49D29D31748002BDB13 /* Repository */,
+				E404FD3529CC9F1300DB4F7F /* Anticorruption */,
+				E42BF08329D480F9008B5F45 /* Inject */,
 			);
 			path = RegisterVehicle;
 			sourceTree = "<group>";
@@ -269,8 +297,9 @@
 		E4B5F4A029D34DE9002BDB13 /* ExitVehicle */ = {
 			isa = PBXGroup;
 			children = (
-				E4B5F4A629D35261002BDB13 /* Anticorruption */,
 				E4B5F4A129D34E0C002BDB13 /* Repository */,
+				E4B5F4A629D35261002BDB13 /* Anticorruption */,
+				E42BF08629D481DE008B5F45 /* Inject */,
 			);
 			path = ExitVehicle;
 			sourceTree = "<group>";
@@ -288,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B5F4A829D3528D002BDB13 /* ExitCarTraslator.swift */,
+				E42BF07329D463A0008B5F45 /* ExitMotorcycleTraslator.swift */,
 			);
 			path = Anticorruption;
 			sourceTree = "<group>";
@@ -423,11 +453,13 @@
 				E4B5F4A329D34E52002BDB13 /* ExitCarRepositoryCoreData.swift in Sources */,
 				E404FD9429CE3C7500DB4F7F /* RegisterVehiclesDB.xcdatamodeld in Sources */,
 				E404FD9129CE2A4500DB4F7F /* ConfigurationCoreDataBase.swift in Sources */,
-				E404FDE929CE4A3800DB4F7F /* CoreData+Inject.swift in Sources */,
+				E42BF08529D48120008B5F45 /* RegisterVehicle+Inject.swift in Sources */,
+				E404FDE929CE4A3800DB4F7F /* ExitVehicle+Inject.swift in Sources */,
 				E404FD3F29CCB04F00DB4F7F /* RegisterMotorcycleTraslator.swift in Sources */,
 				E404FDD629CE47D900DB4F7F /* RegisterCarEntity+CoreDataClass.swift in Sources */,
 				E404FDD429CE47D900DB4F7F /* CarEntity+CoreDataProperties.swift in Sources */,
 				E404FDE329CE492700DB4F7F /* RegisterMotocicleEntity+CoreDataProperties.swift in Sources */,
+				E42BF07429D463A0008B5F45 /* ExitMotorcycleTraslator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E41387E229C4B55B000A07CC /* InfraestructureTests.swift in Sources */,
+				E42BF08929D483A3008B5F45 /* CarRepositoryCoreDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

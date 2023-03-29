@@ -10,8 +10,9 @@ import Infraestructure
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        registerCoreDataDependencies()
+        registerRegisterVehicleRepositoryDependencies()
+        registerExitVehicleRepositoryDependencies()
         registerRegisterVehicleViewModel()
-        registerPaymentParkingViewModel()
+        exitVehicleViewModel()
     }
 }

@@ -11,5 +11,5 @@ public enum RegisterVehicleError: Error {
     case exceedNumberVehicles(String)
     case fieldPlaqueError(String)
     case plaqueAError(String)
-    case vehicleExistError
+    case vehicleExistError(String)
 }

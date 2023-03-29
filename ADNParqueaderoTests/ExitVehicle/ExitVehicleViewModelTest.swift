@@ -1,5 +1,5 @@
 //
-//  PaymentParkingViewModelTest.swift
+//  ExitVehicleViewModelTest.swift
 //  ADNParqueaderoTests
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 24/03/23.
@@ -10,15 +10,15 @@ import XCTest
 @testable import Domain
 @testable import ADNParqueadero
 
-final class PaymentParkingViewModelTest: XCTestCase {
-    private var sut: PaymentParkingViewModel!
+final class ExitVehicleViewModelTest: XCTestCase {
+    private var sut: ExitVehicleViewModel!
     private var exitCarService: ExitCarServiceStub!
     private var exitMotorcycleService: ExitMotorcycleServiceStub!
     
     override func setUpWithError() throws {
         exitCarService = ExitCarServiceStub(exitCar: ConstantsMock.exitCarMock)
         exitMotorcycleService = ExitMotorcycleServiceStub(exitMotorcycle: ConstantsMock.exitMotorcycle)
-        sut = PaymentParkingViewModel(carService: exitCarService, motocicleService: exitMotorcycleService)
+        sut = ExitVehicleViewModel(carService: exitCarService, motocicleService: exitMotorcycleService)
         try super.setUpWithError()
     }
     
@@ -106,7 +106,7 @@ final class PaymentParkingViewModelTest: XCTestCase {
                                              cylinderCapacity: "600")
         
         exitMotorcycleService = ExitMotorcycleServiceStub(exitMotorcycle: motorcycle)
-        sut = PaymentParkingViewModel(carService: exitCarService, motocicleService: exitMotorcycleService)
+        sut = ExitVehicleViewModel(carService: exitCarService, motocicleService: exitMotorcycleService)
         
         exitMotorcycleService.responseHandler = .success {
             ConstantsMock.registerVehiclesWithMotorcycles

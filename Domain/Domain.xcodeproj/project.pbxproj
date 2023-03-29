@@ -39,6 +39,7 @@
 		E4B5F4B529D39FAC002BDB13 /* ExitCarRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4B429D39FAC002BDB13 /* ExitCarRepositoryStub.swift */; };
 		E4B5F4B829D3A679002BDB13 /* ExitMotorcycleServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4B729D3A679002BDB13 /* ExitMotorcycleServiceTest.swift */; };
 		E4B5F4BA29D3AF92002BDB13 /* ExitMotorcycleRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4B929D3AF92002BDB13 /* ExitMotorcycleRepositoryStub.swift */; };
+		E4B5F4BD29D3B5AA002BDB13 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4BC29D3B5AA002BDB13 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		E4B5F4B429D39FAC002BDB13 /* ExitCarRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCarRepositoryStub.swift; sourceTree = "<group>"; };
 		E4B5F4B729D3A679002BDB13 /* ExitMotorcycleServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitMotorcycleServiceTest.swift; sourceTree = "<group>"; };
 		E4B5F4B929D3AF92002BDB13 /* ExitMotorcycleRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitMotorcycleRepositoryStub.swift; sourceTree = "<group>"; };
+		E4B5F4BC29D3B5AA002BDB13 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				E4B5F47A29D23149002BDB13 /* Vehicle */,
 				E4B5F47929D23127002BDB13 /* ExitVechicle */,
 				E4B5F47829D23110002BDB13 /* RegisterVehicle */,
+				E4B5F4BB29D3B57B002BDB13 /* Common */,
 				E413879929C493D8000A07CC /* Domain.h */,
 				E413879A29C493D8000A07CC /* Domain.docc */,
 			);
@@ -313,6 +316,14 @@
 			path = Stub;
 			sourceTree = "<group>";
 		};
+		E4B5F4BB29D3B57B002BDB13 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5F4BC29D3B5AA002BDB13 /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -423,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B5F48729D23BAB002BDB13 /* RegisterCarService.swift in Sources */,
+				E4B5F4BD29D3B5AA002BDB13 /* Constants.swift in Sources */,
 				E4B5F49329D23FD6002BDB13 /* ExitMotorcycleService.swift in Sources */,
 				E4B5F48E29D23F19002BDB13 /* ExitMotocicleRepository.swift in Sources */,
 				E404FD4D29CDCB5400DB4F7F /* ExitVehicle.swift in Sources */,

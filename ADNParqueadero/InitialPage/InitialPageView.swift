@@ -45,7 +45,7 @@ struct InitialPageView: View {
     
     var paymentNavigationLink: some View {
         NavigationLink(
-            destination: PaymentParkingView(viewModel: Resolver.resolve(PaymentParkingViewModel.self)),
+            destination: ExitVehicleView(viewModel: Resolver.resolve(ExitVehicleViewModel.self)),
             label: {
                 HStack(alignment: .center, spacing: 6) {
                     Text("Pagar vehículo")

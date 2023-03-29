@@ -1,5 +1,5 @@
 //
-//  PaymentParkingViewModel.swift
+//  ExitVehicleViewModel.swift
 //  ADNParqueadero
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 21/03/23.
@@ -9,7 +9,7 @@ import Combine
 import Domain
 import Infraestructure
 
-final class PaymentParkingViewModel: BaseViewModel {
+final class ExitVehicleViewModel: BaseViewModel {
     private let carService: ExitCarServiceProtocol
     private let motocicleService: ExitMotorcycleServiceProtocol
     private var subscribers: Set<AnyCancellable> = []
@@ -17,16 +17,7 @@ final class PaymentParkingViewModel: BaseViewModel {
     private var storedData: Date?
     private var currentData: Date = Date()
     
-    
-    // MARK: -Price for type of vehicle
-    private let valueHourCar = 1000
-    private let valueDayCar = 8000
-    private var valueHourMotocicle = 500
-    private let valueDayMotocicle = 4000
-    
-    private var totalToPay = 0
-    
-    @Published var state = PaymentParkingState()
+    @Published var state = ExitVehicleState()
     
     init(carService: ExitCarServiceProtocol,
          motocicleService: ExitMotorcycleServiceProtocol) {
@@ -82,7 +73,7 @@ final class PaymentParkingViewModel: BaseViewModel {
     
 }
 
-extension PaymentParkingViewModel: PaymentParkingProtocol {
+extension ExitVehicleViewModel: ExitVehicleProtocol {
     func searchCar() {
         self.loading = true
         carService.retrieveExitCar(numerPlaque: state.inputNumberPlaque.uppercased())

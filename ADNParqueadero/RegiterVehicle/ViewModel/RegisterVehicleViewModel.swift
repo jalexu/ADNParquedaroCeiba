@@ -12,7 +12,6 @@ import Domain
 import Infraestructure
 
 class RegisterVehicleViewModel: BaseViewModel {
-    private let textLimit = 6
     private let registerCarService: RegisterCarServiceProtocol
     private let registerMotocicleService: RegisterMotorcycleServiceProtocol
     
@@ -49,19 +48,31 @@ class RegisterVehicleViewModel: BaseViewModel {
         self.loading = false
     }
     
+    private func showRegisterVehicleError(error: RegisterVehicleError) {
+        switch error {
+        case .vehicleExistError(let errorDescription):
+            showAlert(message: "\(errorDescription)")
+        case .exceedNumberVehicles(let errorDescription):
+            showAlert(message: "\(errorDescription)")
+        default:
+            break
+        }
+    }
+}
+
+// MARK: -SaveCar
+extension RegisterVehicleViewModel {
     private func saveCar(with data: RegisterVehicle, completion: @escaping () -> Void) {
         registerCarService.saveCar(with: data)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
-                debugPrint(error.localizedDescription)
-                if let errorDescription = error as? RegisterVehicleError {
-                    ///
-                    ///
-                } else {
-                    self?.showAlert(message: "Error al guardar")
-                }
                 self?.hiddeLoading()
+                if let registerError = error as? RegisterVehicleError  {
+                    self?.showRegisterVehicleError(error: registerError)
+                } else {
+                    self?.showAlert(message: Constants.errorMessageSaving)
+                }
             }, receiveValue: { [weak self] response in
                 debugPrint(response)
                 self?.hiddeLoading()
@@ -69,7 +80,10 @@ class RegisterVehicleViewModel: BaseViewModel {
             })
             .store(in: &subscribers)
     }
-    
+}
+
+// MARK: -SaveMotorcycle
+extension RegisterVehicleViewModel {
     private func saveMotocicle(with data: RegisterVehicle, completion: @escaping () -> Void) {
         registerMotocicleService.saveMotorcycle(with: data)
             .receive(on: DispatchQueue.main)
@@ -77,7 +91,11 @@ class RegisterVehicleViewModel: BaseViewModel {
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
                 self?.hiddeLoading()
-                self?.showAlert(message: "Error al guardar")
+                if let registerError = error as? RegisterVehicleError  {
+                    self?.showRegisterVehicleError(error: registerError)
+                } else {
+                    self?.showAlert(message: Constants.errorMessageSaving)
+                }
             }, receiveValue: { [weak self] response in
                 debugPrint(response)
                 self?.hiddeLoading()
@@ -85,18 +103,11 @@ class RegisterVehicleViewModel: BaseViewModel {
             })
             .store(in: &subscribers)
     }
-    
 }
 
 extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     func registerCar(completion: @escaping () -> Void) {
         self.loading = true
-        
-        guard !state.inputPlaque.isEmpty else {
-            self.loading = false
-            showAlert(message: "Debe ingresar un número de placa.")
-            return
-        }
         
         do {
             let registerDay = registerDate()
@@ -115,18 +126,12 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
             showAlert(message: error)
         } catch {
             hiddeLoading()
-            debugPrint("Error general al registrar Vehiculo")
+            showAlert(message: Constants.errorMessageSaving)
         }
     }
     
     func registerMotocicle(completion: @escaping () -> Void) {
         self.loading = true
-        
-        guard !state.inputPlaque.isEmpty else {
-            self.loading = false
-            showAlert(message: "Debe ingresar un número de placa.")
-            return
-        }
         
         do {
             let registerDay = registerDate()
@@ -148,7 +153,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
             showAlert(message: error)
         } catch {
             hiddeLoading()
-            debugPrint("Error general al registrar Vehiculo")
+            showAlert(message: Constants.errorMessageSaving)
         }
     }
     

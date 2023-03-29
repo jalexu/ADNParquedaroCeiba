@@ -28,13 +28,15 @@ public class RegisterMotorcycleService: RegisterMotorcycleServiceProtocol {
             .flatMap { (motocyclesStored, vehicleExist) -> AnyPublisher<Bool, Error> in
                 
                 guard capacityParkingMotorcycles > motocyclesStored else {
-                    return Fail<Bool, Error>(error: RegisterVehicleError.exceedNumberVehicles("El parquedaro no puede recibir mas motos."))
-                        .eraseToAnyPublisher()
+                    return Fail<Bool, Error>(error: RegisterVehicleError
+                        .exceedNumberVehicles(Constants.exceedNumberVehiclesMessage)
+                    ).eraseToAnyPublisher()
                 }
                 
                 guard !(vehicleExist) else {
-                    return Fail<Bool, Error>(error: RegisterVehicleError.vehicleExistError)
-                        .eraseToAnyPublisher()
+                    return Fail<Bool, Error>(error: RegisterVehicleError
+                        .vehicleExistError(Constants.vehicleExisteMessage)
+                    ).eraseToAnyPublisher()
                 }
                 
                 return self.registerMotorcycleRepository.saveMotocicle(with: data)

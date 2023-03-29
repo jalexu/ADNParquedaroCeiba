@@ -26,7 +26,7 @@ public class Vehicle {
     }
     
     private func validateNumbersCaracterPlaque() throws {
-        if plaqueId.count < 6 {
+        if plaqueId.count < Constants.maximumCharacters {
             throw VehicleError.fieldPlaqueError("Placa incorrecta debe tener 6 caracteres")
         }
     }

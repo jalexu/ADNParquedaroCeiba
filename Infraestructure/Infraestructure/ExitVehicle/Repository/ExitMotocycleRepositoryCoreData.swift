@@ -20,7 +20,7 @@ final class ExitMotocycleRepositoryCoreData: ExitMotocycleRepositoryProtocol {
             do {
                 let registerMotocicleEntities = try context.fetch(fetchRequest) as? [RegisterMotocicleEntity] ?? []
                 let registerMotocicleEntity = registerMotocicleEntities.first(where: { $0.plaqueId == numerPlaque })
-                let vehicleData = RegisterMotorcycleTraslator.transformNSManagedObjectToExitMotorcycle(registerMotocicleEntity)
+                let vehicleData = ExitMotorcycleTraslator.transformNSManagedObjectToExitMotorcycle(registerMotocicleEntity)
                 promise(.success(vehicleData))
             } catch {
                 promise(.failure(error))

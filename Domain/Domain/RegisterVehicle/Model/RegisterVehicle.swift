@@ -37,7 +37,7 @@ public class RegisterVehicle {
     }
     
     private func validatePlaqueA() throws {
-        if vehicle.getPlaqueId().first?.uppercased() == "A" && validateDaysForPlaqueA(registerDate: registerDay) {
+        if vehicle.getPlaqueId().first?.uppercased() == Constants.firstLetterA && validateDaysForPlaqueA(registerDate: registerDay) {
             throw RegisterVehicleError.plaqueAError("No está autorizado a ingresar.")
         }
     }

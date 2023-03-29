@@ -10,26 +10,6 @@ import Domain
 
 final class RegisterMotorcycleTraslator {
     
-    static func transformNSManagedObjectToExitMotorcycle(_ input: NSManagedObject?) -> Domain.ExitMotorcycle? {
-        var exitMotocycle: Domain.ExitMotorcycle? = nil
-        
-        if let dataInput = input {
-            let motocicleData = dataInput as? RegisterMotocicleEntity
-            let motocicle = motocicleData?.motocicles?.allObjects as? [MotocicleEntity]
-            
-            let today = Date()
-            exitMotocycle = ExitMotorcycle(
-                plaqueId: dataInput.value(forKey: "plaqueId") as! String,
-                registerDay: dataInput.value(forKey: "registerDay") as! Date,
-                exitDate: today,
-                cylinderCapacity: motocicle?.first?.value(forKey: "cylinderCapacity") as! String)
-            
-            return exitMotocycle
-        }
-        
-        return exitMotocycle
-    }
-    
     static func tranformRegisterVehicleToRegisterMotocicleEntity(
         data: Domain.RegisterVehicle, context: NSManagedObjectContext) throws -> RegisterMotocicleEntity {
             let registerMotocicleDB = RegisterMotocicleEntity(context: context)

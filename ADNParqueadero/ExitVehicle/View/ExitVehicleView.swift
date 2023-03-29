@@ -1,5 +1,5 @@
 //
-//  PaymentParkingView.swift
+//  ExitVehicleView.swift
 //  ADNParqueadero
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 21/03/23.
@@ -9,8 +9,7 @@ import SwiftUI
 import Domain
 import Combine
 
-
-struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtocol {
+struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
     @ObservedObject private var viewModel: ViewModel
     
     init(viewModel: ViewModel) {
@@ -107,10 +106,10 @@ struct PaymentParkingView<ViewModel>: View where ViewModel: PaymentParkingProtoc
     
     var typeVehiclePickerView: some View {
         VStack(spacing: 0) {
-            Text("Seleccione el tipo de vehículo a pagar")
+            Text(Constants.Labels.selectTypeVehicle)
                 .foregroundColor(.gray)
             
-            Picker("Tipo de vehículo", selection: $viewModel.state.seletedVehicleType) {
+            Picker(Constants.Labels.typeVehicle, selection: $viewModel.state.seletedVehicleType) {
                 ForEach(VehicleType.allCases, id: \.self) {
                     Text($0.rawValue)
                         .font(.system(size: 24))

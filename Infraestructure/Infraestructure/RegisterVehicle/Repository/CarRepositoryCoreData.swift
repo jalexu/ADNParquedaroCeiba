@@ -16,21 +16,9 @@ final class CarRepositoryCoreData: RegisterCarRepository {
     func saveCar(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error> {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
-            let registerCarDB = RegisterCarEntity(context: context)
-            
-            guard let car = data.getVehicle() as? Car else {
-                return promise(.failure(CostumErrors.dataDontFound))
-            }
-            registerCarDB.id = data.getId()
-            registerCarDB.plaqueId = car.getPlaqueId()
-            registerCarDB.registerDay = data.getRegisterDay()
-            
-            let cardDB = CarEntity(context: context)
-            cardDB.plaqueId = car.getPlaqueId()
-            
-            registerCarDB.addToCars(cardDB)
             
             do {
+                let _ = try RegisterCarTraslator.tranformRegisterVehicleToRegisterCarEntity(data: data, context: context)
                 try context.save()
                 debugPrint("We have been register vehicule")
                 promise(.success(true))
