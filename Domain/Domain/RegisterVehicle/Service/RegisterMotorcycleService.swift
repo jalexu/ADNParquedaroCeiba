@@ -13,43 +13,10 @@ public protocol RegisterMotorcycleServiceProtocol {
     func retrieveMotorcycles() -> AnyPublisher<Int, Error>
 }
 
-public class RegisterMotorcycleService: RegisterMotorcycleServiceProtocol {
+public class RegisterMotorcycleService: RegisterVehicleService {
     
-    private let registerMotorcycleRepository: RegisterMotorcycleRepository
-    
-    public init(registerMotocicleRepository: RegisterMotorcycleRepository) {
-        self.registerMotorcycleRepository = registerMotocicleRepository
+    public override init(registerVehicleRepository: RegisterVehicleRepository) {
+        super.init(registerVehicleRepository: registerVehicleRepository)
+        self.vehicleCapacity = 10
     }
-    
-    public func saveMotorcycle(with data: RegisterVehicle) -> AnyPublisher<Bool, Error> {
-        let capacityParkingMotorcycles: Int16 = 10
-        
-        return Publishers.Zip(retrieveMotorcycles(), retrieveRegisterVehicle(numerPlaque: data.getVehicle().getPlaqueId()))
-            .flatMap { (motocyclesStored, vehicleExist) -> AnyPublisher<Bool, Error> in
-                
-                guard capacityParkingMotorcycles > motocyclesStored else {
-                    return Fail<Bool, Error>(error: RegisterVehicleError
-                        .exceedNumberVehicles(Constants.exceedNumberVehiclesMessage)
-                    ).eraseToAnyPublisher()
-                }
-                
-                guard !(vehicleExist) else {
-                    return Fail<Bool, Error>(error: RegisterVehicleError
-                        .vehicleExistError(Constants.vehicleExisteMessage)
-                    ).eraseToAnyPublisher()
-                }
-                
-                return self.registerMotorcycleRepository.saveMotocicle(with: data)
-            }
-            .eraseToAnyPublisher()
-    }
-    
-    public func retrieveMotorcycles() -> AnyPublisher<Int, Error> {
-        registerMotorcycleRepository.retrieveMotorcycles()
-    }
-    
-    private func retrieveRegisterVehicle(numerPlaque: String) -> AnyPublisher<Bool, Error> {
-        registerMotorcycleRepository.retrieveRegisterMotorcycle(numerPlaque: numerPlaque)
-    }
-    
 }

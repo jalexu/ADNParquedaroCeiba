@@ -10,10 +10,8 @@ import Combine
 
 protocol ExitVehicleProtocol: ObservableObject {
     var state: ExitVehicleState { get set }
-    func searchCar()
-    func searchMotocicle()
-    func paymentCar()
-    func paymentMotocicle()
+    func searchVehicle()
+    func paymentVehicle()
     func onDisappear()
 }
 

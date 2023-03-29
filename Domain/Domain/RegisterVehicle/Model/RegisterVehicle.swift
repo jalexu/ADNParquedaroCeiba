@@ -17,6 +17,7 @@ public class RegisterVehicle {
     private let id: UUID = UUID()
     private var registerDay: Date
     private var vehicle: Vehicle
+    private let firstLetterA = "A"
     
     public init(vehicle: Vehicle, registerDay: Date) throws {
         self.vehicle = vehicle
@@ -37,7 +38,7 @@ public class RegisterVehicle {
     }
     
     private func validatePlaqueA() throws {
-        if vehicle.getPlaqueId().first?.uppercased() == Constants.firstLetterA && validateDaysForPlaqueA(registerDate: registerDay) {
+        if vehicle.getPlaqueId().first?.uppercased() == firstLetterA && validateDaysForPlaqueA(registerDate: registerDay) {
             throw RegisterVehicleError.plaqueAError("No está autorizado a ingresar.")
         }
     }

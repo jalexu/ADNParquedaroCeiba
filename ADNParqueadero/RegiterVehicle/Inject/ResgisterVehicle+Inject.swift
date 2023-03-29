@@ -11,8 +11,8 @@ import Domain
 extension Resolver {
     public static func registerRegisterVehicleViewModel() {
         register(RegisterVehicleViewModel.self) { resolver in
-            RegisterVehicleViewModel(registerCarService: resolver.resolve(RegisterCarServiceProtocol.self),
-                                     registerMotocicleService: resolver.resolve(RegisterMotorcycleServiceProtocol.self))
+            RegisterVehicleViewModel(registerCarService: resolver.resolve(RegisterVehicleServiceProtocol.self),
+                                     registerMotocicleService: resolver.resolve(RegisterVehicleServiceProtocol.self))
         }
     }
 }

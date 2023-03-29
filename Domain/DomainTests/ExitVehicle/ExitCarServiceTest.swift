@@ -11,18 +11,18 @@ import XCTest
 
 final class ExitCarServiceTest: XCTestCase {
 
-    private var sut: ExitCarService!
-    private var exitCarRepository: ExitCarRepositoryStub!
+    private var sut: ExitVehicleService!
+    private var exitCarRepository: ExitVehicleRepositoryStub!
     private var cancellable: AnyCancellable?
     
     override func setUpWithError() throws {
-        exitCarRepository = ExitCarRepositoryStub()
-        sut = ExitCarService(exitCarRepository: exitCarRepository)
+        exitCarRepository = ExitVehicleRepositoryStub()
+        sut = ExitVehicleService(exitVehicleRepository: exitCarRepository)
         try super.setUpWithError()
     }
     
     override func tearDownWithError() throws {
-        ExitCarRepositoryStub.error = nil
+        ExitVehicleRepositoryStub.error = nil
         exitCarRepository = nil
         sut = nil
         try super.tearDownWithError()
@@ -36,7 +36,7 @@ final class ExitCarServiceTest: XCTestCase {
         failureExpectation.isInverted = true
         
         // Act
-        cancellable = sut.retrieveExitCar(numerPlaque: "ASR789")
+        cancellable = sut.retrieveExitVehicle(numerPlaque: "ASR789")
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
                 XCTFail(error.localizedDescription)
@@ -58,10 +58,10 @@ final class ExitCarServiceTest: XCTestCase {
         let successExpectation = expectation(description: "Success retrieve")
         let failureExpectation = expectation(description: "Error retrieve")
         successExpectation.isInverted = true
-        ExitCarRepositoryStub.error = DomainTestMock.errorMock
+        ExitVehicleRepositoryStub.error = DomainTestMock.errorMock
         
         // Act
-        cancellable = sut.retrieveExitCar(numerPlaque: "ASR789")
+        cancellable = sut.retrieveExitVehicle(numerPlaque: "ASR789")
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
                 response = error
@@ -85,7 +85,7 @@ final class ExitCarServiceTest: XCTestCase {
         failureExpectation.isInverted = true
         
         // Act
-        cancellable = sut.deleteCar(numerPlaque: "ASR789")
+        cancellable = sut.delete(numerPlaque: "ASR789")
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
                 XCTFail(error.localizedDescription)
@@ -107,10 +107,10 @@ final class ExitCarServiceTest: XCTestCase {
         let successExpectation = expectation(description: "Success retrieve")
         let failureExpectation = expectation(description: "Error retrieve")
         successExpectation.isInverted = true
-        ExitCarRepositoryStub.error = DomainTestMock.errorMock
+        ExitVehicleRepositoryStub.error = DomainTestMock.errorMock
         
         // Act
-        cancellable = sut.deleteCar(numerPlaque: "ASR789")
+        cancellable = sut.delete(numerPlaque: "ASR789")
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
                 response = error

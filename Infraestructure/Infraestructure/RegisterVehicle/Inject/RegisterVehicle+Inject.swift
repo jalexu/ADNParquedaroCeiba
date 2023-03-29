@@ -15,22 +15,22 @@ extension Resolver {
     }
     
     private static func registerRegisterCarRepository() {
-        register(RegisterCarRepository.self) {
-            return CarRepositoryCoreData()
+        register(RegisterVehicleRepository.self) {
+            return RegisterVehicleRepositoryCoreData()
         }
         
-        register(RegisterCarServiceProtocol.self) { resolver in
-            return RegisterCarService(registerCarRepository: resolver.resolve(RegisterCarRepository.self))
+        register(RegisterVehicleServiceProtocol.self) { resolver in
+            return RegisterCarService(registerVehicleRepository: resolver.resolve(RegisterVehicleRepository.self))
         }
     }
     
     private static func registerRegisterMotocicleRepository() {
-        register(RegisterMotorcycleRepository.self) {
-            return MotorcycleRepositoryCoreData()
+        register(RegisterVehicleRepository.self) {
+            return RegisterVehicleRepositoryCoreData()
         }
         
-        register(RegisterMotorcycleServiceProtocol.self) { resolver in
-            return RegisterMotorcycleService(registerMotocicleRepository: resolver.resolve(RegisterMotorcycleRepository.self))
+        register(RegisterVehicleServiceProtocol.self) { resolver in
+            return RegisterMotorcycleService(registerVehicleRepository: resolver.resolve(RegisterVehicleRepository.self))
         }
     }
 }

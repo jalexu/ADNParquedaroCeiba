@@ -1,5 +1,5 @@
 //
-//  ExitCarServiceStub.swift
+//  ExitVehicleServiceStub.swift
 //  ADNParqueaderoTests
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 28/03/23.
@@ -9,27 +9,27 @@ import Combine
 @testable import Domain
 @testable import Infraestructure
 
-final class ExitCarServiceStub: ExitCarServiceProtocol {
+final class ExitVehicleServiceStub: ExitVehicleServiceProtocol {
     enum InteractorStubCase<T> {
         case success(() -> T)
         case failure(() -> Error)
     }
     
-    private var exitCar: ExitCar?
+    private var exitCar: ExitVehicle?
     var responseHandler: InteractorStubCase<Any>
     
-    init(exitCar: ExitCar?) {
+    init(exitCar: ExitVehicle?) {
         self.exitCar = exitCar
         responseHandler = .failure({
             CostumErrors.errorCoreData
         })
     }
     
-    func retrieveExitCar(numerPlaque: String) -> AnyPublisher<Domain.ExitCar?, Error> {
-        var publisher = CurrentValueSubject<Domain.ExitCar?, Error>(exitCar)
+    func retrieveExitVehicle(numerPlaque: String) -> AnyPublisher<Domain.ExitVehicle?, Error> {
+        var publisher = CurrentValueSubject<Domain.ExitVehicle?, Error>(exitCar)
         switch responseHandler {
         case .success(_):
-            publisher = CurrentValueSubject<Domain.ExitCar?, Error>(exitCar)
+            publisher = CurrentValueSubject<Domain.ExitVehicle?, Error>(exitCar)
         case .failure(let errorHandler):
             publisher.send(completion: .failure(errorHandler()))
         }
@@ -37,7 +37,7 @@ final class ExitCarServiceStub: ExitCarServiceProtocol {
         return publisher.eraseToAnyPublisher()
     }
     
-    func deleteCar(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         var publisher = CurrentValueSubject<Bool, Error>(true)
         switch responseHandler {
         case .success(_):

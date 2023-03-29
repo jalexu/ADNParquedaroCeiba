@@ -12,15 +12,15 @@ import Domain
 import Infraestructure
 
 class RegisterVehicleViewModel: BaseViewModel {
-    private let registerCarService: RegisterCarServiceProtocol
-    private let registerMotocicleService: RegisterMotorcycleServiceProtocol
+    private let registerCarService: RegisterVehicleServiceProtocol
+    private let registerMotocicleService: RegisterVehicleServiceProtocol
     
     private var subscribers: Set<AnyCancellable> = []
     
     @Published var state = RegisterVehiculeState()
     
-    init(registerCarService: RegisterCarServiceProtocol,
-         registerMotocicleService: RegisterMotorcycleServiceProtocol) {
+    init(registerCarService: RegisterVehicleServiceProtocol,
+         registerMotocicleService: RegisterVehicleServiceProtocol) {
         self.registerCarService = registerCarService
         self.registerMotocicleService = registerMotocicleService
     }
@@ -63,7 +63,7 @@ class RegisterVehicleViewModel: BaseViewModel {
 // MARK: -SaveCar
 extension RegisterVehicleViewModel {
     private func saveCar(with data: RegisterVehicle, completion: @escaping () -> Void) {
-        registerCarService.saveCar(with: data)
+        registerCarService.save(with: data)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
@@ -85,7 +85,7 @@ extension RegisterVehicleViewModel {
 // MARK: -SaveMotorcycle
 extension RegisterVehicleViewModel {
     private func saveMotocicle(with data: RegisterVehicle, completion: @escaping () -> Void) {
-        registerMotocicleService.saveMotorcycle(with: data)
+        registerMotocicleService.save(with: data)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
@@ -166,14 +166,14 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     
     func numberMoticicles() {
         self.loading = true
-        registerMotocicleService.retrieveMotorcycles()
+        registerMotocicleService.retrieveAll()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
                 self?.loading = false
             }, receiveValue: { [weak self] response in
-                self?.state.numersOfMotocicles = response
+               // self?.state.numersOfMotocicles = response
                 self?.loading = false
                 self?.objectWillChange.send()
             })
@@ -181,14 +181,14 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     }
     
     func numberCars(completion: @escaping () -> Void) {
-        registerCarService.retrieveNumberCars()
+        registerCarService.retrieveAll()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)
                 self?.loading = false
             }, receiveValue: { [weak self] response in
-                self?.state.numersOfCars = response
+                //self?.state.numersOfCars = response
                 self?.loading = false
                 completion()
             })

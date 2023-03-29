@@ -923,118 +923,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E40216D0-2EEA-4FD9-BBAE-B827351B5711"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Domain/RegisterVehicle/Service/RegisterMotorcycleService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "saveMotorcycle(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4F05CC06-9E9B-4D9C-B1B5-A30F3F726758"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Domain/RegisterVehicle/Service/RegisterMotorcycleService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "saveMotorcycle(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4F05CC06-9E9B-4D9C-B1B5-A30F3F726758 - 4db25f7fb200b688"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Domain.RegisterMotorcycleService.saveMotorcycle(with: Domain.RegisterVehicle) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt;"
-                  moduleName = "Domain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/Domain/RegisterVehicle/Service/RegisterMotorcycleService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "686">
-               </Location>
-               <Location
-                  uuid = "4F05CC06-9E9B-4D9C-B1B5-A30F3F726758 - c3bb4b45af2e9648"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int, Swift.Bool) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt; in Domain.RegisterMotorcycleService.saveMotorcycle(with: Domain.RegisterVehicle) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt;"
-                  moduleName = "Domain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/Domain/RegisterVehicle/Service/RegisterMotorcycleService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "616">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AC3DDFC2-E416-43AA-A833-186DDC612E5E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Domain/RegisterVehicle/Service/RegisterMotorcycleService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "saveMotorcycle(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AC3DDFC2-E416-43AA-A833-186DDC612E5E - c3bb4b45af2e9795"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int, Swift.Bool) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt; in Domain.RegisterMotorcycleService.saveMotorcycle(with: Domain.RegisterVehicle) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt;"
-                  moduleName = "Domain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/Domain/RegisterVehicle/Service/RegisterMotorcycleService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "893">
-               </Location>
-               <Location
-                  uuid = "AC3DDFC2-E416-43AA-A833-186DDC612E5E - c3bb4b45af2e9795"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int, Swift.Bool) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt; in Domain.RegisterMotorcycleService.saveMotorcycle(with: Domain.RegisterVehicle) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt;"
-                  moduleName = "Domain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/Domain/RegisterVehicle/Service/RegisterMotorcycleService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "833">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4B182AFD-C1FF-460D-B80A-314145F9B97F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1097,22 +985,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6601B4EC-35E2-467F-A248-39E641A9784F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Domain/RegisterVehicle/Service/RegisterCarService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "saveCar(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "02EEAC25-4D7F-4759-90E6-9636068FF1DC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1122,7 +994,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "retrieveExitCar(numerPlaque:)"
+            landmarkName = "retrieveExitVehicle(numerPlaque:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1155,54 +1027,6 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "retrieveExitCar(numerPlaque:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "36E20419-F089-4BC4-B277-2B7D0B067382"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Domain/RegisterVehicle/Model/RegisterVehicle.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "validateDaysForPlaqueA(registerDate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C4049AD6-A969-4977-8025-F71DD1038FD4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Domain/RegisterVehicle/Model/RegisterVehicle.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "validateDaysForPlaqueA(registerDate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "13200D09-E7FB-41F4-954B-5BE8B702FA19"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Domain/RegisterVehicle/Model/RegisterVehicle.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "validatePlaqueA()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1299,6 +1123,134 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "retrieveMotocycle(numerPlaque:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F2ED39F-8C0B-4268-95EB-069F7A2A9211"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Domain/Domain/ExitVechicle/Service/ExitCarService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "ExitVehicleServiceProtocol"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B510844D-48C4-4946-B6BE-980E2BFBE2DB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "save(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EE9CE0A-4260-4AAF-A4CE-604CB522F56A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "save(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C62C9D5F-B90F-47AA-AC41-FDAF4370691F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "retrieveByPlaque(numerPlaque:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EBDD967-882F-49CE-999B-70A5BE10FD18"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "retrieveByPlaque(numerPlaque:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64A62DEA-59B2-41FF-9D20-D98C9F3E48D4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Anticorruption/RegisterCarTraslator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "tranformRegisterVehicleToRegisterCarEntity(data:context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "427DA96D-6D2B-4106-A1E7-2FC8C179F239"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ADNParqueadero/ExitVehicle/ViewModel/ExitVehicleViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "searchVehicle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0213395E-EAA3-4D52-A091-C14885ACF582"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Domain/Domain/RegisterVehicle/Service/RegisterVehicleService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "numberVehicleStoredForType(data:vehicle:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

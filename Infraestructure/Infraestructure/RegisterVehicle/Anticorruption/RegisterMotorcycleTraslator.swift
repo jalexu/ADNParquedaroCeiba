@@ -9,15 +9,14 @@ import CoreData
 import Domain
 
 final class RegisterMotorcycleTraslator {
-    
+    @discardableResult
     static func tranformRegisterVehicleToRegisterMotocicleEntity(
-        data: Domain.RegisterVehicle, context: NSManagedObjectContext) throws -> RegisterMotocicleEntity {
-            let registerMotocicleDB = RegisterMotocicleEntity(context: context)
-            
+        data: Domain.RegisterVehicle, context: NSManagedObjectContext) -> RegisterMotocicleEntity? {
             guard let motorcycle = data.getVehicle() as? Motorcycle else {
-                throw CostumErrors.dataDontFound
+                return nil
             }
             
+            let registerMotocicleDB = RegisterMotocicleEntity(context: context)
             registerMotocicleDB.id = data.getId()
             registerMotocicleDB.plaqueId = motorcycle.getPlaqueId()
             registerMotocicleDB.registerDay = data.getRegisterDay()
@@ -30,6 +29,23 @@ final class RegisterMotorcycleTraslator {
             
             return registerMotocicleDB
         }
+    
+    static func entityToRegisterVehicle(entities: [RegisterMotocicleEntity]) throws -> [RegisterVehicle] {
+        var vehicleData: [RegisterVehicle] = []
+        vehicleData = try entities.map { entity in
+            let registerVehicle = try RegisterVehicle(
+                vehicle: toMotorcicly(entities: entity.motocicles?.allObjects as? [MotocicleEntity] ?? []),
+                registerDay: entity.registerDay!)
+            return  registerVehicle
+        }
+        
+        return vehicleData
+    }
+    
+    static private func toMotorcicly(entities: [MotocicleEntity]) throws -> Motorcycle {
+        return try Motorcycle(plaqueId: entities.first?.plaqueId ?? "",
+                              cylinderCapacity: entities.first?.cylinderCapacity ?? "")
+    }
     
     static func transformRegisterMotocicleEntityToRegisterMotocicleEntity(_ input: RegisterMotocicleEntity?) throws -> Domain.RegisterVehicle? {
         var registerVehicle: Domain.RegisterVehicle? = nil

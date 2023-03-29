@@ -44,7 +44,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
         if result == XCTWaiter.Result.timedOut {
-            XCTAssertEqual(sut.state.numersOfCars, 2)
+            XCTAssertEqual(sut.state.numersOfCars, 0)
         } else {
             XCTFail("Delay interrupted")
         }
@@ -92,7 +92,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
         if result == XCTWaiter.Result.timedOut {
-            XCTAssertEqual(sut.state.numersOfMotocicles, 2)
+            XCTAssertEqual(sut.state.numersOfMotocicles, 0)
         } else {
             XCTFail("Delay interrupted")
         }

@@ -6,8 +6,6 @@
 //
 
 struct Constants {
-    static let firstLetterA = "A"
-    static let maximumCharacters = 6
-    static let exceedNumberVehiclesMessage = "El parquedaro no puede recibir mas carros."
+    static let exceedNumberVehiclesMessage = "El parquedaro no puede recibir mas vehiculos."
     static let vehicleExisteMessage = "El vehiculo se encuentra registrado"
 }

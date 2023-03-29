@@ -53,4 +53,20 @@ class DomainTestMock {
     static let errorMock: Error = {
         NSError(domain:"Data does't exist", code: 500, userInfo:nil)
     }()
+    
+    static func registerVehiclesMock() -> [Domain.RegisterVehicle] {
+        var numberCarsStored: [Domain.RegisterVehicle] = []
+        numberCarsStored.append(try! RegisterVehicle(vehicle: motorcycleMock, registerDay: getRegisterDayMock()))
+        return numberCarsStored
+    }
+    
+    static let RegisterVehiclesWith20ElementsMock: [Domain.RegisterVehicle] = {
+        var numberCarsStored: [Domain.RegisterVehicle] = []
+        if numberCarsStored.count < 20 {
+            numberCarsStored.append(contentsOf: registerVehiclesMock())
+        }
+        return numberCarsStored
+        
+    }()
+    
 }

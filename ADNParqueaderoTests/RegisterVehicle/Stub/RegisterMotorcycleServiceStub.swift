@@ -9,7 +9,8 @@ import Combine
 @testable import Domain
 @testable import Infraestructure
 
-final class RegisterMotorcycleServiceStub: RegisterMotorcycleServiceProtocol {
+final class RegisterMotorcycleServiceStub: RegisterVehicleServiceProtocol {
+    
     enum InteractorStubCase<T> {
         case success(() -> T)
         case failure(() -> Error)
@@ -25,7 +26,7 @@ final class RegisterMotorcycleServiceStub: RegisterMotorcycleServiceProtocol {
         })
     }
     
-    func saveMotorcycle(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error> {
+    func save(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error> {
         var publisher = CurrentValueSubject<Bool, Error>(true)
         switch responseHandler {
         case .success(_):
@@ -37,11 +38,16 @@ final class RegisterMotorcycleServiceStub: RegisterMotorcycleServiceProtocol {
         return publisher.eraseToAnyPublisher()
     }
     
-    func retrieveMotorcycles() -> AnyPublisher<Int, Error> {
-        var publisher = CurrentValueSubject<Int, Error>(vehicles.count)
+    func retrieveAll() -> AnyPublisher<[Domain.RegisterVehicle], Error> {
+        let stored = [
+            try! Domain.RegisterVehicle(
+                vehicle: Car(plaqueId: "IOD890") ,
+                registerDay: ConstantsMock.getDateMock())
+        ]
+        var publisher = CurrentValueSubject<[Domain.RegisterVehicle], Error>(stored)
         switch responseHandler {
         case .success(_):
-            publisher = CurrentValueSubject<Int, Error>(vehicles.count)
+            publisher = CurrentValueSubject<[Domain.RegisterVehicle], Error>(stored)
         case .failure(let errorHandler):
             publisher.send(completion: .failure(errorHandler()))
         }

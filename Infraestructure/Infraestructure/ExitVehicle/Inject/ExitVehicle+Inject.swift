@@ -10,27 +10,12 @@ import Domain
 
 extension Resolver {
     public static func registerExitVehicleRepositoryDependencies() {
-        registerExitCarService()
-        registerExitMotorcycleService()
-    }
-    
-    private static func registerExitCarService() {
-        register(ExitCarRepositoryProtocol.self) {
-            return ExitCarRepositoryCoreData()
+        register(ExitVehicleRepositoryProtocol.self) {
+            return ExitVehicleRepositoryCoreData()
         }
         
-        register(ExitCarServiceProtocol.self) { resolver in
-            return ExitCarService(exitCarRepository: resolver.resolve(ExitCarRepositoryProtocol.self))
-        }
-    }
-    
-    private static func registerExitMotorcycleService() {
-        register(ExitMotocycleRepositoryProtocol.self) {
-            return ExitMotocycleRepositoryCoreData()
-        }
-        
-        register(ExitMotorcycleServiceProtocol.self) { resolver in
-            return ExitMotorcycleService(exitMotocicleRepository: resolver.resolve(ExitMotocycleRepositoryProtocol.self))
+        register(ExitVehicleServiceProtocol.self) { resolver in
+            return ExitVehicleService(exitVehicleRepository: resolver.resolve(ExitVehicleRepositoryProtocol.self))
         }
     }
     

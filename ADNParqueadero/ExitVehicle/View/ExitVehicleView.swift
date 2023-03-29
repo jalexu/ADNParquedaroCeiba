@@ -62,11 +62,7 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
     
     var searchButtonView: some View {
         Button {
-            if viewModel.state.seletedVehicleType == .car {
-                viewModel.searchCar()
-            } else {
-                viewModel.searchMotocicle()
-            }
+            viewModel.searchVehicle()
         } label: {
             HStack(alignment: .center, spacing: 6) {
                 Text("Buscar")
@@ -84,11 +80,7 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
     
     var payButtonView: some View {
         Button {
-            if viewModel.state.seletedVehicleType == .car {
-                viewModel.paymentCar()
-            } else {
-                viewModel.paymentMotocicle()
-            }
+            viewModel.paymentVehicle()
         } label: {
             HStack(alignment: .center, spacing: 6) {
                 Text("Pagar")
@@ -125,7 +117,7 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
             ScrollView {
                 VStack {
                     if !viewModel.state.showFildsPay {
-                        typeVehiclePickerView
+                        //typeVehiclePickerView
                         VStack(alignment: .center, spacing: 20) {
                             TextField("Ingresa la placa", text: $viewModel.state.inputNumberPlaque)
                                 .keyboardType(.asciiCapable)

@@ -10,7 +10,7 @@ import CoreData
 import Domain
 import Combine
 
-final class CarRepositoryCoreData: RegisterCarRepository {
+final class CarRepositoryCoreData {
     init() {}
     
     func saveCar(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error> {
@@ -18,7 +18,7 @@ final class CarRepositoryCoreData: RegisterCarRepository {
             let context = ConfigurationCoreDataBase.context
             
             do {
-                let _ = try RegisterCarTraslator.tranformRegisterVehicleToRegisterCarEntity(data: data, context: context)
+                RegisterCarTraslator.tranformRegisterVehicleToRegisterCarEntity(data: data, context: context)
                 try context.save()
                 debugPrint("We have been register vehicule")
                 promise(.success(true))
