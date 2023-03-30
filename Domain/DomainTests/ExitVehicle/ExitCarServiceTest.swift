@@ -85,7 +85,7 @@ final class ExitCarServiceTest: XCTestCase {
         failureExpectation.isInverted = true
         
         // Act
-        cancellable = sut.delete(numerPlaque: "ASR789")
+        cancellable = sut.deleteRegister(numerPlaque: "ASR789")
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
                 XCTFail(error.localizedDescription)
@@ -110,7 +110,7 @@ final class ExitCarServiceTest: XCTestCase {
         ExitVehicleRepositoryStub.error = DomainTestMock.errorMock
         
         // Act
-        cancellable = sut.delete(numerPlaque: "ASR789")
+        cancellable = sut.deleteRegister(numerPlaque: "ASR789")
             .sink(receiveCompletion: { completion in
                 guard case .failure(let error) = completion else { return }
                 response = error

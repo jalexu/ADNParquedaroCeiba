@@ -132,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				E4B5F4BB29D3B57B002BDB13 /* Common */,
-				E413879A29C493D8000A07CC /* Domain.docc */,
-				E413879929C493D8000A07CC /* Domain.h */,
 				E4B5F47929D23127002BDB13 /* ExitVechicle */,
 				E4B5F47829D23110002BDB13 /* RegisterVehicle */,
 			);
@@ -310,6 +308,8 @@
 		E4B5F4BB29D3B57B002BDB13 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E413879929C493D8000A07CC /* Domain.h */,
+				E413879A29C493D8000A07CC /* Domain.docc */,
 				E4B5F4BC29D3B5AA002BDB13 /* Constants.swift */,
 			);
 			path = Common;

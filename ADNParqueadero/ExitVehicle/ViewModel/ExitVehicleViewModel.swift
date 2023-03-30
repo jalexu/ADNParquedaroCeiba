@@ -29,7 +29,7 @@ final class ExitVehicleViewModel: BaseViewModel {
     
     private func deleteVehicle() {
         self.loading = true
-        exitVehicleService.delete(numerPlaque: state.inputNumberPlaque.uppercased())
+        exitVehicleService.deleteRegister(numerPlaque: state.inputNumberPlaque.uppercased())
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 debugPrint(error.localizedDescription)

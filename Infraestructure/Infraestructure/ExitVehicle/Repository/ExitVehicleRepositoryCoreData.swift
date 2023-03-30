@@ -42,7 +42,7 @@ final class ExitVehicleRepositoryCoreData: ExitVehicleRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+    func deleteRegister(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
             let fetchRequestCar = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterCarEntity")

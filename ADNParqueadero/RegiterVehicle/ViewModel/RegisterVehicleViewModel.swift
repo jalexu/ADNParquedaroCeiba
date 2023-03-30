@@ -158,29 +158,11 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     }
     
     func onAppear() {
-        self.loading = true
-        numberCars { [weak self] in
-            self?.numberMoticicles()
-        }
+        numberVehicles()
     }
     
-    func numberMoticicles() {
+    private func numberVehicles() {
         self.loading = true
-        registerMotocicleService.retrieveAll()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { [weak self] completion in
-                guard case .failure(let error) = completion else { return }
-                debugPrint(error.localizedDescription)
-                self?.loading = false
-            }, receiveValue: { [weak self] response in
-               // self?.state.numersOfMotocicles = response
-                self?.loading = false
-                self?.objectWillChange.send()
-            })
-            .store(in: &self.subscribers)
-    }
-    
-    func numberCars(completion: @escaping () -> Void) {
         registerCarService.retrieveAll()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
@@ -188,11 +170,18 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
                 debugPrint(error.localizedDescription)
                 self?.loading = false
             }, receiveValue: { [weak self] response in
-                //self?.state.numersOfCars = response
+                self?.showNumberVehicles(registerVehicles: response)
                 self?.loading = false
-                completion()
             })
             .store(in: &subscribers)
+    }
+    
+    
+    private func showNumberVehicles(registerVehicles: [RegisterVehicle]) {
+        updateState {
+            state.numersOfCars = registerVehicles.map({ $0.getVehicle() as? Motorcycle}).count
+            state.numersOfCars = registerVehicles.map({ $0.getVehicle() as? Car}).count
+        }
     }
     
     func onDisappear() {

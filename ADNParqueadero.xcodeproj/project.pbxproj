@@ -226,6 +226,7 @@
 		E42BF07D29D46F8A008B5F45 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E4568C7A29CA817F0055A8E7 /* BaseModel */,
 				E42BF07F29D46FE0008B5F45 /* Constants.swift */,
 			);
 			path = Common;
@@ -309,12 +310,11 @@
 			isa = PBXGroup;
 			children = (
 				E4568C5629CA33000055A8E7 /* ADNParqueadero+Inject */,
+				E4568C6529CA475D0055A8E7 /* Info.plist */,
 				E4FA503F29C12C1500A11573 /* ADNParqueaderoApp.swift */,
 				E4FA504329C12C1700A11573 /* Assets.xcassets */,
-				E4568C7A29CA817F0055A8E7 /* BaseModel */,
 				E42BF07D29D46F8A008B5F45 /* Common */,
 				E4568C7029CA7E9D0055A8E7 /* ExitVehicle */,
-				E4568C6529CA475D0055A8E7 /* Info.plist */,
 				E413880329C4E7FE000A07CC /* InitialPage */,
 				E4FA504529C12C1700A11573 /* Preview Content */,
 				E4568C6F29CA7E7F0055A8E7 /* RegiterVehicle */,

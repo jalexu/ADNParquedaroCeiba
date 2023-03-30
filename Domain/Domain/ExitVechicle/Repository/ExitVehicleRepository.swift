@@ -8,5 +8,5 @@ import Combine
 
 public protocol ExitVehicleRepositoryProtocol {
     func retrieveExitVehicle(numerPlaque: String) -> AnyPublisher<ExitVehicle?, Error>
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error>
+    func deleteRegister(numerPlaque: String) -> AnyPublisher<Bool, Error>
 }

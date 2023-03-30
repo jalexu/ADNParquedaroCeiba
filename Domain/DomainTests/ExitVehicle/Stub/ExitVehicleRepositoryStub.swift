@@ -25,7 +25,7 @@ final class ExitVehicleRepositoryStub: ExitVehicleRepositoryProtocol {
         return subject.eraseToAnyPublisher()
     }
     
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+    func deleteRegister(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         let subject = CurrentValueSubject<Bool, Error>(true)
         
         if let error = ExitVehicleRepositoryStub.error {

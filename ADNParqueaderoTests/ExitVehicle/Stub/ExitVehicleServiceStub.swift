@@ -37,7 +37,7 @@ final class ExitVehicleServiceStub: ExitVehicleServiceProtocol {
         return publisher.eraseToAnyPublisher()
     }
     
-    func delete(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+    func deleteRegister(numerPlaque: String) -> AnyPublisher<Bool, Error> {
         var publisher = CurrentValueSubject<Bool, Error>(true)
         switch responseHandler {
         case .success(_):

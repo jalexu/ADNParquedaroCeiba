@@ -30,7 +30,6 @@ public class RegisterVehicleService: RegisterVehicleServiceProtocol, VehicleCapa
         
         return Publishers.Zip(retrieveAll(), retrieveRegisterVehicle(numerPlaque: data.getVehicle().getPlaqueId()))
             .flatMap { (vehiclesStored, vehicleExist) -> AnyPublisher<Bool, Error> in
-                
                 let numbervehiclesStored = self.numberVehicleStoredForType(data: vehiclesStored, vehicle: data.getVehicle())
                 
                 guard self.vehicleCapacity > numbervehiclesStored else {

@@ -146,6 +146,7 @@
 				E4B5F4A029D34DE9002BDB13 /* ExitVehicle */,
 				E41387D729C4B55B000A07CC /* Infraestructure.h */,
 				E4B5F49C29D3171D002BDB13 /* RegisterVehicle */,
+				E42BF09029D5B5D6008B5F45 /* Vehicle */,
 			);
 			path = Infraestructure;
 			sourceTree = "<group>";
@@ -182,6 +183,23 @@
 			path = RegisterVehicle;
 			sourceTree = "<group>";
 		};
+		E42BF08E29D4E31F008B5F45 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5F49A29D315BE002BDB13 /* RegisterCarEntity */,
+				E4B5F49729D31556002BDB13 /* RegisterMotocycleEntity */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E42BF09029D5B5D6008B5F45 /* Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5F49429D314D2002BDB13 /* Entity */,
+			);
+			path = Vehicle;
+			sourceTree = "<group>";
+		};
 		E4568C3929C9FBA30055A8E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,9 +221,7 @@
 		E4B5F49429D314D2002BDB13 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				E4B5F49729D31556002BDB13 /* RegisterMotocycleEntity */,
 				E4B5F49829D3157A002BDB13 /* MotocycleEntity */,
-				E4B5F49A29D315BE002BDB13 /* RegisterCarEntity */,
 				E4B5F49929D3159C002BDB13 /* CarEntity */,
 			);
 			path = Entity;
@@ -223,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				E4B5F49B29D3166A002BDB13 /* CoreData */,
-				E4B5F49429D314D2002BDB13 /* Entity */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -277,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				E404FD3529CC9F1300DB4F7F /* Anticorruption */,
+				E42BF08E29D4E31F008B5F45 /* Entity */,
 				E42BF08329D480F9008B5F45 /* Inject */,
 				E4B5F49D29D31748002BDB13 /* Repository */,
 			);
