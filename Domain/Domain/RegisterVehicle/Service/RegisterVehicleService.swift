@@ -59,12 +59,10 @@ public class RegisterVehicleService: RegisterVehicleServiceProtocol, VehicleCapa
     
     private func numberVehicleStoredForType(data: [RegisterVehicle], vehicle: Vehicle) -> Int {
         if ((vehicle as? Car) != nil) {
-            return data.map({ $0.getVehicle() as? Car}).count
+            return data.compactMap({ $0.getVehicle() as? Car}).count
         } else {
-            return data.map({ $0.getVehicle() as? Motorcycle}).count
+            return data.compactMap({ $0.getVehicle() as? Motorcycle}).count
         }
     }
-
-    
 }
 

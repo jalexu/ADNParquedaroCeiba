@@ -21,5 +21,5 @@ final class ExitVehicleState: ObservableObject {
     var showFildsPay: Bool = false
     var showMessage: Bool = false
     var showError: Bool = false
-    var seletedVehicleType: VehicleType = VehicleType.car
+    var seletedVehicleType: VehicleType? = nil
 }

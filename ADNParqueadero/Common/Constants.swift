@@ -6,13 +6,17 @@
 //
 
 struct Constants {
-    static let errorMessageSaving = "Error al guardar"
+    static let errorMessageSaving = "General.errorMessageSaving".localized()
     static let maximumCharacters = 6
     
     struct Labels {
-        static let enterPlaque = "Ingresa la placa"
-        static let selectTypeVehicle = "Seleccione el tipo de vehículo a ingresar"
-        static let typeVehicle = "Tipo de vehículo"
-        static let noParkingMessage = "No se puede parquear"
+        static let enterPlaque = "Labels.enterPlaque".localized()
+        static let selectTypeVehicle = "Labels.selectTypeVehicle".localized()
+        static let typeVehicle = "Labels.typeVehicle".localized()
+        static let noParkingMessage = "Labels.noParkingMessage".localized()
+    }
+    
+    struct Title {
+        static let parqueaderoTitle = "Title.parqueadero".localized()
     }
 }

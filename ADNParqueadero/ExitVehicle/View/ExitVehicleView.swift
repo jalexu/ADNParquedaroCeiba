@@ -10,6 +10,7 @@ import Domain
 import Combine
 
 struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
+    
     @ObservedObject private var viewModel: ViewModel
     
     init(viewModel: ViewModel) {
@@ -22,7 +23,7 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
                 Text("Días:")
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
-                    .foregroundColor(.black)
+                    .foregroundColor(.gray)
                     .padding([.top, .trailing, .leading], 20)
                 Text(String(viewModel.state.daysToPay))
                     .fontWeight(.bold)
@@ -35,7 +36,7 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
                 Text("Horas:")
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
-                    .foregroundColor(.black)
+                    .foregroundColor(.gray)
                     .padding([.top, .trailing, .leading], 20)
                 Text(String(viewModel.state.hoursToPay))
                     .fontWeight(.bold)
@@ -48,12 +49,12 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
                 Text("Valor a pagar:")
                     .fontWeight(.black)
                     .font(.system(size: 20))
-                    .foregroundColor(.black)
+                    .foregroundColor(.orange)
                     .padding([.top, .trailing, .leading], 20)
                 Text(String(viewModel.state.valueToPay))
                     .fontWeight(.bold)
                     .font(.system(size: 20))
-                    .foregroundColor(.gray)
+                    .foregroundColor(.orange)
                     .padding([.top, .trailing, .leading], 20)
             }
             
@@ -96,28 +97,15 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
         }
     }
     
-    var typeVehiclePickerView: some View {
-        VStack(spacing: 0) {
-            Text(Constants.Labels.selectTypeVehicle)
-                .foregroundColor(.gray)
-            
-            Picker(Constants.Labels.typeVehicle, selection: $viewModel.state.seletedVehicleType) {
-                ForEach(VehicleType.allCases, id: \.self) {
-                    Text($0.rawValue)
-                        .font(.system(size: 24))
-                }
-            }
-            .pickerStyle(.segmented)
-        }
-        .padding([.top ,.trailing, .leading], 20)
-    }
-    
     var body: some View {
         ZStack{
             ScrollView {
                 VStack {
+                    if viewModel.state.valueToPay != 0 {
+                        CircleImageView(imageName: "thanks")
+                    }
+                    
                     if !viewModel.state.showFildsPay {
-                        //typeVehiclePickerView
                         VStack(alignment: .center, spacing: 20) {
                             TextField("Ingresa la placa", text: $viewModel.state.inputNumberPlaque)
                                 .keyboardType(.asciiCapable)
@@ -145,10 +133,10 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
                 .onDisappear {
                     viewModel.onDisappear()
                 }
-                
             }
             .background(Color("ColorBackground").ignoresSafeArea(.all,edges: [.bottom, .leading, .trailing]))
+            
         }
-        .navigationTitle("Parqueadero ADN")
+        .navigationTitle(Constants.Title.parqueaderoTitle)
     }
 }

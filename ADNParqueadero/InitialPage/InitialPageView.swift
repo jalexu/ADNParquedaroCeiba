@@ -10,21 +10,6 @@ import Resolver
 
 struct InitialPageView: View {
     
-    var navigationTitleView: some View {
-        HStack(spacing: 4) {
-            Spacer()
-            Text("Parqueadero ADN")
-                .font(.title3)
-                .fontWeight(.black)
-                .foregroundColor(.black)
-            Image(systemName: "flag.2.crossed")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30, height: 10, alignment: .center)
-            Spacer()
-        }
-    }
-    
     var registerNavigationLink: some View {
         NavigationLink(
             destination: RegisterVehicleView(viewModel: Resolver.resolve(RegisterVehicleViewModel.self)),
@@ -64,35 +49,31 @@ struct InitialPageView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                VStack {
-                    navigationTitleView
-                        .padding(.bottom)
-                        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                        .background(Color.white)
-                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y:5)
-                        .frame(maxWidth: .infinity)
-                    
-                    Spacer()
-                    
-                    HStack(spacing: 20) {
-                        registerNavigationLink
-                        
-                        paymentNavigationLink
-                    }
-                    .padding(.bottom, 50)
-                    
-                    Spacer()
+                VStack(alignment: .center, spacing: 60) {
+                    registerNavigationLink
+                    paymentNavigationLink
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text(Constants.Title.parqueaderoTitle)
+                        .font(.headline)
+                        .foregroundColor(.orange)
                     
                 }
-                .background(Color("ColorBackground").ignoresSafeArea(.all,edges: .all))
             }
-            .ignoresSafeArea(.all)
+            .background(MotionAnimationView()).ignoresSafeArea(.all,edges: [.bottom, .leading, .trailing])
         }
+        
     }
 }
 
+#if DEBUG
 struct InitialPageView_Previews: PreviewProvider {
     static var previews: some View {
         InitialPageView()
     }
 }
+#endif

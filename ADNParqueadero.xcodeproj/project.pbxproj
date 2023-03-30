@@ -14,6 +14,11 @@
 		E404FDBC29CE419400DB4F7F /* Infraestructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E404FDBB29CE419400DB4F7F /* Infraestructure.framework */; };
 		E41387BA29C49538000A07CC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387B929C49538000A07CC /* Domain.framework */; };
 		E42BF08029D46FE0008B5F45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF07F29D46FE0008B5F45 /* Constants.swift */; };
+		E42BF09529D5C2B7008B5F45 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF09429D5C2B7008B5F45 /* String+Extension.swift */; };
+		E42BF09729D5EB1D008B5F45 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E42BF09629D5EB1D008B5F45 /* Localizable.strings */; };
+		E42BF09C29D5EBF6008B5F45 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF09B29D5EBF6008B5F45 /* CircleImageView.swift */; };
+		E42BF09E29D5FB6F008B5F45 /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF09D29D5FB6F008B5F45 /* MotionAnimationView.swift */; };
+		E42BF0A129D61609008B5F45 /* CreateVehicleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF0A029D61609008B5F45 /* CreateVehicleStrategy.swift */; };
 		E4568C3129C9D9610055A8E7 /* RegisterVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */; };
 		E4568C3329C9DB750055A8E7 /* RegisterVehiculeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */; };
 		E4568C3529C9E1710055A8E7 /* RegisterVehiculeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3429C9E1710055A8E7 /* RegisterVehiculeContract.swift */; };
@@ -64,6 +69,11 @@
 		E41387B929C49538000A07CC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41387F529C4B5C4000A07CC /* Infraestructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infraestructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42BF07F29D46FE0008B5F45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E42BF09429D5C2B7008B5F45 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E42BF09629D5EB1D008B5F45 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		E42BF09B29D5EBF6008B5F45 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		E42BF09D29D5FB6F008B5F45 /* MotionAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimationView.swift; sourceTree = "<group>"; };
+		E42BF0A029D61609008B5F45 /* CreateVehicleStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVehicleStrategy.swift; sourceTree = "<group>"; };
 		E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleViewModel.swift; sourceTree = "<group>"; };
 		E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehiculeState.swift; sourceTree = "<group>"; };
 		E4568C3429C9E1710055A8E7 /* RegisterVehiculeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehiculeContract.swift; sourceTree = "<group>"; };
@@ -227,7 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				E4568C7A29CA817F0055A8E7 /* BaseModel */,
+				E42BF09829D5EB96008B5F45 /* Component */,
 				E42BF07F29D46FE0008B5F45 /* Constants.swift */,
+				E42BF09329D5C275008B5F45 /* Extension */,
+				E42BF09629D5EB1D008B5F45 /* Localizable.strings */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -248,6 +261,31 @@
 			path = Inject;
 			sourceTree = "<group>";
 		};
+		E42BF09329D5C275008B5F45 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E42BF09429D5C2B7008B5F45 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E42BF09829D5EB96008B5F45 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E42BF09B29D5EBF6008B5F45 /* CircleImageView.swift */,
+				E42BF09D29D5FB6F008B5F45 /* MotionAnimationView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		E42BF09F29D615E0008B5F45 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				E42BF0A029D61609008B5F45 /* CreateVehicleStrategy.swift */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
 		E4568C5629CA33000055A8E7 /* ADNParqueadero+Inject */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,14 +294,15 @@
 			path = "ADNParqueadero+Inject";
 			sourceTree = "<group>";
 		};
-		E4568C6F29CA7E7F0055A8E7 /* RegiterVehicle */ = {
+		E4568C6F29CA7E7F0055A8E7 /* RegisterVehicle */ = {
 			isa = PBXGroup;
 			children = (
+				E42BF08229D47FCD008B5F45 /* Inject */,
+				E42BF09F29D615E0008B5F45 /* Strategy */,
 				E42BF07729D46439008B5F45 /* View */,
 				E42BF07829D46445008B5F45 /* ViewModel */,
-				E42BF08229D47FCD008B5F45 /* Inject */,
 			);
-			path = RegiterVehicle;
+			path = RegisterVehicle;
 			sourceTree = "<group>";
 		};
 		E4568C7029CA7E9D0055A8E7 /* ExitVehicle */ = {
@@ -317,7 +356,7 @@
 				E4568C7029CA7E9D0055A8E7 /* ExitVehicle */,
 				E413880329C4E7FE000A07CC /* InitialPage */,
 				E4FA504529C12C1700A11573 /* Preview Content */,
-				E4568C6F29CA7E7F0055A8E7 /* RegiterVehicle */,
+				E4568C6F29CA7E7F0055A8E7 /* RegisterVehicle */,
 			);
 			path = ADNParqueadero;
 			sourceTree = "<group>";
@@ -463,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4FA504729C12C1700A11573 /* Preview Assets.xcassets in Resources */,
+				E42BF09729D5EB1D008B5F45 /* Localizable.strings in Resources */,
 				E4FA504429C12C1700A11573 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,17 +548,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42BF09529D5C2B7008B5F45 /* String+Extension.swift in Sources */,
 				E404FD1929CB307F00DB4F7F /* ExitVehicle+Inject.swift in Sources */,
 				E4FA504229C12C1500A11573 /* RegisterVehicleView.swift in Sources */,
 				E4568C7629CA804C0055A8E7 /* BaseViewModel.swift in Sources */,
 				E4568C3529C9E1710055A8E7 /* RegisterVehiculeContract.swift in Sources */,
 				E4568C3329C9DB750055A8E7 /* RegisterVehiculeState.swift in Sources */,
+				E42BF0A129D61609008B5F45 /* CreateVehicleStrategy.swift in Sources */,
 				E42BF08029D46FE0008B5F45 /* Constants.swift in Sources */,
 				E4568C6C29CA7D490055A8E7 /* ExitVehicleView.swift in Sources */,
 				E4568C7229CA7EF70055A8E7 /* ExitVehicleState.swift in Sources */,
 				E4568C7E29CA82E80055A8E7 /* InitialPageView.swift in Sources */,
+				E42BF09C29D5EBF6008B5F45 /* CircleImageView.swift in Sources */,
 				E4568C3129C9D9610055A8E7 /* RegisterVehicleViewModel.swift in Sources */,
 				E4568C5B29CA33C80055A8E7 /* ResgisterVehicle+Inject.swift in Sources */,
+				E42BF09E29D5FB6F008B5F45 /* MotionAnimationView.swift in Sources */,
 				E404FD1729CB303000DB4F7F /* ADNParqueadero+Inject.swift in Sources */,
 				E4568C6E29CA7E430055A8E7 /* ExitVehicleViewModel.swift in Sources */,
 				E4FA504029C12C1500A11573 /* ADNParqueaderoApp.swift in Sources */,

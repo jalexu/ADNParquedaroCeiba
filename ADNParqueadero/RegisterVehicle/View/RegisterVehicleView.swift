@@ -21,15 +21,10 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
     
     var registerButtonView: some View {
         Button {
-            if viewModel.state.seletedVehicleType == .car {
-                viewModel.registerCar {
-                    presentation.wrappedValue.dismiss()
-                }
-            } else {
-                viewModel.registerMotocicle {
-                    presentation.wrappedValue.dismiss()
-                }
+            viewModel.registerVehicle {
+                presentation.wrappedValue.dismiss()
             }
+            
         } label: {
             HStack(alignment: .center, spacing: 6) {
                 Text("Registar vehículo")
@@ -43,18 +38,23 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                     .stroke(Color.gray, lineWidth: 1)
             )
         }
-        
     }
     var body: some View {
         ZStack{
             VStack {
                 ScrollView {
+                    if viewModel.state.seletedVehicleType == .car {
+                        CircleImageView(imageName: "car")
+                    } else {
+                        CircleImageView(imageName: "motorcycle")
+                    }
+                    
                     VStack(spacing: 5) {
                         HStack(spacing: 5) {
-                            Text("Cantidad carros parqueados: ")
+                            Text("Cantidad carros parqueados:")
                                 .fontWeight(.semibold)
                                 .font(.system(size: 14))
-                                .foregroundColor(.black)
+                                .foregroundColor(.gray)
                             Text(String(viewModel.state.numersOfCars))
                                 .fontWeight(.bold)
                                 .font(.system(size: 14))
@@ -65,7 +65,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                             Text("Catidad motos parqueadas:")
                                 .fontWeight(.semibold)
                                 .font(.system(size: 14))
-                                .foregroundColor(.black)
+                                .foregroundColor(.gray)
                             Text(String(viewModel.state.numersOfMotocicles))
                                 .fontWeight(.bold)
                                 .font(.system(size: 14))
@@ -77,7 +77,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                     Text("Ingrese datos del vehículo")
                         .fontWeight(.black)
                         .font(.system(size: 16))
-                        .foregroundColor(.black)
+                        .foregroundColor(.orange)
                         .padding([.top, .trailing, .leading], 20)
                     
                     
@@ -90,7 +90,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                         
                         VStack(spacing: 0) {
                             Text(Constants.Labels.selectTypeVehicle)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.orange)
                             Picker(Constants.Labels.typeVehicle, selection: $viewModel.state.seletedVehicleType) {
                                 ForEach(VehicleType.allCases, id: \.self) {
                                     Text($0.rawValue)
@@ -127,11 +127,12 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                         )
                     }
                 }
-                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom)
+                
                 
             }
             .background(Color("ColorBackground").ignoresSafeArea(.all,edges: [.bottom, .leading, .trailing]))
+            
         }
-        .navigationTitle("Parqueadero ADN")
+        .navigationTitle(Constants.Title.parqueaderoTitle)
     }
 }

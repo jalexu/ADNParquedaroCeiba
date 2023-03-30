@@ -1209,48 +1209,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0213395E-EAA3-4D52-A091-C14885ACF582"
+            uuid = "44AD3B0E-4D07-43F9-962A-87DD9017C9F6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Domain/Domain/RegisterVehicle/Service/RegisterVehicleService.swift"
+            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "numberVehicleStoredForType(data:vehicle:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "save(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "504C5C85-0FB3-43FB-8F6A-F662426C7F7C"
+            uuid = "284FB226-27FE-4141-B2A2-569DE6C8055B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ADNParqueadero/RegiterVehicle/ViewModel/RegisterVehicleViewModel.swift"
+            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "numberVehicles()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF896B1D-7A23-4329-AA58-2753238B8236"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ADNParqueadero/RegiterVehicle/ViewModel/RegisterVehicleViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "numberVehicles()"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "save(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

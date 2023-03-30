@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  ADNParqueadero
+
+  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 30/03/23.
+  
+*/
+
+// MARK: General
+"General.errorMessageSaving" = "Error al guardar";
+
+// MARK: Labels
+"Labels.enterPlaque" = "Ingresa la placa.";
+"Labels.selectTypeVehicle" = "Seleccione el tipo de vehículo a ingresar.";
+"Labels.typeVehicle" = "Tipo de vehículo.";
+"Labels.noParkingMessage" = "Tipo de vehículo.";
+
+
+// MARK: Title
+"Title.parqueadero" = "Parqueadero ADN";
+
+
+// MARK: Domain
+"Domain.exceedNumberVehiclesMessage" = "El parquedaro no puede recibir mas vehiculos.";
+"Domain.vehicleExisteMessage" = "El vehiculo se encuentra registrado.";

@@ -131,7 +131,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         }
         
         // Act
-        sut.registerCar { }
+        sut.registerVehicle { }
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -153,7 +153,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         })
         
         // Act
-        sut.registerCar { }
+        sut.registerVehicle { }
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -215,7 +215,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.inputPlaque = ""
         
         // Act
-        sut.registerCar(completion: {})
+        sut.registerVehicle(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -234,7 +234,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.inputPlaque = "LFG678"
         
         // Act
-        sut.registerCar(completion: {})
+        sut.registerVehicle(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
@@ -252,7 +252,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .car
         
         // Act
-        sut.registerCar(completion: {})
+        sut.registerVehicle(completion: {})
         
         // Assert
         let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)

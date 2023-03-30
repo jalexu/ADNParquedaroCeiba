@@ -60,9 +60,9 @@ class RegisterVehicleViewModel: BaseViewModel {
     }
 }
 
-// MARK: -SaveCar
+// MARK: save Vehicle
 extension RegisterVehicleViewModel {
-    private func saveCar(with data: RegisterVehicle, completion: @escaping () -> Void) {
+    private func saveVehicle(with data: RegisterVehicle, completion: @escaping () -> Void) {
         registerCarService.save(with: data)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
@@ -82,42 +82,30 @@ extension RegisterVehicleViewModel {
     }
 }
 
-// MARK: -SaveMotorcycle
-extension RegisterVehicleViewModel {
-    private func saveMotocicle(with data: RegisterVehicle, completion: @escaping () -> Void) {
-        registerMotocicleService.save(with: data)
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { [weak self] completion in
-                guard case .failure(let error) = completion else { return }
-                debugPrint(error.localizedDescription)
-                self?.hiddeLoading()
-                if let registerError = error as? RegisterVehicleError  {
-                    self?.showRegisterVehicleError(error: registerError)
-                } else {
-                    self?.showAlert(message: Constants.errorMessageSaving)
-                }
-            }, receiveValue: { [weak self] response in
-                debugPrint(response)
-                self?.hiddeLoading()
-                completion()
-            })
-            .store(in: &subscribers)
-    }
-}
-
 extension RegisterVehicleViewModel: RegisterVehicleProtocol {
-    func registerCar(completion: @escaping () -> Void) {
+    func registerVehicle(completion: @escaping () -> Void) {
+        var createVehicleStrategy: CreateVehicleStrategy
+        var registerCar: RegisterVehicle
+        let registerDay = registerDate()
         self.loading = true
         
         do {
-            let registerDay = registerDate()
-            let car = try Car(plaqueId: state.inputPlaque)
-            let registerCar = try RegisterVehicle(vehicle: car, registerDay: registerDay)
+            switch state.seletedVehicleType {
+            case .car:
+                createVehicleStrategy = CreateCar(plaqueId: state.inputPlaque)
+                registerCar = try createVehicleStrategy.createVehicle(registerDate: registerDay)
+            case .motocicle:
+                createVehicleStrategy = CreateMotorcycle(plaqueId: state.inputPlaque, cylinderCapacity: state.inputPlaque)
+                registerCar = try createVehicleStrategy.createVehicle(registerDate: registerDay)
+            }
             
-            saveCar(with: registerCar) {
+            saveVehicle(with: registerCar) {
                 completion()
             }
             
+        }  catch VehicleError.cylinderCapacity(let error) {
+            hiddeLoading()
+            showAlert(message: error)
         } catch VehicleError.plaqueAError(let error) {
             hiddeLoading()
             showAlert(message: error)
@@ -129,33 +117,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
             showAlert(message: Constants.errorMessageSaving)
         }
     }
-    
-    func registerMotocicle(completion: @escaping () -> Void) {
-        self.loading = true
-        
-        do {
-            let registerDay = registerDate()
-            let motocicle = try Motorcycle(plaqueId: state.inputPlaque, cylinderCapacity: state.inputCylinderCapacity)
-            let registerMotocicle = try RegisterVehicle(vehicle: motocicle, registerDay: registerDay)
-            
-            saveMotocicle(with: registerMotocicle) {
-                completion()
-            }
-            
-        } catch VehicleError.plaqueAError(let error) {
-            hiddeLoading()
-            showAlert(message: error)
-        } catch VehicleError.fieldPlaqueError(let error) {
-            hiddeLoading()
-            showAlert(message: error)
-        } catch VehicleError.cylinderCapacity(let error) {
-            hiddeLoading()
-            showAlert(message: error)
-        } catch {
-            hiddeLoading()
-            showAlert(message: Constants.errorMessageSaving)
-        }
-    }
+
     
     func onAppear() {
         numberVehicles()
@@ -179,8 +141,8 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     
     private func showNumberVehicles(registerVehicles: [RegisterVehicle]) {
         updateState {
-            state.numersOfCars = registerVehicles.map({ $0.getVehicle() as? Motorcycle}).count
-            state.numersOfCars = registerVehicles.map({ $0.getVehicle() as? Car}).count
+            state.numersOfMotocicles = registerVehicles.compactMap({ $0.getVehicle() as? Motorcycle}).count
+            state.numersOfCars = registerVehicles.compactMap({ $0.getVehicle() as? Car}).count
         }
     }
     
