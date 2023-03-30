@@ -9,8 +9,10 @@ import Foundation
 import CoreData
 
 final class ConfigurationCoreDataBase {
+    static var contexts = persistentContainer.viewContext
+    
     static var context: NSManagedObjectContext {
-        return persistentContainer.viewContext
+        return contexts
     }
     
     // MARK: Find CoreData
@@ -36,10 +38,10 @@ final class ConfigurationCoreDataBase {
     
     // MARK: -CoreData Saving support
     static func saveContext() {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
+       
+        if contexts.hasChanges {
             do {
-                try context.save()
+                try contexts.save()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

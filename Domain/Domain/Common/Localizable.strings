@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Domain
+
+  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 30/03/23.
+  
+*/
+
+// MARK: Error
+"Error.exceedNumberVehiclesMessage" = "El parquedaro no puede recibir mas vehiculos..";
+"Error.vehicleExisteMessage" = "El vehiculo se encuentra registrado";

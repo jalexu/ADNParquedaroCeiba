@@ -6,6 +6,6 @@
 //
 
 struct Constants {
-    static let exceedNumberVehiclesMessage = "El parquedaro no puede recibir mas vehiculos."
-    static let vehicleExisteMessage = "El vehiculo se encuentra registrado"
+    static let exceedNumberVehiclesMessage = "Error.exceedNumberVehiclesMessage".localized()
+    static let vehicleExisteMessage = "Error.vehicleExisteMessage".localized()
 }

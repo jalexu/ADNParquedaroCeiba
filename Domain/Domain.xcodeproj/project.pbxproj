@@ -25,6 +25,8 @@
 		E41387C629C4A8AB000A07CC /* CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387C529C4A8AB000A07CC /* CarTests.swift */; };
 		E41387C929C4A979000A07CC /* MotorcycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41387C829C4A979000A07CC /* MotorcycleTests.swift */; };
 		E42BF08D29D4910B008B5F45 /* RegisterVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08C29D4910B008B5F45 /* RegisterVehicleService.swift */; };
+		E49DB5E629D61A6F00EBE79B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E49DB5E529D61A6F00EBE79B /* Localizable.strings */; };
+		E49DB5E929D61AF700EBE79B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49DB5E829D61AF700EBE79B /* String+Extension.swift */; };
 		E4B5F47329D219E5002BDB13 /* RegisterCarServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F47229D219E5002BDB13 /* RegisterCarServiceTest.swift */; };
 		E4B5F47729D21AEF002BDB13 /* RegisterVehicleRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F47629D21AEF002BDB13 /* RegisterVehicleRepositoryStub.swift */; };
 		E4B5F47D29D233DC002BDB13 /* RegisterVehicleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F47C29D233DC002BDB13 /* RegisterVehicleError.swift */; };
@@ -69,6 +71,8 @@
 		E41387C529C4A8AB000A07CC /* CarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTests.swift; sourceTree = "<group>"; };
 		E41387C829C4A979000A07CC /* MotorcycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleTests.swift; sourceTree = "<group>"; };
 		E42BF08C29D4910B008B5F45 /* RegisterVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleService.swift; sourceTree = "<group>"; };
+		E49DB5E529D61A6F00EBE79B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		E49DB5E829D61AF700EBE79B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E4B5F47229D219E5002BDB13 /* RegisterCarServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCarServiceTest.swift; sourceTree = "<group>"; };
 		E4B5F47629D21AEF002BDB13 /* RegisterVehicleRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleRepositoryStub.swift; sourceTree = "<group>"; };
 		E4B5F47C29D233DC002BDB13 /* RegisterVehicleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleError.swift; sourceTree = "<group>"; };
@@ -157,6 +161,14 @@
 				E404FD5B29CDF81800DB4F7F /* ExitCarTests.swift */,
 			);
 			path = Vehicle;
+			sourceTree = "<group>";
+		};
+		E49DB5E729D61ACE00EBE79B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E49DB5E829D61AF700EBE79B /* String+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E4B5F47529D21A70002BDB13 /* Stub */ = {
@@ -308,9 +320,11 @@
 		E4B5F4BB29D3B57B002BDB13 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E49DB5E729D61ACE00EBE79B /* Extension */,
 				E413879929C493D8000A07CC /* Domain.h */,
 				E413879A29C493D8000A07CC /* Domain.docc */,
 				E4B5F4BC29D3B5AA002BDB13 /* Constants.swift */,
+				E49DB5E529D61A6F00EBE79B /* Localizable.strings */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -407,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49DB5E629D61A6F00EBE79B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +449,7 @@
 				E4B5F48C29D23E45002BDB13 /* ExitVehicleRepository.swift in Sources */,
 				E404FD2E29CC9B0A00DB4F7F /* RegisterVehicleRepository.swift in Sources */,
 				E4B5F48229D234BB002BDB13 /* VehicleError.swift in Sources */,
+				E49DB5E929D61AF700EBE79B /* String+Extension.swift in Sources */,
 				E42BF08D29D4910B008B5F45 /* RegisterVehicleService.swift in Sources */,
 				E404FD4729CD442200DB4F7F /* RegisterVehicle.swift in Sources */,
 				E4B5F49129D23FBD002BDB13 /* ExitVehicleService.swift in Sources */,
