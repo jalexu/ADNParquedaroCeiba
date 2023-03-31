@@ -8,38 +8,31 @@
 import SwiftUI
 
 struct MotionAnimationView: View {
-    //MARK: -PROPERTIES
     @State private var ramdomCircle = Int.random(in: 12...16)
     @State private var isAnimate: Bool = false
     
-    //1. RANDOM COORDINATE
-    func randomCoordinate(max: CGFloat) ->CGFloat{
+    func randomCoordinate(max: CGFloat) -> CGFloat {
         return CGFloat.random(in: 0...max)
     }
     
-    //2. RANDOM SIZE
-    func randomSize() -> CGFloat{
+    func randomSize() -> CGFloat {
         return CGFloat(Int.random(in: 0...300))
     }
     
-    //3. RANDOM SCALE
-    func randomScale() -> CGFloat{
+    func randomScale() -> CGFloat {
         return CGFloat(Double.random(in: 0.1...2.0))
     }
     
-    //4. RANDOM SPEED
-    func randomSpeed() -> Double{
+    func randomSpeed() -> Double {
         return Double.random(in: 0.025...1.0)
     }
     
-    //5. RANDOM DELAY
-    func randomDelay() -> Double{
+    func randomDelay() -> Double {
         return Double.random(in: 0...2)
     }
     
-    //MARK: -BODY
     var body: some View {
-        GeometryReader{ geometry in
+        GeometryReader { geometry in
             ZStack {
                 ForEach(0...ramdomCircle, id: \.self) { item in
                     Circle()
@@ -57,7 +50,7 @@ struct MotionAnimationView: View {
                                 .speed(randomSpeed())
                                 .delay(randomDelay())
                         )
-                        .onAppear(perform:{
+                        .onAppear(perform: {
                             isAnimate = true
                         })
                 }

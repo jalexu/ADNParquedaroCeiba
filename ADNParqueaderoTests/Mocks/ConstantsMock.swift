@@ -9,21 +9,41 @@ import Foundation
 @testable import Domain
 
 public struct ConstantsMock {
-    static let registerVehiclesWithCarMock: [Domain.RegisterVehicle] = [
-        try! RegisterVehicle(
+    static func registerVehiclesWithCarMock() throws -> [Domain.RegisterVehicle] {
+        var registerVehicles: [Domain.RegisterVehicle] = []
+        var registerVehicle: RegisterVehicle
+        
+        registerVehicle = try Domain.RegisterVehicle(
             vehicle: Car(plaqueId: "LSF890"),
-            registerDay: getDateMock()),
-        try!RegisterVehicle(
+            registerDay: getDateMock())
+        
+        registerVehicles.append(registerVehicle)
+        
+        registerVehicle = try RegisterVehicle(
             vehicle: Car(plaqueId: "TFD890"),
             registerDay: getDateMock())
-    ]
+           
+        registerVehicles.append(registerVehicle)
+            
+        return registerVehicles
+    }
     
-    static let registerVehiclesWithMotorcycles: [Domain.RegisterVehicle] = [
-        try! RegisterVehicle(vehicle: Motorcycle(plaqueId: "UIU908", cylinderCapacity: "200"),
-                             registerDay: getDateMock()),
-        try!RegisterVehicle(vehicle: Motorcycle(plaqueId: "KLM567", cylinderCapacity: "600"),
-                            registerDay: getDateMock())
-    ]
+    static func registerVehiclesWithMotorcycles() throws -> [Domain.RegisterVehicle] {
+        var registerVehicles: [Domain.RegisterVehicle] = []
+        var registerVehicle: RegisterVehicle
+        
+        registerVehicle = try RegisterVehicle(vehicle: Motorcycle(plaqueId: "UIU908", cylinderCapacity: "200"),
+                                              registerDay: getDateMock())
+        
+        registerVehicles.append(registerVehicle)
+        
+        registerVehicle = try RegisterVehicle(vehicle: Motorcycle(plaqueId: "KLM567", cylinderCapacity: "600"),
+                                              registerDay: getDateMock())
+        
+        registerVehicles.append(registerVehicle)
+        
+        return registerVehicles
+    }
     
     static let exitCarMock: ExitCar = {
         return ExitCar(plaqueId: "ASF890",

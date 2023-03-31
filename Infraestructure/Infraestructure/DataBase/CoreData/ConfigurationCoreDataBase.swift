@@ -18,14 +18,14 @@ final class ConfigurationCoreDataBase {
     // MARK: Find CoreData
     static var objectModel: NSManagedObjectModel = {
         let messageKitBundle = Bundle(identifier: "com.jaime.uribe.Infraestructure")
-        guard let modelURL = messageKitBundle!.url(forResource: "RegisterVehiclesDB" , withExtension: "momd")else {
+        guard let modelURL = messageKitBundle!.url(forResource: "RegisterVehiclesDB", withExtension: "momd")else {
             preconditionFailure("No found database")
         }
         
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
-    // MARK: -CoreData stack
+    // MARK: - CoreData stack
     static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "RegisterVehiclesDB", managedObjectModel: objectModel)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -36,7 +36,7 @@ final class ConfigurationCoreDataBase {
         return container
     }()
     
-    // MARK: -CoreData Saving support
+    // MARK: - CoreData Saving support
     static func saveContext() {
        
         if contexts.hasChanges {

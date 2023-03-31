@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-
 public protocol RegisterVehicleServiceProtocol {
     func save(with data: RegisterVehicle) -> AnyPublisher<Bool, Error>
     func retrieveAll() -> AnyPublisher<[RegisterVehicle], Error>
@@ -65,4 +64,3 @@ public class RegisterVehicleService: RegisterVehicleServiceProtocol, VehicleCapa
         }
     }
 }
-

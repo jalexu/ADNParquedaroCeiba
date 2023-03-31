@@ -26,7 +26,7 @@ final class RegisterCarServiceStub: RegisterVehicleServiceProtocol {
         })
     }
     
-    func save(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error>  {
+    func save(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error> {
         var publisher = CurrentValueSubject<Bool, Error>(true)
         switch responseHandler {
         case .success(_):
@@ -41,7 +41,7 @@ final class RegisterCarServiceStub: RegisterVehicleServiceProtocol {
     func retrieveAll() -> AnyPublisher<[Domain.RegisterVehicle], Error> {
         let stored = [
             try! Domain.RegisterVehicle(
-                vehicle: Car(plaqueId: "IOD890") ,
+                vehicle: Car(plaqueId: "IOD890"),
                 registerDay: ConstantsMock.getDateMock())
         ]
         var publisher = CurrentValueSubject<[Domain.RegisterVehicle], Error>(stored)

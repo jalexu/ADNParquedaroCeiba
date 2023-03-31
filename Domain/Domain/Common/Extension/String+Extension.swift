@@ -11,4 +11,3 @@ extension String {
         return NSLocalizedString(self, comment: commet)
     }
 }
-

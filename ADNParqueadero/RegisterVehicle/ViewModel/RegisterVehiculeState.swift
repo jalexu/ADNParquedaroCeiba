@@ -38,5 +38,3 @@ public enum VehicleType: String, CaseIterable {
         }
     }
 }
-
-

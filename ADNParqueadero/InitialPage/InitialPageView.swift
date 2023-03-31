@@ -48,7 +48,7 @@ struct InitialPageView: View {
     
     var body: some View {
         NavigationView {
-            ZStack{
+            ZStack {
                 VStack(alignment: .center, spacing: 60) {
                     registerNavigationLink
                     paymentNavigationLink
@@ -64,9 +64,8 @@ struct InitialPageView: View {
                     
                 }
             }
-            .background(MotionAnimationView()).ignoresSafeArea(.all,edges: [.bottom, .leading, .trailing])
+            .background(MotionAnimationView()).ignoresSafeArea(.all, edges: [.bottom, .leading, .trailing])
         }
-        
     }
 }
 

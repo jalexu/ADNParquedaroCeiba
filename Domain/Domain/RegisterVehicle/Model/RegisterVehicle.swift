@@ -12,7 +12,6 @@ public enum VehicleErrors: Error {
     case cylinderCapacity(String)
 }
 
-
 public class RegisterVehicle {
     private let id: UUID = UUID()
     private var registerDay: Date

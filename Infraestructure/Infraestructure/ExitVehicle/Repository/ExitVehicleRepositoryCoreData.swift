@@ -50,9 +50,9 @@ final class ExitVehicleRepositoryCoreData: ExitVehicleRepositoryProtocol {
             
             do {
                 let resultcar = try context.fetch(fetchRequestCar) as? [NSManagedObject]
-                let carToDelete = resultcar?.first { $0.value(forKey: "plaqueId") as! String == numerPlaque }
+                let carToDelete = resultcar?.first { $0.value(forKey: "plaqueId") as? String == numerPlaque }
                 let resultMotorcycle = try context.fetch(fetchRequestMotorcycle) as? [NSManagedObject]
-                let motorcycleToDelete = resultMotorcycle?.first { $0.value(forKey: "plaqueId") as! String == numerPlaque }
+                let motorcycleToDelete = resultMotorcycle?.first { $0.value(forKey: "plaqueId") as? String == numerPlaque }
                 
                 if carToDelete != nil {
                     context.delete(carToDelete!)
@@ -62,8 +62,7 @@ final class ExitVehicleRepositoryCoreData: ExitVehicleRepositoryProtocol {
                     context.delete(motorcycleToDelete!)
                     try context.save()
                     promise(.success(true))
-                }
-                else {
+                } else {
                     promise(.success(false))
                 }
                 
@@ -73,4 +72,3 @@ final class ExitVehicleRepositoryCoreData: ExitVehicleRepositoryProtocol {
         }.eraseToAnyPublisher()
     }
 }
-

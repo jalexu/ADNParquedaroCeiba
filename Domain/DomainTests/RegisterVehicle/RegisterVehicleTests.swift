@@ -51,7 +51,6 @@ final class RegisterVehicleTests: XCTestCase {
         XCTAssertNotNil(resultado)
     }
     
-    
     func test_initCar_whenIsMondayAndCarHasPlaqueA_ThenRetunException() throws {
         // Arrange
         var resultado: String = ""
@@ -67,6 +66,5 @@ final class RegisterVehicleTests: XCTestCase {
         
         // Assert
             XCTAssertEqual(resultado, "No está autorizado a ingresar.")
-        
     }
 }

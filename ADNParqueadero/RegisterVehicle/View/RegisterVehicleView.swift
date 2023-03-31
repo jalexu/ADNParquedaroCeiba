@@ -9,8 +9,8 @@ import SwiftUI
 import Domain
 import Combine
 
-
 struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProtocol {
+
     @ObservedObject private var viewModel: ViewModel
     
     @Environment(\.presentationMode) var presentation
@@ -40,7 +40,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
         }
     }
     var body: some View {
-        ZStack{
+        ZStack {
             VStack {
                 ScrollView {
                     if viewModel.state.seletedVehicleType == .car {
@@ -79,7 +79,6 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                         .font(.system(size: 16))
                         .foregroundColor(.orange)
                         .padding([.top, .trailing, .leading], 20)
-                    
                     
                     VStack(spacing: 20) {
                         TextField(Constants.Labels.enterPlaque, text: $viewModel.state.inputPlaque)
@@ -127,10 +126,8 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                         )
                     }
                 }
-                
-                
             }
-            .background(Color("ColorBackground").ignoresSafeArea(.all,edges: [.bottom, .leading, .trailing]))
+            .background(Color("ColorBackground").ignoresSafeArea(.all, edges: [.bottom, .leading, .trailing]))
             
         }
         .navigationTitle(Constants.Title.parqueaderoTitle)

@@ -93,4 +93,3 @@ extension ExitVehicleViewModel: ExitVehicleProtocol {
         resetState()
     }
 }
-

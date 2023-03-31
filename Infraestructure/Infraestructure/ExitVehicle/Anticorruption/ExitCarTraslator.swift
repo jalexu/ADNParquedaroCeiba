@@ -13,8 +13,8 @@ final class ExitCarTraslator {
         var exitCar: Domain.ExitCar? = nil
         if let dataInput = input {
             let today = Date()
-            exitCar = Domain.ExitCar(plaqueId: dataInput.value(forKey: "plaqueId") as! String,
-                                     registerDay: dataInput.value(forKey: "registerDay") as! Date,
+            exitCar = Domain.ExitCar(plaqueId: dataInput.value(forKey: "plaqueId") as? String ?? "",
+                                     registerDay: dataInput.value(forKey: "registerDay") as? Date ?? Date(),
                                      exitDate: today)
             
             return exitCar

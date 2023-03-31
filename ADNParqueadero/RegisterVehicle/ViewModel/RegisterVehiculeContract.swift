@@ -13,4 +13,3 @@ protocol RegisterVehicleProtocol: ObservableObject {
     func onAppear()
     func onDisappear()
 }
-

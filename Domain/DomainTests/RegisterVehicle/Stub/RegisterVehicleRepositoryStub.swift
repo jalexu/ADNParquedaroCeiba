@@ -38,7 +38,7 @@ final class RegisterVehicleRepositoryStub: RegisterVehicleRepository {
     func retrieveAll() -> AnyPublisher<[Domain.RegisterVehicle], Error> {
         RegisterVehicleRepositoryStub.numberCarsStored = [
             try! Domain.RegisterVehicle(
-                vehicle: DomainTestMock.carMock ,
+                vehicle: DomainTestMock.carMock,
                 registerDay: DomainTestMock.getRegisterDayMock())
         ]
         

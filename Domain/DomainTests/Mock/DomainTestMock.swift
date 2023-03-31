@@ -51,22 +51,21 @@ class DomainTestMock {
     }()
     
     static let errorMock: Error = {
-        NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+        NSError(domain: "Data does't exist", code: 500, userInfo: nil)
     }()
     
-    static func registerVehiclesMock() -> [Domain.RegisterVehicle] {
+    static func registerVehiclesMock() throws -> [Domain.RegisterVehicle] {
         var numberCarsStored: [Domain.RegisterVehicle] = []
-        numberCarsStored.append(try! RegisterVehicle(vehicle: motorcycleMock, registerDay: getRegisterDayMock()))
+        numberCarsStored.append(try RegisterVehicle(vehicle: motorcycleMock, registerDay: getRegisterDayMock()))
         return numberCarsStored
     }
     
-    static let RegisterVehiclesWith20ElementsMock: [Domain.RegisterVehicle] = {
+    static func registerVehiclesWith20ElementsMock() throws -> [Domain.RegisterVehicle] {
         var numberCarsStored: [Domain.RegisterVehicle] = []
         if numberCarsStored.count < 20 {
-            numberCarsStored.append(contentsOf: registerVehiclesMock())
+            numberCarsStored.append(contentsOf: try registerVehiclesMock())
         }
         return numberCarsStored
-        
-    }()
+    }
     
 }

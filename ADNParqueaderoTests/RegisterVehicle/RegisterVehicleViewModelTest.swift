@@ -55,7 +55,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Get error from coreData")
         
         carService.responseHandler = .failure({
-            NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+            NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
         sut.state.seletedVehicleType = .car
@@ -103,7 +103,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Get error from coreData")
         
         carService.responseHandler = .failure({
-            NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+            NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
         sut.state.seletedVehicleType = .motocicle
@@ -149,7 +149,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .car
         
         carService.responseHandler = .failure({
-            NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+            NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
         // Act
@@ -194,7 +194,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.inputCylinderCapacity = "200"
         
         motocicleService.responseHandler = .failure({
-            NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+            NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
         // Act
@@ -225,7 +225,6 @@ final class RegisterVehicleViewModelTest: XCTestCase {
             XCTFail("Delay interrupted")
         }
     }
-    
     
     func test_registerCar_WhenParkingIsFull_ThenShowAlert() {
         // Arrange

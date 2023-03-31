@@ -28,7 +28,6 @@ final class ExitCarServiceTest: XCTestCase {
         try super.tearDownWithError()
     }
     
-    
     func test_retrieveCar_ThenIsSuccess() {
         // Arrange
         let successExpectation = expectation(description: "Success retrieve")

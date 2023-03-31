@@ -18,10 +18,10 @@ final class ExitMotorcycleTraslator {
             
             let today = Date()
             exitMotocycle = ExitMotorcycle(
-                plaqueId: dataInput.value(forKey: "plaqueId") as! String,
-                registerDay: dataInput.value(forKey: "registerDay") as! Date,
+                plaqueId: dataInput.value(forKey: "plaqueId") as? String ?? "",
+                registerDay: dataInput.value(forKey: "registerDay") as? Date ?? Date(),
                 exitDate: today,
-                cylinderCapacity: motocicle?.first?.value(forKey: "cylinderCapacity") as! String)
+                cylinderCapacity: motocicle?.first?.value(forKey: "cylinderCapacity") as? String ?? "")
             
             return exitMotocycle
         }

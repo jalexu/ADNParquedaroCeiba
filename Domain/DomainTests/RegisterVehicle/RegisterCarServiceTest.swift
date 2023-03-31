@@ -83,7 +83,6 @@ final class RegisterCarServiceTest: XCTestCase {
         successExpectation.isInverted = true
         RegisterVehicleRepositoryStub.numberCarsStored = DomainTestMock.RegisterVehiclesWith20ElementsMock
         
-        
         // Act
         cancellable = sut.save(with: DomainTestMock.registerVehicleCarMock)
             .sink(receiveCompletion: { completion in

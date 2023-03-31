@@ -42,9 +42,9 @@ final class RegisterVehicleRepositoryCoreData: RegisterVehicleRepository {
             
             do {
                 let registerCar = try context.fetch(fetchRequestCar) as? [NSManagedObject]
-                let resultCar = registerCar?.first { $0.value(forKey: "plaqueId") as! String == numerPlaque }
+                let resultCar = registerCar?.first { $0.value(forKey: "plaqueId") as? String == numerPlaque }
                 let registerMotorcycle = try context.fetch(fetchRequestMotorcycle) as? [NSManagedObject]
-                let resultMotorcycle = registerMotorcycle?.first { $0.value(forKey: "plaqueId") as! String == numerPlaque }
+                let resultMotorcycle = registerMotorcycle?.first { $0.value(forKey: "plaqueId") as? String == numerPlaque }
                 
                 if resultCar != nil {
                     vehicle = resultCar

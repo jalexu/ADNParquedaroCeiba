@@ -41,7 +41,7 @@ final class RegisterMotorcycleServiceStub: RegisterVehicleServiceProtocol {
     func retrieveAll() -> AnyPublisher<[Domain.RegisterVehicle], Error> {
         let stored = [
             try! Domain.RegisterVehicle(
-                vehicle: Car(plaqueId: "IOD890") ,
+                vehicle: Car(plaqueId: "IOD890"),
                 registerDay: ConstantsMock.getDateMock())
         ]
         var publisher = CurrentValueSubject<[Domain.RegisterVehicle], Error>(stored)

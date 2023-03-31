@@ -41,4 +41,3 @@ struct CreateMotorcycle: CreateVehicleStrategy {
         return registerVehicle
     }
 }
-

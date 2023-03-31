@@ -5,7 +5,6 @@
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 24/03/23.
 //
 
-
 public class ExitVehicle {
     private let id: UUID = UUID()
     private var plaqueId: String
@@ -32,7 +31,7 @@ public class ExitVehicle {
         
         if hoursParking.days >=  1 {
             valueToPay = (hoursParking.days * valueDay) + (hoursParking.hours * valueHour)
-        } else if hoursParking.hours <= 9  {
+        } else if hoursParking.hours <= 9 {
             valueToPay = valueHour * hoursParking.hours
         } else {
             valueToPay = valueDay

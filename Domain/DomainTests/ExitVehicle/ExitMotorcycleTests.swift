@@ -67,7 +67,10 @@ final class ExitMotorcycleTests: XCTestCase {
         // Arrange
         var resultado: Int = 0
         let yestarday: Date = Date()
-        sut = ExitMotorcycle(plaqueId: "TYDDD", registerDay: yestarday.addingTimeInterval(-50400), exitDate: exitDate, cylinderCapacity: "400")
+        sut = ExitMotorcycle(plaqueId: "TYDDD",
+                             registerDay: yestarday.addingTimeInterval(-50400),
+                             exitDate: exitDate,
+                             cylinderCapacity: "400")
         
         // Act
         resultado = sut.totalToPay()

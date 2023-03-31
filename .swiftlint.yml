@@ -1,13 +1,19 @@
 disabled_rules: # rule identifiers to exclude from running
-  - comma
   - control_statement
+  - trailing_whitespace
+  - unused_closure_parameter
+  - redundant_optional_initialization
+  - empty_enum_arguments
   
 opt_in_rules: # some rules are only opt-in
-  - empty_count
+  - comment
 
 included: # paths to include during linting. `--path` is ignored if present.
   - ADNParqueadero
+  - Domain/Domain
+  - Infraestructure/Infraestructure
   - ADNParqueaderoTests
+  - Domain/DomainTests
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
 
@@ -17,6 +23,13 @@ force_cast: warning # implicitly. Give warning only for force casting
 
 force_try:
   severity: warning # explicitly. Give warning only for force try
+  excluded: # excluded via string
+   -".*Stub\\.swift"
+   -".*Mock\\.swift"
+
+line_length:
+- 130
+- 140
 
 type_body_length:
   - 300 # warning
@@ -34,9 +47,10 @@ large_tuple: # warn user when using 3 values in tuple, give error if there are 4
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names
 type_name:
-  min_length: 4 # only warning
+  min_length: 3 # only warning
   max_length: # warning and error
-    warning: 30
-    error: 35
-  excluded: iPhone # excluded via string
+    warning: 100
+    error: 120
+  excluded: # excluded via string
+   - iPhone
 reporter: "xcode"

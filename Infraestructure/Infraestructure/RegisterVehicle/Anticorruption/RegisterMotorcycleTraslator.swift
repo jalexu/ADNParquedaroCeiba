@@ -47,7 +47,8 @@ final class RegisterMotorcycleTraslator {
                               cylinderCapacity: entities.first?.cylinderCapacity ?? "")
     }
     
-    static func transformRegisterMotocicleEntityToRegisterMotocicleEntity(_ input: RegisterMotocicleEntity?) throws -> Domain.RegisterVehicle? {
+    static func transformRegisterMotocicleEntityToRegisterMotocicleEntity(_ input: RegisterMotocicleEntity?)
+    throws -> Domain.RegisterVehicle? {
         var registerVehicle: Domain.RegisterVehicle? = nil
         
         guard let dataInput = input,

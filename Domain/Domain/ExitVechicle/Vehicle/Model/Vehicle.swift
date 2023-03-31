@@ -29,7 +29,5 @@ public class Vehicle {
         if plaqueId.count < maximumCharacters {
             throw VehicleError.fieldPlaqueError("Placa incorrecta debe tener 6 caracteres")
         }
-    }
-    
-    
+    }    
 }

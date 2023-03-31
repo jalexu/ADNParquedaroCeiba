@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension RegisterCarEntity {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<RegisterCarEntity> {
@@ -40,6 +39,6 @@ extension RegisterCarEntity {
 
 }
 
-extension RegisterCarEntity : Identifiable {
+extension RegisterCarEntity: Identifiable {
 
 }

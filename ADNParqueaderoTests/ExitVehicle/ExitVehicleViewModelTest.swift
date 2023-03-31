@@ -55,7 +55,7 @@ final class ExitVehicleViewModelTest: XCTestCase {
         sut.state.inputNumberPlaque = "ASF890"
         
         exitVehicleService.responseHandler = .failure({
-            NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+            NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
         // Act
@@ -131,7 +131,7 @@ final class ExitVehicleViewModelTest: XCTestCase {
         sut.state.inputNumberPlaque = "ASF890"
         
         exitVehicleService.responseHandler = .failure({
-            NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+            NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
         // Act
@@ -177,7 +177,7 @@ final class ExitVehicleViewModelTest: XCTestCase {
        sut.state.hoursToPay = 2
        
         exitVehicleService.responseHandler = .failure {
-           NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+           NSError(domain: "Data does't exist", code: 500, userInfo: nil)
        }
        
        // Act
@@ -223,7 +223,7 @@ final class ExitVehicleViewModelTest: XCTestCase {
        sut.state.hoursToPay = 1
        
         exitVehicleService.responseHandler = .failure {
-           NSError(domain:"Data does't exist", code: 500, userInfo:nil)
+           NSError(domain: "Data does't exist", code: 500, userInfo: nil)
        }
        
        // Act

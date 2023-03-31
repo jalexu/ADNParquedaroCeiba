@@ -51,7 +51,7 @@ final class CarRepositoryCoreData {
             
             do {
                 let result = try context.fetch(fetchRequest) as? [NSManagedObject]
-                let register = result?.first { $0.value(forKey: "plaqueId") as! String == numerPlaque }
+                let register = result?.first { $0.value(forKey: "plaqueId") as? String == numerPlaque }
                 promise(.success(register != nil))
             } catch {
                 promise(.failure(error))

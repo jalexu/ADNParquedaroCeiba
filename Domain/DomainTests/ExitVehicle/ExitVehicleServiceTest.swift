@@ -26,8 +26,7 @@ final class ExitVehicleServiceTest: XCTestCase {
         sut = nil
         try super.tearDownWithError()
     }
-    
-    
+        
     func test_retrieveMotocycle_ThenIsSuccess() {
         // Arrange
         let successExpectation = expectation(description: "Success retrieve")
@@ -126,5 +125,4 @@ final class ExitVehicleServiceTest: XCTestCase {
         cancellable?.cancel()
     }
      
-
 }

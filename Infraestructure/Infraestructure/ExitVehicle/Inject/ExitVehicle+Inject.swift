@@ -18,6 +18,4 @@ extension Resolver {
             return ExitVehicleService(exitVehicleRepository: resolver.resolve(ExitVehicleRepositoryProtocol.self))
         }
     }
-    
 }
-

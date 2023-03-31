@@ -98,7 +98,7 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
     }
     
     var body: some View {
-        ZStack{
+        ZStack {
             ScrollView {
                 VStack {
                     if viewModel.state.valueToPay != 0 {
@@ -134,7 +134,7 @@ struct ExitVehicleView<ViewModel>: View where ViewModel: ExitVehicleProtocol {
                     viewModel.onDisappear()
                 }
             }
-            .background(Color("ColorBackground").ignoresSafeArea(.all,edges: [.bottom, .leading, .trailing]))
+            .background(Color("ColorBackground").ignoresSafeArea(.all, edges: [.bottom, .leading, .trailing]))
             
         }
         .navigationTitle(Constants.Title.parqueaderoTitle)

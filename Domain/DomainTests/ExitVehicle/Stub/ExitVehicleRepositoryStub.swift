@@ -35,5 +35,4 @@ final class ExitVehicleRepositoryStub: ExitVehicleRepositoryProtocol {
         return subject.eraseToAnyPublisher()
     }
     
-    
 }

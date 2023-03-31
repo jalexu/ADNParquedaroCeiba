@@ -68,7 +68,7 @@ extension RegisterVehicleViewModel {
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
                 self?.hiddeLoading()
-                if let registerError = error as? RegisterVehicleError  {
+                if let registerError = error as? RegisterVehicleError {
                     self?.showRegisterVehicleError(error: registerError)
                 } else {
                     self?.showAlert(message: Constants.errorMessageSaving)
@@ -102,14 +102,13 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
             saveVehicle(with: registerCar) {
                 completion()
             }
-            
-        }  catch VehicleError.cylinderCapacity(let error) {
+        } catch VehicleError.cylinderCapacity(let error) {
             hiddeLoading()
             showAlert(message: error)
         } catch VehicleError.plaqueAError(let error) {
             hiddeLoading()
             showAlert(message: error)
-        }  catch VehicleError.fieldPlaqueError(let error) {
+        } catch VehicleError.fieldPlaqueError(let error) {
             hiddeLoading()
             showAlert(message: error)
         } catch {
@@ -118,7 +117,6 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
         }
     }
 
-    
     func onAppear() {
         numberVehicles()
     }
@@ -137,7 +135,6 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
             })
             .store(in: &subscribers)
     }
-    
     
     private func showNumberVehicles(registerVehicles: [RegisterVehicle]) {
         updateState {

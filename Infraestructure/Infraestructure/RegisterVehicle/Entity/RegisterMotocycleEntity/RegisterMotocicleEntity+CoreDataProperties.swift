@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension RegisterMotocicleEntity {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<RegisterMotocicleEntity> {
@@ -40,6 +39,6 @@ extension RegisterMotocicleEntity {
 
 }
 
-extension RegisterMotocicleEntity : Identifiable {
+extension RegisterMotocicleEntity: Identifiable {
 
 }

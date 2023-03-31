@@ -14,7 +14,7 @@ public class Motorcycle: Vehicle {
         try self.validateCylinderCapacity()
     }
     
-    public func getCylinderCapacity()-> String {
+    public func getCylinderCapacity() -> String {
         cylinderCapacity
     }
     

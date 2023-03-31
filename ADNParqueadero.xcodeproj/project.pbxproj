@@ -66,6 +66,7 @@
 		E404FD1E29CB7C7800DB4F7F /* RegisterCarServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCarServiceStub.swift; sourceTree = "<group>"; };
 		E404FD2329CB848500DB4F7F /* ConstantsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsMock.swift; sourceTree = "<group>"; };
 		E404FDBB29CE419400DB4F7F /* Infraestructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infraestructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40B912129D71610000284D8 /* SwiftLint */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftLint; path = Pods/SwiftLint; sourceTree = "<group>"; };
 		E41387B929C49538000A07CC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41387F529C4B5C4000A07CC /* Infraestructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infraestructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42BF07F29D46FE0008B5F45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		75328F80CEC166342A4E505B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E40B912129D71610000284D8 /* SwiftLint */,
 				E404FDBB29CE419400DB4F7F /* Infraestructure.framework */,
 				E41387F529C4B5C4000A07CC /* Infraestructure.framework */,
 				E41387B929C49538000A07CC /* Domain.framework */,
@@ -398,7 +400,7 @@
 				E4FA503829C12C1500A11573 /* Sources */,
 				E4FA503929C12C1500A11573 /* Frameworks */,
 				E4FA503A29C12C1500A11573 /* Resources */,
-				E413878B29C228B7000A07CC /* ShellScript */,
+				E40B912029D7156D000284D8 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -524,8 +526,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E413878B29C228B7000A07CC /* ShellScript */ = {
+		E40B912029D7156D000284D8 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -533,13 +536,14 @@
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
