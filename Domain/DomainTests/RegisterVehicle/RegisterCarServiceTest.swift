@@ -81,7 +81,9 @@ final class RegisterCarServiceTest: XCTestCase {
         let successExpectation = expectation(description: "Success save")
         let failureExpectation = expectation(description: "Error save")
         successExpectation.isInverted = true
-        RegisterVehicleRepositoryStub.numberCarsStored = DomainTestMock.RegisterVehiclesWith20ElementsMock
+        do {
+            try RegisterVehicleRepositoryStub.numberCarsStored = DomainTestMock.registerVehiclesWith20ElementsMock()
+        } catch { }
         
         // Act
         cancellable = sut.save(with: DomainTestMock.registerVehicleCarMock)

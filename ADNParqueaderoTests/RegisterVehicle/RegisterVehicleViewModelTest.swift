@@ -15,8 +15,8 @@ final class RegisterVehicleViewModelTest: XCTestCase {
     private var motocicleService: RegisterMotorcycleServiceStub!
     
     override func setUpWithError() throws {
-        carService = RegisterCarServiceStub(vehicles: ConstantsMock.registerVehiclesWithCarMock)
-        motocicleService = RegisterMotorcycleServiceStub(vehicles: ConstantsMock.registerVehiclesWithMotorcycles)
+        carService = try RegisterCarServiceStub(vehicles: ConstantsMock.registerVehiclesWithCarMock())
+        motocicleService = try RegisterMotorcycleServiceStub(vehicles: ConstantsMock.registerVehiclesWithMotorcycles())
         sut = RegisterVehicleViewModel(registerCarService: carService, registerMotocicleService: motocicleService)
         try super.setUpWithError()
     }
