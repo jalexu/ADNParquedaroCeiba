@@ -29,6 +29,11 @@ pipeline {
         }
       }
     }
+    stage('Clean workspace') {
+      steps {
+        deleteDir()
+      }
+    }
   }
   post {
     failure {

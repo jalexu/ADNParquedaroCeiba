@@ -16,7 +16,7 @@ final class RegisterVehicleRepositoryCoreData: RegisterVehicleRepository {
         return Future { promise in
             let context = ConfigurationCoreDataBase.context
             
-            if ((data.getVehicle() as? Car) != nil) {
+            if (data.getVehicle() as? Car) != nil {
                 RegisterCarTraslator.tranformRegisterVehicleToRegisterCarEntity(data: data, context: context)
             } else {
                 RegisterMotorcycleTraslator.tranformRegisterVehicleToRegisterMotocicleEntity(data: data, context: context)

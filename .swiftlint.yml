@@ -1,12 +1,11 @@
 disabled_rules: # rule identifiers to exclude from running
-  - control_statement
   - trailing_whitespace
   - unused_closure_parameter
   - redundant_optional_initialization
   - empty_enum_arguments
   
 opt_in_rules: # some rules are only opt-in
-  - comment
+  - comment_spacing
 
 included: # paths to include during linting. `--path` is ignored if present.
   - ADNParqueadero
@@ -16,6 +15,9 @@ included: # paths to include during linting. `--path` is ignored if present.
   - Domain/DomainTests
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
+  - ADNParqueaderoTests/RegisterVehicle/Stub/
+  - Domain/DomainTests/Mock
+  - Domain/DomainTests/RegisterVehicle/Stub/
 
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
@@ -23,9 +25,6 @@ force_cast: warning # implicitly. Give warning only for force casting
 
 force_try:
   severity: warning # explicitly. Give warning only for force try
-  excluded: # excluded via string
-   -".*Stub\\.swift"
-   -".*Mock\\.swift"
 
 line_length:
 - 130
