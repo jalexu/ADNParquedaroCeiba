@@ -12,17 +12,14 @@ import Domain
 import Infraestructure
 
 class RegisterVehicleViewModel: BaseViewModel {
-    private let registerCarService: RegisterVehicleServiceProtocol
-    private let registerMotocicleService: RegisterVehicleServiceProtocol
+    private let registarVehicleService: RegisterVehicleServiceProtocol
     
     private var subscribers: Set<AnyCancellable> = []
     
     @Published var state = RegisterVehiculeState()
     
-    init(registerCarService: RegisterVehicleServiceProtocol,
-         registerMotocicleService: RegisterVehicleServiceProtocol) {
-        self.registerCarService = registerCarService
-        self.registerMotocicleService = registerMotocicleService
+    init(registarVehicleService: RegisterVehicleServiceProtocol) {
+        self.registarVehicleService = registarVehicleService
     }
     
     private func updateState(updater: () -> Void) {
@@ -63,7 +60,7 @@ class RegisterVehicleViewModel: BaseViewModel {
 // MARK: save Vehicle
 extension RegisterVehicleViewModel {
     private func saveVehicle(with data: RegisterVehicle, completion: @escaping () -> Void) {
-        registerCarService.save(with: data)
+        registarVehicleService.save(with: data)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
@@ -123,7 +120,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     
     private func numberVehicles() {
         self.loading = true
-        registerCarService.retrieveAll()
+        registarVehicleService.retrieveAll()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard case .failure(let error) = completion else { return }

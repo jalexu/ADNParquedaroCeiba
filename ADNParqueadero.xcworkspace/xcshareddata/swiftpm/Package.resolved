@@ -1,21 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Factory",
+      "state" : {
+        "revision" : "86c72fccbc8b4f978b46c629c46038d2e59a62f1",
+        "version" : "2.1.2"
+      }
+    },
+    {
       "identity" : "rappleprogresshud",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rjeprasad/RappleProgressHUD.git",
       "state" : {
         "revision" : "1ef701c43feb0990e0d5e3521a4efa8a2ac40f7e",
         "version" : "4.1.0"
-      }
-    },
-    {
-      "identity" : "resolver",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hmlongco/Resolver.git",
-      "state" : {
-        "branch" : "master",
-        "revision" : "c1c5ce3f7b567d3f813ca341087658cf13795918"
       }
     }
   ],

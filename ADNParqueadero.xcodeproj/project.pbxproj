@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E404FD1729CB303000DB4F7F /* ADNParqueadero+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD1629CB303000DB4F7F /* ADNParqueadero+Inject.swift */; };
 		E404FD1929CB307F00DB4F7F /* ExitVehicle+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD1829CB307F00DB4F7F /* ExitVehicle+Inject.swift */; };
-		E404FD1F29CB7C7800DB4F7F /* RegisterCarServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD1E29CB7C7800DB4F7F /* RegisterCarServiceStub.swift */; };
+		E404FD1F29CB7C7800DB4F7F /* RegisterVehicleServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD1E29CB7C7800DB4F7F /* RegisterVehicleServiceStub.swift */; };
 		E404FD2429CB848500DB4F7F /* ConstantsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD2329CB848500DB4F7F /* ConstantsMock.swift */; };
 		E404FDBC29CE419400DB4F7F /* Infraestructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E404FDBB29CE419400DB4F7F /* Infraestructure.framework */; };
 		E41387BA29C49538000A07CC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41387B929C49538000A07CC /* Domain.framework */; };
@@ -19,11 +18,11 @@
 		E42BF09C29D5EBF6008B5F45 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF09B29D5EBF6008B5F45 /* CircleImageView.swift */; };
 		E42BF09E29D5FB6F008B5F45 /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF09D29D5FB6F008B5F45 /* MotionAnimationView.swift */; };
 		E42BF0A129D61609008B5F45 /* CreateVehicleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF0A029D61609008B5F45 /* CreateVehicleStrategy.swift */; };
+		E42C1C0F29DB24FE0078707A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = E42C1C0E29DB24FE0078707A /* Factory */; };
 		E4568C3129C9D9610055A8E7 /* RegisterVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */; };
 		E4568C3329C9DB750055A8E7 /* RegisterVehiculeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */; };
 		E4568C3529C9E1710055A8E7 /* RegisterVehiculeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3429C9E1710055A8E7 /* RegisterVehiculeContract.swift */; };
 		E4568C5B29CA33C80055A8E7 /* ResgisterVehicle+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C5A29CA33C80055A8E7 /* ResgisterVehicle+Inject.swift */; };
-		E4568C6029CA387C0055A8E7 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = E4568C5F29CA387C0055A8E7 /* Resolver */; };
 		E4568C6C29CA7D490055A8E7 /* ExitVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C6B29CA7D490055A8E7 /* ExitVehicleView.swift */; };
 		E4568C6E29CA7E430055A8E7 /* ExitVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C6D29CA7E430055A8E7 /* ExitVehicleViewModel.swift */; };
 		E4568C7229CA7EF70055A8E7 /* ExitVehicleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C7129CA7EF70055A8E7 /* ExitVehicleState.swift */; };
@@ -61,9 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E404FD1629CB303000DB4F7F /* ADNParqueadero+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ADNParqueadero+Inject.swift"; sourceTree = "<group>"; };
 		E404FD1829CB307F00DB4F7F /* ExitVehicle+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExitVehicle+Inject.swift"; sourceTree = "<group>"; };
-		E404FD1E29CB7C7800DB4F7F /* RegisterCarServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCarServiceStub.swift; sourceTree = "<group>"; };
+		E404FD1E29CB7C7800DB4F7F /* RegisterVehicleServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleServiceStub.swift; sourceTree = "<group>"; };
 		E404FD2329CB848500DB4F7F /* ConstantsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsMock.swift; sourceTree = "<group>"; };
 		E404FDBB29CE419400DB4F7F /* Infraestructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infraestructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40B912129D71610000284D8 /* SwiftLint */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftLint; path = Pods/SwiftLint; sourceTree = "<group>"; };
@@ -109,7 +107,7 @@
 				E404FDBC29CE419400DB4F7F /* Infraestructure.framework in Frameworks */,
 				E41387BA29C49538000A07CC /* Domain.framework in Frameworks */,
 				E4568C7929CA80C00055A8E7 /* RappleProgressHUD in Frameworks */,
-				E4568C6029CA387C0055A8E7 /* Resolver in Frameworks */,
+				E42C1C0F29DB24FE0078707A /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B5F46E29CF4D81002BDB13 /* RegisterMotorcycleServiceStub.swift */,
-				E404FD1E29CB7C7800DB4F7F /* RegisterCarServiceStub.swift */,
+				E404FD1E29CB7C7800DB4F7F /* RegisterVehicleServiceStub.swift */,
 			);
 			path = Stub;
 			sourceTree = "<group>";
@@ -288,14 +286,6 @@
 			path = Strategy;
 			sourceTree = "<group>";
 		};
-		E4568C5629CA33000055A8E7 /* ADNParqueadero+Inject */ = {
-			isa = PBXGroup;
-			children = (
-				E404FD1629CB303000DB4F7F /* ADNParqueadero+Inject.swift */,
-			);
-			path = "ADNParqueadero+Inject";
-			sourceTree = "<group>";
-		};
 		E4568C6F29CA7E7F0055A8E7 /* RegisterVehicle */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +340,6 @@
 		E4FA503E29C12C1500A11573 /* ADNParqueadero */ = {
 			isa = PBXGroup;
 			children = (
-				E4568C5629CA33000055A8E7 /* ADNParqueadero+Inject */,
 				E4568C6529CA475D0055A8E7 /* Info.plist */,
 				E4FA503F29C12C1500A11573 /* ADNParqueaderoApp.swift */,
 				E4FA504329C12C1700A11573 /* Assets.xcassets */,
@@ -408,8 +397,8 @@
 			);
 			name = ADNParqueadero;
 			packageProductDependencies = (
-				E4568C5F29CA387C0055A8E7 /* Resolver */,
 				E4568C7829CA80C00055A8E7 /* RappleProgressHUD */,
+				E42C1C0E29DB24FE0078707A /* Factory */,
 			);
 			productName = ADNParqueadero;
 			productReference = E4FA503C29C12C1500A11573 /* ADNParqueadero.app */;
@@ -484,8 +473,8 @@
 			);
 			mainGroup = E4FA503329C12C1500A11573;
 			packageReferences = (
-				E4568C5E29CA387C0055A8E7 /* XCRemoteSwiftPackageReference "Resolver.git" */,
 				E4568C7729CA80C00055A8E7 /* XCRemoteSwiftPackageReference "RappleProgressHUD.git" */,
+				E42C1C0D29DB24FE0078707A /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = E4FA503D29C12C1500A11573 /* Products */;
 			projectDirPath = "";
@@ -567,7 +556,6 @@
 				E4568C3129C9D9610055A8E7 /* RegisterVehicleViewModel.swift in Sources */,
 				E4568C5B29CA33C80055A8E7 /* ResgisterVehicle+Inject.swift in Sources */,
 				E42BF09E29D5FB6F008B5F45 /* MotionAnimationView.swift in Sources */,
-				E404FD1729CB303000DB4F7F /* ADNParqueadero+Inject.swift in Sources */,
 				E4568C6E29CA7E430055A8E7 /* ExitVehicleViewModel.swift in Sources */,
 				E4FA504029C12C1500A11573 /* ADNParqueaderoApp.swift in Sources */,
 				E4568C7429CA7F2A0055A8E7 /* ExitVehicleContract.swift in Sources */,
@@ -580,7 +568,7 @@
 			files = (
 				E4B5F4AE29D3922A002BDB13 /* ExitVehicleServiceStub.swift in Sources */,
 				E404FD2429CB848500DB4F7F /* ConstantsMock.swift in Sources */,
-				E404FD1F29CB7C7800DB4F7F /* RegisterCarServiceStub.swift in Sources */,
+				E404FD1F29CB7C7800DB4F7F /* RegisterVehicleServiceStub.swift in Sources */,
 				E4FA505129C12C1700A11573 /* RegisterVehicleViewModelTest.swift in Sources */,
 				E4B5F47129CF5BF3002BDB13 /* ExitVehicleViewModelTest.swift in Sources */,
 				E4B5F46F29CF4D81002BDB13 /* RegisterMotorcycleServiceStub.swift in Sources */,
@@ -900,12 +888,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E4568C5E29CA387C0055A8E7 /* XCRemoteSwiftPackageReference "Resolver.git" */ = {
+		E42C1C0D29DB24FE0078707A /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			repositoryURL = "https://github.com/hmlongco/Factory";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		E4568C7729CA80C00055A8E7 /* XCRemoteSwiftPackageReference "RappleProgressHUD.git" */ = {
@@ -919,10 +907,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E4568C5F29CA387C0055A8E7 /* Resolver */ = {
+		E42C1C0E29DB24FE0078707A /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E4568C5E29CA387C0055A8E7 /* XCRemoteSwiftPackageReference "Resolver.git" */;
-			productName = Resolver;
+			package = E42C1C0D29DB24FE0078707A /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 		E4568C7829CA80C00055A8E7 /* RappleProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;

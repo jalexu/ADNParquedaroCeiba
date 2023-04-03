@@ -1,5 +1,5 @@
 //
-//  RegisterCarServiceStub.swift
+//  RegisterVehicleServiceStub.swift
 //  ADNParqueaderoTests
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 22/03/23.
@@ -9,7 +9,7 @@ import Combine
 @testable import Domain
 @testable import Infraestructure
 
-final class RegisterCarServiceStub: RegisterVehicleServiceProtocol {
+final class RegisterVehicleServiceStub: RegisterVehicleServiceProtocol {
     enum InteractorStubCase<T> {
         case success(() -> T)
         case failure(() -> Error)

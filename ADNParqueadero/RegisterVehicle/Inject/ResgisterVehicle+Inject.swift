@@ -5,14 +5,14 @@
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 21/03/23.
 //
 
-import Resolver
 import Domain
+import Factory
 
-extension Resolver {
-    public static func registerRegisterVehicleViewModel() {
-        register(RegisterVehicleViewModel.self) { resolver in
-            RegisterVehicleViewModel(registerCarService: resolver.resolve(RegisterVehicleServiceProtocol.self),
-                                     registerMotocicleService: resolver.resolve(RegisterVehicleServiceProtocol.self))
+// MARK: Inject RegisterVehicleViewModel
+extension Container {
+    var injectRegisterVehicleViewModel: Factory<RegisterVehicleViewModel> {
+        Factory(self) {
+            RegisterVehicleViewModel(registarVehicleService: self.injectRegisterVehicleService())
         }
     }
 }

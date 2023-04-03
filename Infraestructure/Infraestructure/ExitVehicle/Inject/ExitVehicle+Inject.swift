@@ -5,17 +5,16 @@
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 24/03/23.
 //
 
-import Resolver
 import Domain
+import Factory
 
-extension Resolver {
-    public static func registerExitVehicleRepositoryDependencies() {
-        register(ExitVehicleRepositoryProtocol.self) {
-            return ExitVehicleRepositoryCoreData()
-        }
-        
-        register(ExitVehicleServiceProtocol.self) { resolver in
-            return ExitVehicleService(exitVehicleRepository: resolver.resolve(ExitVehicleRepositoryProtocol.self))
-        }
+// MARK: Inject ExitVehicleRepository
+extension Container {
+    var injectExitVehicleRepository: Factory<ExitVehicleRepositoryProtocol> {
+        Factory(self) { ExitVehicleRepositoryCoreData() }.singleton
+    }
+    
+    public var injectExitVehicleService: Factory<ExitVehicleServiceProtocol> {
+        Factory(self) { ExitVehicleService(exitVehicleRepository: self.injectExitVehicleRepository()) }
     }
 }

@@ -5,32 +5,17 @@
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 29/03/23.
 //
 
-import Resolver
 import Domain
+import Factory
 
-extension Resolver {
-    public static func registerRegisterVehicleRepositoryDependencies() {
-        registerRegisterCarRepository()
-        registerRegisterMotocicleRepository()
+// MARK: Inject RegisterVehicle
+extension Container {
+    
+    public var injectRegisterVehicleRepository: Factory<RegisterVehicleRepository> {
+        Factory(self) { RegisterVehicleRepositoryCoreData() }.singleton
     }
     
-    private static func registerRegisterCarRepository() {
-        register(RegisterVehicleRepository.self) {
-            return RegisterVehicleRepositoryCoreData()
-        }
-        
-        register(RegisterVehicleServiceProtocol.self) { resolver in
-            return RegisterCarService(registerVehicleRepository: resolver.resolve(RegisterVehicleRepository.self))
-        }
-    }
-    
-    private static func registerRegisterMotocicleRepository() {
-        register(RegisterVehicleRepository.self) {
-            return RegisterVehicleRepositoryCoreData()
-        }
-        
-        register(RegisterVehicleServiceProtocol.self) { resolver in
-            return RegisterMotorcycleService(registerVehicleRepository: resolver.resolve(RegisterVehicleRepository.self))
-        }
+    public var injectRegisterVehicleService: Factory<RegisterVehicleServiceProtocol> {
+        Factory(self) { RegisterMotorcycleService(registerVehicleRepository: self.injectRegisterVehicleRepository()) }
     }
 }

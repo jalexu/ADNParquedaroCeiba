@@ -30,7 +30,7 @@
 		E42BF07429D463A0008B5F45 /* ExitMotorcycleTraslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF07329D463A0008B5F45 /* ExitMotorcycleTraslator.swift */; };
 		E42BF08529D48120008B5F45 /* RegisterVehicle+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08429D48120008B5F45 /* RegisterVehicle+Inject.swift */; };
 		E42BF08929D483A3008B5F45 /* CarRepositoryCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */; };
-		E4568C6329CA38970055A8E7 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = E4568C6229CA38970055A8E7 /* Resolver */; };
+		E42C1C1229DB251C0078707A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = E42C1C1129DB251C0078707A /* Factory */; };
 		E4B5F4A329D34E52002BDB13 /* ExitVehicleRepositoryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4A229D34E52002BDB13 /* ExitVehicleRepositoryCoreData.swift */; };
 		E4B5F4A929D3528D002BDB13 /* ExitCarTraslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4A829D3528D002BDB13 /* ExitCarTraslator.swift */; };
 /* End PBXBuildFile section */
@@ -94,8 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42C1C1229DB251C0078707A /* Factory in Frameworks */,
 				E404FD4129CCB37D00DB4F7F /* Domain.framework in Frameworks */,
-				E4568C6329CA38970055A8E7 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +365,7 @@
 			);
 			name = Infraestructure;
 			packageProductDependencies = (
-				E4568C6229CA38970055A8E7 /* Resolver */,
+				E42C1C1129DB251C0078707A /* Factory */,
 			);
 			productName = Infraestructure;
 			productReference = E41387D429C4B55B000A07CC /* Infraestructure.framework */;
@@ -418,7 +418,7 @@
 			);
 			mainGroup = E41387CA29C4B55B000A07CC;
 			packageReferences = (
-				E4568C6129CA38970055A8E7 /* XCRemoteSwiftPackageReference "Resolver" */,
+				E42C1C1029DB251C0078707A /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = E41387D529C4B55B000A07CC /* Products */;
 			projectDirPath = "";
@@ -738,21 +738,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E4568C6129CA38970055A8E7 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+		E42C1C1029DB251C0078707A /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			repositoryURL = "https://github.com/hmlongco/Factory";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E4568C6229CA38970055A8E7 /* Resolver */ = {
+		E42C1C1129DB251C0078707A /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E4568C6129CA38970055A8E7 /* XCRemoteSwiftPackageReference "Resolver" */;
-			productName = Resolver;
+			package = E42C1C1029DB251C0078707A /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
 

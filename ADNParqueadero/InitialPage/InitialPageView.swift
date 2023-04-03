@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
-import Resolver
+import Factory
 
 struct InitialPageView: View {
     
+    @StateObject private var registerVehicleViewModel = Container.shared.injectRegisterVehicleViewModel()
+    @StateObject private var exitVehicleViewModel = Container.shared.injectExitVehicleViewModel()
+    
     var registerNavigationLink: some View {
         NavigationLink(
-            destination: RegisterVehicleView(viewModel: Resolver.resolve(RegisterVehicleViewModel.self)),
+            destination: RegisterVehicleView(viewModel: registerVehicleViewModel),
             label: {
                 HStack(alignment: .center, spacing: 6) {
                     Text("Registrar vehículo")
@@ -30,7 +33,7 @@ struct InitialPageView: View {
     
     var paymentNavigationLink: some View {
         NavigationLink(
-            destination: ExitVehicleView(viewModel: Resolver.resolve(ExitVehicleViewModel.self)),
+            destination: ExitVehicleView(viewModel: exitVehicleViewModel),
             label: {
                 HStack(alignment: .center, spacing: 6) {
                     Text("Pagar vehículo")

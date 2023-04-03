@@ -1156,6 +1156,38 @@
             endingLineNumber = "52"
             landmarkName = "retrieveByPlaque(numerPlaque:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C62C9D5F-B90F-47AA-AC41-FDAF4370691F - 1b76637f7661eec8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; ()) -&gt; () in Infraestructure.RegisterVehicleRepositoryCoreData.retrieveByPlaque(numerPlaque: Swift.String) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt;"
+                  moduleName = "Infraestructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1617">
+               </Location>
+               <Location
+                  uuid = "C62C9D5F-B90F-47AA-AC41-FDAF4370691F - 1b76637f7661e90e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; ()) -&gt; () in Infraestructure.RegisterVehicleRepositoryCoreData.retrieveByPlaque(numerPlaque: Swift.String) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt;"
+                  moduleName = "Infraestructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "707">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1172,6 +1204,38 @@
             endingLineNumber = "50"
             landmarkName = "retrieveByPlaque(numerPlaque:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7EBDD967-882F-49CE-999B-70A5BE10FD18 - 1b76637f7661ee8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; ()) -&gt; () in Infraestructure.RegisterVehicleRepositoryCoreData.retrieveByPlaque(numerPlaque: Swift.String) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt;"
+                  moduleName = "Infraestructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "1475">
+               </Location>
+               <Location
+                  uuid = "7EBDD967-882F-49CE-999B-70A5BE10FD18 - 1b76637f7661eee9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; ()) -&gt; () in Infraestructure.RegisterVehicleRepositoryCoreData.retrieveByPlaque(numerPlaque: Swift.String) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt;"
+                  moduleName = "Infraestructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "634">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1188,6 +1252,38 @@
             endingLineNumber = "29"
             landmarkName = "tranformRegisterVehicleToRegisterCarEntity(data:context:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "64A62DEA-59B2-41FF-9D20-D98C9F3E48D4 - bed57fc4ad8fa41b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Infraestructure.RegisterCarTraslator.tranformRegisterVehicleToRegisterCarEntity(data: Domain.RegisterVehicle, context: __C.NSManagedObjectContext) -&gt; Swift.Optional&lt;Infraestructure.RegisterCarEntity&gt;"
+                  moduleName = "Infraestructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Infraestructure/Infraestructure/RegisterVehicle/Anticorruption/RegisterCarTraslator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "851">
+               </Location>
+               <Location
+                  uuid = "64A62DEA-59B2-41FF-9D20-D98C9F3E48D4 - 27776e200d7ab65e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[2] = Dead&gt; of static Infraestructure.RegisterCarTraslator.tranformRegisterVehicleToRegisterCarEntity(data: Domain.RegisterVehicle, context: __C.NSManagedObjectContext) -&gt; Swift.Optional&lt;Infraestructure.RegisterCarEntity&gt;"
+                  moduleName = "Infraestructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Infraestructure/Infraestructure/RegisterVehicle/Anticorruption/RegisterCarTraslator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "567">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1204,38 +1300,38 @@
             endingLineNumber = "72"
             landmarkName = "searchVehicle()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "44AD3B0E-4D07-43F9-962A-87DD9017C9F6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "save(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "284FB226-27FE-4141-B2A2-569DE6C8055B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Infraestructure/Infraestructure/RegisterVehicle/Repository/RegisterVehicleRepositoryCoreData.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "save(with:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "427DA96D-6D2B-4106-A1E7-2FC8C179F239 - 8f0c8977d8fa2703"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Domain.ExitVehicle&gt;) -&gt; () in ADNParqueadero.ExitVehicleViewModel.searchVehicle() -&gt; ()"
+                  moduleName = "ADNParqueadero"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/ADNParqueadero/ExitVehicle/ViewModel/ExitVehicleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "417">
+               </Location>
+               <Location
+                  uuid = "427DA96D-6D2B-4106-A1E7-2FC8C179F239 - 8f0c8977d8fa2703"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Domain.ExitVehicle&gt;) -&gt; () in ADNParqueadero.ExitVehicleViewModel.searchVehicle() -&gt; ()"
+                  moduleName = "ADNParqueadero"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/ADNParqueadero/ExitVehicle/ViewModel/ExitVehicleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "145">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

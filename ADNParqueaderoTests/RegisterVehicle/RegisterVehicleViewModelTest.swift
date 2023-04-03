@@ -11,19 +11,16 @@ import XCTest
 
 final class RegisterVehicleViewModelTest: XCTestCase {
     private var sut: RegisterVehicleViewModel!
-    private var carService: RegisterCarServiceStub!
-    private var motocicleService: RegisterMotorcycleServiceStub!
+    private var registerVehicleService: RegisterVehicleServiceStub!
     
     override func setUpWithError() throws {
-        carService = try RegisterCarServiceStub(vehicles: ConstantsMock.registerVehiclesWithCarMock())
-        motocicleService = try RegisterMotorcycleServiceStub(vehicles: ConstantsMock.registerVehiclesWithMotorcycles())
-        sut = RegisterVehicleViewModel(registerCarService: carService, registerMotocicleService: motocicleService)
+        registerVehicleService = try RegisterVehicleServiceStub(vehicles: ConstantsMock.registerVehiclesWithCarMock())
+        sut = RegisterVehicleViewModel(registarVehicleService: registerVehicleService)
         try super.setUpWithError()
     }
     
     override func tearDownWithError() throws {
-        carService = nil
-        motocicleService = nil
+        registerVehicleService = nil
         sut = nil
         try super.tearDownWithError()
     }
@@ -32,7 +29,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         // Arrange
         let expectation = XCTestExpectation(description: "Get vehicles from coreData")
         
-        carService.responseHandler = .success {
+        registerVehicleService.responseHandler = .success {
             ConstantsMock.registerVehiclesWithCarMock
         }
         
@@ -54,7 +51,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         // Arrange
         let expectation = XCTestExpectation(description: "Get error from coreData")
         
-        carService.responseHandler = .failure({
+        registerVehicleService.responseHandler = .failure({
             NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
@@ -76,11 +73,11 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         // Arrange
         let expectation = XCTestExpectation(description: "Get vehicles from coreData")
         
-        carService.responseHandler = .success {
+        registerVehicleService.responseHandler = .success {
             ConstantsMock.registerVehiclesWithCarMock
         }
         
-        motocicleService.responseHandler = .success {
+        registerVehicleService.responseHandler = .success {
             ConstantsMock.registerVehiclesWithMotorcycles
         }
         
@@ -102,7 +99,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         // Arrange
         let expectation = XCTestExpectation(description: "Get error from coreData")
         
-        carService.responseHandler = .failure({
+        registerVehicleService.responseHandler = .failure({
             NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
@@ -126,7 +123,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.inputPlaque = "AHN657"
         sut.state.seletedVehicleType = .car
         
-        carService.responseHandler = .success {
+        registerVehicleService.responseHandler = .success {
             ConstantsMock.registerVehiclesWithCarMock
         }
         
@@ -148,7 +145,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.inputPlaque = "BHN657"
         sut.state.seletedVehicleType = .car
         
-        carService.responseHandler = .failure({
+        registerVehicleService.responseHandler = .failure({
             NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
@@ -170,7 +167,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.inputPlaque = "AHN657"
         sut.state.seletedVehicleType = .motocicle
         
-        motocicleService.responseHandler = .success {
+        registerVehicleService.responseHandler = .success {
             ConstantsMock.registerVehiclesWithMotorcycles
         }
         
@@ -193,7 +190,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.seletedVehicleType = .motocicle
         sut.state.inputCylinderCapacity = "200"
         
-        motocicleService.responseHandler = .failure({
+        registerVehicleService.responseHandler = .failure({
             NSError(domain: "Data does't exist", code: 500, userInfo: nil)
         })
         
@@ -287,7 +284,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.inputPlaque = ""
         sut.state.seletedVehicleType = .motocicle
         
-        motocicleService.responseHandler = .success {
+        registerVehicleService.responseHandler = .success {
             ConstantsMock.registerVehiclesWithMotorcycles
         }
         
@@ -309,7 +306,7 @@ final class RegisterVehicleViewModelTest: XCTestCase {
         sut.state.inputPlaque = "ALK"
         sut.state.seletedVehicleType = .motocicle
         
-        motocicleService.responseHandler = .success {
+        registerVehicleService.responseHandler = .success {
             ConstantsMock.registerVehiclesWithMotorcycles
         }
         
