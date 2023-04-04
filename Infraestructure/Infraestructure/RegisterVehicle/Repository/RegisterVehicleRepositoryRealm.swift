@@ -1,5 +1,5 @@
 //
-//  CarRepositoryCoreData.swift
+//  RegisterVehicleRepositoryRealm.swift
 //  Infraestructure
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 23/03/23.
@@ -10,7 +10,7 @@ import CoreData
 import Domain
 import Combine
 
-final class CarRepositoryCoreData {
+final class RegisterVehicleRepositoryRealm {
     init() {}
     
     func saveCar(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error> {
