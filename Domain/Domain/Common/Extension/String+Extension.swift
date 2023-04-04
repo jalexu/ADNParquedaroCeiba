@@ -8,6 +8,7 @@
 import Foundation
 extension String {
     func localized(commet: String = "") -> String {
-        return NSLocalizedString(self, comment: commet)
+        let bundle = Bundle(identifier: "com.jaime.uribe.Domain")
+        return NSLocalizedString(self, bundle: bundle!, comment: commet)
     }
 }

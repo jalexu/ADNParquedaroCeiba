@@ -5,57 +5,81 @@
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 23/03/23.
 //
 
-import Foundation
-import CoreData
 import Domain
 import Combine
 
-final class RegisterVehicleRepositoryRealm {
-    init() {}
+@_implementationOnly import RealmSwift
+
+final class RegisterVehicleRepositoryRealm: RegisterVehicleRepository {
     
-    func saveCar(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error> {
-        return Future { promise in
-            let context = ConfigurationCoreDataBase.context
-            
-            do {
-                RegisterCarTraslator.tranformRegisterVehicleToRegisterCarEntity(data: data, context: context)
-                try context.save()
-                debugPrint("We have been register vehicule")
-                promise(.success(true))
-            } catch {
-                debugPrint("Realm has error whent try to save data")
-                promise(.failure(error))
-            }
-        }.eraseToAnyPublisher()
+    private var realmManager: RealmManagerProtocol
+    
+    init(realmManager: RealmManagerProtocol) {
+        self.realmManager = realmManager
     }
     
-    func retrieveNumberCars() -> AnyPublisher<Int, Error> {
-        return Future { promise in
-            let context = ConfigurationCoreDataBase.context
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterCarEntity")
-            
-            do {
-                let result = try context.fetch(fetchRequest)
-                let vehicleData = result.count
-                promise(.success(vehicleData))
-            } catch {
-                promise(.failure(error))
-            }
-        }.eraseToAnyPublisher()
+    func save(with data: Domain.RegisterVehicle) -> AnyPublisher<Bool, Error> {
+        var vehicleDTO: Object
+        if (data.getVehicle() as? Motorcycle) != nil {
+            vehicleDTO = RegisterMotorcycleTraslator.toRegisterMotorcycleDTO(data: data)
+        } else {
+            vehicleDTO = RegisterCarTraslator.toRegisterCarDTO(data: data)
+        }
+        
+        return realmManager.save(dto: vehicleDTO)
     }
     
-    func retrieveRegisterCar(numerPlaque: String) -> AnyPublisher<Bool, Error> {
-        return Future { promise in
-            let context = ConfigurationCoreDataBase.context
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RegisterCarEntity")
-            
-            do {
-                let result = try context.fetch(fetchRequest) as? [NSManagedObject]
-                let register = result?.first { $0.value(forKey: "plaqueId") as? String == numerPlaque }
-                promise(.success(register != nil))
-            } catch {
-                promise(.failure(error))
+    func retrieveByPlaque(numerPlaque: String) -> AnyPublisher<Bool, Error> {
+        return Publishers.Zip(findCarDto(plaqueId: numerPlaque), findMotorcycleDto(plaqueId: numerPlaque))
+            .flatMap { (registerCarDTO, registerMotorcycleDTO)  in
+                if registerCarDTO != nil {
+                    return CurrentValueSubject<Bool, Error>(true)
+                }
+                
+                if registerMotorcycleDTO != nil {
+                    return CurrentValueSubject<Bool, Error>(true)
+                }
+                
+                return CurrentValueSubject<Bool, Error>(false)
             }
-        }.eraseToAnyPublisher()
+            .eraseToAnyPublisher()
+    }
+    
+    func retrieveAll() -> AnyPublisher<[RegisterVehicle], Error> {
+        return Publishers.Zip(getCarDtos(), getMotorcycleDtos())
+            .flatMap { (carsDto, motociclesDtos) in
+                var registerVehicle: [RegisterVehicle] = []
+                do {
+                    let motorcycles = try RegisterMotorcycleTraslator
+                        .motorcyclesDtoToRegisterVehicle(motorcyclesDTO: motociclesDtos)
+                    let cars = try RegisterCarTraslator.carDtosToRegisterVehicle(carsDTO: carsDto)
+                    
+                    registerVehicle.append(contentsOf: motorcycles)
+                    registerVehicle.append(contentsOf: cars)
+                    
+                    return CurrentValueSubject<[RegisterVehicle], Error>(registerVehicle)
+                        .eraseToAnyPublisher()
+                } catch {
+                    return Fail(error: error)
+                        .eraseToAnyPublisher()
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private func getMotorcycleDtos() -> AnyPublisher<[RegisterMotorcycleDTO], Never> {
+        realmManager.fetchObjects(RegisterMotorcycleDTO.self)
+    }
+    
+    private func getCarDtos() -> AnyPublisher<[RegisterCarDTO], Never> {
+        realmManager.fetchObjects(RegisterCarDTO.self)
+    }
+    
+    private func findMotorcycleDto(plaqueId: String) -> AnyPublisher<RegisterMotorcycleDTO?, Never> {
+        realmManager.fetchObject(plaqueId: plaqueId, RegisterMotorcycleDTO.self)
+    }
+    
+    private func findCarDto(plaqueId: String) -> AnyPublisher<RegisterCarDTO?, Never> {
+        realmManager.fetchObject(plaqueId: plaqueId, RegisterCarDTO.self)
     }
 }

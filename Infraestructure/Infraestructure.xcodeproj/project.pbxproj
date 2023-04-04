@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E404FD2129CB7E1B00DB4F7F /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD2029CB7E1B00DB4F7F /* CustomErrors.swift */; };
-		E404FD3429CC9E5C00DB4F7F /* CarRepositoryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD3329CC9E5C00DB4F7F /* CarRepositoryCoreData.swift */; };
+		E404FD3429CC9E5C00DB4F7F /* RegisterVehicleRepositoryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD3329CC9E5C00DB4F7F /* RegisterVehicleRepositoryRealm.swift */; };
 		E404FD3B29CCAC8E00DB4F7F /* RegisterVehicleRepositoryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD3A29CCAC8E00DB4F7F /* RegisterVehicleRepositoryCoreData.swift */; };
 		E404FD3D29CCAE7E00DB4F7F /* RegisterCarTraslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD3C29CCAE7E00DB4F7F /* RegisterCarTraslator.swift */; };
 		E404FD3F29CCB04F00DB4F7F /* RegisterMotorcycleTraslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404FD3E29CCB04F00DB4F7F /* RegisterMotorcycleTraslator.swift */; };
@@ -31,6 +31,13 @@
 		E42BF08529D48120008B5F45 /* RegisterVehicle+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08429D48120008B5F45 /* RegisterVehicle+Inject.swift */; };
 		E42BF08929D483A3008B5F45 /* CarRepositoryCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */; };
 		E42C1C1229DB251C0078707A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = E42C1C1129DB251C0078707A /* Factory */; };
+		E42C1C1E29DB5BD50078707A /* RegisterCarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C1C1D29DB5BD50078707A /* RegisterCarDTO.swift */; };
+		E42C1C2229DB5F090078707A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C1C2129DB5F090078707A /* RealmManager.swift */; };
+		E42C1C2E29DB842A0078707A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E42C1C2D29DB842A0078707A /* Realm */; };
+		E42C1C3029DB842A0078707A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E42C1C2F29DB842A0078707A /* RealmSwift */; };
+		E42C1C3229DC74B80078707A /* RegisterMotorcycleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C1C3129DC74B80078707A /* RegisterMotorcycleDTO.swift */; };
+		E42C1C3929DCAFC20078707A /* RegisterVehicleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C1C3829DCAFC20078707A /* RegisterVehicleDTO.swift */; };
+		E42C1C3B29DCB9920078707A /* ExitVehicleRepositoryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C1C3A29DCB9920078707A /* ExitVehicleRepositoryRealm.swift */; };
 		E4B5F4A329D34E52002BDB13 /* ExitVehicleRepositoryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4A229D34E52002BDB13 /* ExitVehicleRepositoryCoreData.swift */; };
 		E4B5F4A929D3528D002BDB13 /* ExitCarTraslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F4A829D3528D002BDB13 /* ExitCarTraslator.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +68,7 @@
 
 /* Begin PBXFileReference section */
 		E404FD2029CB7E1B00DB4F7F /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
-		E404FD3329CC9E5C00DB4F7F /* CarRepositoryCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepositoryCoreData.swift; sourceTree = "<group>"; };
+		E404FD3329CC9E5C00DB4F7F /* RegisterVehicleRepositoryRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleRepositoryRealm.swift; sourceTree = "<group>"; };
 		E404FD3A29CCAC8E00DB4F7F /* RegisterVehicleRepositoryCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleRepositoryCoreData.swift; sourceTree = "<group>"; };
 		E404FD3C29CCAE7E00DB4F7F /* RegisterCarTraslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCarTraslator.swift; sourceTree = "<group>"; };
 		E404FD3E29CCB04F00DB4F7F /* RegisterMotorcycleTraslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMotorcycleTraslator.swift; sourceTree = "<group>"; };
@@ -83,6 +90,11 @@
 		E42BF07329D463A0008B5F45 /* ExitMotorcycleTraslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitMotorcycleTraslator.swift; sourceTree = "<group>"; };
 		E42BF08429D48120008B5F45 /* RegisterVehicle+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterVehicle+Inject.swift"; sourceTree = "<group>"; };
 		E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepositoryCoreDataTest.swift; sourceTree = "<group>"; };
+		E42C1C1D29DB5BD50078707A /* RegisterCarDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCarDTO.swift; sourceTree = "<group>"; };
+		E42C1C2129DB5F090078707A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		E42C1C3129DC74B80078707A /* RegisterMotorcycleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMotorcycleDTO.swift; sourceTree = "<group>"; };
+		E42C1C3829DCAFC20078707A /* RegisterVehicleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleDTO.swift; sourceTree = "<group>"; };
+		E42C1C3A29DCB9920078707A /* ExitVehicleRepositoryRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitVehicleRepositoryRealm.swift; sourceTree = "<group>"; };
 		E4568C3A29C9FBA30055A8E7 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4568C3E29C9FE3E0055A8E7 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B5F4A229D34E52002BDB13 /* ExitVehicleRepositoryCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitVehicleRepositoryCoreData.swift; sourceTree = "<group>"; };
@@ -94,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42C1C3029DB842A0078707A /* RealmSwift in Frameworks */,
+				E42C1C2E29DB842A0078707A /* Realm in Frameworks */,
 				E42C1C1229DB251C0078707A /* Factory in Frameworks */,
 				E404FD4129CCB37D00DB4F7F /* Domain.framework in Frameworks */,
 			);
@@ -200,6 +214,24 @@
 			path = Vehicle;
 			sourceTree = "<group>";
 		};
+		E42C1C1329DB59A70078707A /* RealmDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				E42C1C2129DB5F090078707A /* RealmManager.swift */,
+			);
+			path = RealmDataBase;
+			sourceTree = "<group>";
+		};
+		E42C1C1C29DB5BAD0078707A /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				E42C1C1D29DB5BD50078707A /* RegisterCarDTO.swift */,
+				E42C1C3129DC74B80078707A /* RegisterMotorcycleDTO.swift */,
+				E42C1C3829DCAFC20078707A /* RegisterVehicleDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		E4568C3929C9FBA30055A8E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B5F49B29D3166A002BDB13 /* CoreData */,
+				E42C1C1329DB59A70078707A /* RealmDataBase */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -292,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				E404FD3529CC9F1300DB4F7F /* Anticorruption */,
+				E42C1C1C29DB5BAD0078707A /* DTO */,
 				E42BF08E29D4E31F008B5F45 /* Entity */,
 				E42BF08329D480F9008B5F45 /* Inject */,
 				E4B5F49D29D31748002BDB13 /* Repository */,
@@ -302,7 +336,7 @@
 		E4B5F49D29D31748002BDB13 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				E404FD3329CC9E5C00DB4F7F /* CarRepositoryCoreData.swift */,
+				E404FD3329CC9E5C00DB4F7F /* RegisterVehicleRepositoryRealm.swift */,
 				E404FD3A29CCAC8E00DB4F7F /* RegisterVehicleRepositoryCoreData.swift */,
 			);
 			path = Repository;
@@ -322,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B5F4A229D34E52002BDB13 /* ExitVehicleRepositoryCoreData.swift */,
+				E42C1C3A29DCB9920078707A /* ExitVehicleRepositoryRealm.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -366,6 +401,8 @@
 			name = Infraestructure;
 			packageProductDependencies = (
 				E42C1C1129DB251C0078707A /* Factory */,
+				E42C1C2D29DB842A0078707A /* Realm */,
+				E42C1C2F29DB842A0078707A /* RealmSwift */,
 			);
 			productName = Infraestructure;
 			productReference = E41387D429C4B55B000A07CC /* Infraestructure.framework */;
@@ -419,6 +456,7 @@
 			mainGroup = E41387CA29C4B55B000A07CC;
 			packageReferences = (
 				E42C1C1029DB251C0078707A /* XCRemoteSwiftPackageReference "Factory" */,
+				E42C1C2C29DB842A0078707A /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = E41387D529C4B55B000A07CC /* Products */;
 			projectDirPath = "";
@@ -455,11 +493,14 @@
 				E404FDE629CE499100DB4F7F /* MotocicleEntity+CoreDataClass.swift in Sources */,
 				E404FD3D29CCAE7E00DB4F7F /* RegisterCarTraslator.swift in Sources */,
 				E404FD2129CB7E1B00DB4F7F /* CustomErrors.swift in Sources */,
-				E404FD3429CC9E5C00DB4F7F /* CarRepositoryCoreData.swift in Sources */,
+				E404FD3429CC9E5C00DB4F7F /* RegisterVehicleRepositoryRealm.swift in Sources */,
 				E404FDE229CE492700DB4F7F /* RegisterMotocicleEntity+CoreDataClass.swift in Sources */,
+				E42C1C2229DB5F090078707A /* RealmManager.swift in Sources */,
 				E404FD3B29CCAC8E00DB4F7F /* RegisterVehicleRepositoryCoreData.swift in Sources */,
+				E42C1C3929DCAFC20078707A /* RegisterVehicleDTO.swift in Sources */,
 				E404FDD529CE47D900DB4F7F /* RegisterCarEntity+CoreDataProperties.swift in Sources */,
 				E404FDD729CE47D900DB4F7F /* CarEntity+CoreDataClass.swift in Sources */,
+				E42C1C3229DC74B80078707A /* RegisterMotorcycleDTO.swift in Sources */,
 				E4B5F4A929D3528D002BDB13 /* ExitCarTraslator.swift in Sources */,
 				E404FDE729CE499100DB4F7F /* MotocicleEntity+CoreDataProperties.swift in Sources */,
 				E4B5F4A329D34E52002BDB13 /* ExitVehicleRepositoryCoreData.swift in Sources */,
@@ -468,7 +509,9 @@
 				E42BF08529D48120008B5F45 /* RegisterVehicle+Inject.swift in Sources */,
 				E404FDE929CE4A3800DB4F7F /* ExitVehicle+Inject.swift in Sources */,
 				E404FD3F29CCB04F00DB4F7F /* RegisterMotorcycleTraslator.swift in Sources */,
+				E42C1C1E29DB5BD50078707A /* RegisterCarDTO.swift in Sources */,
 				E404FDD629CE47D900DB4F7F /* RegisterCarEntity+CoreDataClass.swift in Sources */,
+				E42C1C3B29DCB9920078707A /* ExitVehicleRepositoryRealm.swift in Sources */,
 				E404FDD429CE47D900DB4F7F /* CarEntity+CoreDataProperties.swift in Sources */,
 				E404FDE329CE492700DB4F7F /* RegisterMotocicleEntity+CoreDataProperties.swift in Sources */,
 				E42BF07429D463A0008B5F45 /* ExitMotorcycleTraslator.swift in Sources */,
@@ -746,6 +789,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		E42C1C2C29DB842A0078707A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -753,6 +804,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E42C1C1029DB251C0078707A /* XCRemoteSwiftPackageReference "Factory" */;
 			productName = Factory;
+		};
+		E42C1C2D29DB842A0078707A /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E42C1C2C29DB842A0078707A /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		E42C1C2F29DB842A0078707A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E42C1C2C29DB842A0078707A /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

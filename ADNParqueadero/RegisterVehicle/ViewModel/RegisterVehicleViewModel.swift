@@ -16,10 +16,11 @@ class RegisterVehicleViewModel: BaseViewModel {
     
     private var subscribers: Set<AnyCancellable> = []
     
-    @Published var state = RegisterVehiculeState()
+    @Published var state: RegisterVehiculeState
     
     init(registarVehicleService: RegisterVehicleServiceProtocol) {
         self.registarVehicleService = registarVehicleService
+        self.state = RegisterVehiculeState()
     }
     
     private func updateState(updater: () -> Void) {
@@ -92,7 +93,8 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
                 createVehicleStrategy = CreateCar(plaqueId: state.inputPlaque)
                 registerCar = try createVehicleStrategy.createVehicle(registerDate: registerDay)
             case .motocicle:
-                createVehicleStrategy = CreateMotorcycle(plaqueId: state.inputPlaque, cylinderCapacity: state.inputPlaque)
+                createVehicleStrategy = CreateMotorcycle(plaqueId: state.inputPlaque,
+                                                         cylinderCapacity: state.inputCylinderCapacity)
                 registerCar = try createVehicleStrategy.createVehicle(registerDate: registerDay)
             }
             
@@ -141,6 +143,7 @@ extension RegisterVehicleViewModel: RegisterVehicleProtocol {
     }
     
     func onDisappear() {
+        subscribers.removeAll()
         state.numersOfCars = 0
         state.inputPlaque = ""
         state.inputCylinderCapacity = ""

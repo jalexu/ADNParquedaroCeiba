@@ -44,4 +44,16 @@ final class RegisterCarTraslator {
     static private func toCar(entities: [CarEntity])  throws -> Car {
         return try Car(plaqueId: entities.first?.plaqueId ?? "")
     }
+    
+    static func toRegisterCarDTO(data: Domain.RegisterVehicle) -> RegisterCarDTO {
+        return RegisterCarDTO(plaqueId: data.getVehicle().getPlaqueId(),
+                              registerDay: data.getRegisterDay())
+    }
+    
+    static func carDtosToRegisterVehicle(carsDTO: [RegisterCarDTO]) throws -> [RegisterVehicle] {
+        return try carsDTO.map {
+            let car = try Car(plaqueId: $0.plaqueId)
+            return try RegisterVehicle(vehicle: car, registerDay: $0.registerDay)
+        }
+    }
 }

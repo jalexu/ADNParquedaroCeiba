@@ -11,7 +11,7 @@ import Factory
 // MARK: Inject ExitVehicleRepository
 extension Container {
     var injectExitVehicleRepository: Factory<ExitVehicleRepositoryProtocol> {
-        Factory(self) { ExitVehicleRepositoryCoreData() }.singleton
+        Factory(self) { ExitVehicleRepositoryRealm(realmManager: self.injectRealmManager()) }.singleton
     }
     
     public var injectExitVehicleService: Factory<ExitVehicleServiceProtocol> {

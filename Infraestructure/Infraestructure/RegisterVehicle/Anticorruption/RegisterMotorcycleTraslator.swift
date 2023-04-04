@@ -63,4 +63,24 @@ final class RegisterMotorcycleTraslator {
         
         return registerVehicle
     }
+    
+    static func toRegisterMotorcycleDTO(data: Domain.RegisterVehicle) -> RegisterMotorcycleDTO {
+        if let motorcycle = data.getVehicle() as? Motorcycle {
+            return RegisterMotorcycleDTO(plaqueId: motorcycle.getPlaqueId(),
+                                         cylinderCapacity: motorcycle.getCylinderCapacity(),
+                                         registerDay: data.getRegisterDay())
+        } else {
+            return RegisterMotorcycleDTO(plaqueId: "",
+                                         cylinderCapacity: "",
+                                         registerDay: Date())
+        }
+    }
+    
+    static func motorcyclesDtoToRegisterVehicle(motorcyclesDTO: [RegisterMotorcycleDTO]) throws -> [RegisterVehicle] {
+        return try motorcyclesDTO.map {
+            let motorcycle = try Motorcycle(plaqueId: $0.plaqueId,
+                                            cylinderCapacity: $0.cylinderCapacity)
+            return try RegisterVehicle(vehicle: motorcycle, registerDay: $0.registerDay)
+        }
+    }
 }

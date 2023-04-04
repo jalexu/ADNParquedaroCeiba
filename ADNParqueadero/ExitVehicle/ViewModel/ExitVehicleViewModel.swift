@@ -50,6 +50,7 @@ final class ExitVehicleViewModel: BaseViewModel {
             state.hoursToPay = 0
             state.daysToPay = 0
             state.inputNumberPlaque = ""
+            subscribers.removeAll()
         }
     }
     

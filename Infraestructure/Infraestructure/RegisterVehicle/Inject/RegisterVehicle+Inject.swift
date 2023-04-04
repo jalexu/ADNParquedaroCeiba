@@ -11,8 +11,12 @@ import Factory
 // MARK: Inject RegisterVehicle
 extension Container {
     
+    var injectRealmManager: Factory<RealmManagerProtocol> {
+        self { RealmManager() }.singleton
+    }
+    
     public var injectRegisterVehicleRepository: Factory<RegisterVehicleRepository> {
-        Factory(self) { RegisterVehicleRepositoryCoreData() }.singleton
+        Factory(self) { RegisterVehicleRepositoryRealm(realmManager: self.injectRealmManager()) }
     }
     
     public var injectRegisterVehicleService: Factory<RegisterVehicleServiceProtocol> {
