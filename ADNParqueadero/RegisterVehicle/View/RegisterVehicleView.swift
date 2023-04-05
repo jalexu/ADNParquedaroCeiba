@@ -38,6 +38,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                     .stroke(Color.gray, lineWidth: 1)
             )
         }
+        .accessibilityIdentifier("registerButtonView")
     }
     var body: some View {
         ZStack {
@@ -86,6 +87,7 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                             .padding([.top, .trailing, .leading], 20)
                             .font(.system(size: 24))
                             .keyboardType(.asciiCapable)
+                            .accessibilityIdentifier("inputPlaque")
                         
                         VStack(spacing: 0) {
                             Text(Constants.Labels.selectTypeVehicle)
@@ -96,6 +98,8 @@ struct RegisterVehicleView<ViewModel>: View where ViewModel: RegisterVehicleProt
                                 }
                             }
                             .pickerStyle(.segmented)
+                            .accessibilityIdentifier("selectTypeVehicle")
+                            
                         }
                         .padding([.top, .bottom, .trailing, .leading], 20)
                         

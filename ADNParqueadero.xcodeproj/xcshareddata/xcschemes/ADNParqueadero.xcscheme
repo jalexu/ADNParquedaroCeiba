@@ -60,6 +60,16 @@
                ReferencedContainer = "container:Infraestructure/Infraestructure.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E4FA505529C12C1700A11573"
+               BuildableName = "ADNParqueaderoUITests.xctest"
+               BlueprintName = "ADNParqueaderoUITests"
+               ReferencedContainer = "container:ADNParqueadero.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

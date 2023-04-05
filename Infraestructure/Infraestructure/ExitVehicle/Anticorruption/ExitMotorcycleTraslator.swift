@@ -28,4 +28,11 @@ final class ExitMotorcycleTraslator {
         
         return exitMotocycle
     }
+    
+    static func motorcycleDtoToExitMotorcycle(motorcycleDTO: RegisterMotorcycleDTO) -> ExitMotorcycle {
+        ExitMotorcycle(plaqueId: motorcycleDTO.plaqueId,
+                       registerDay: motorcycleDTO.registerDay,
+                       exitDate: Date(),
+                       cylinderCapacity: motorcycleDTO.cylinderCapacity)
+    }
 }

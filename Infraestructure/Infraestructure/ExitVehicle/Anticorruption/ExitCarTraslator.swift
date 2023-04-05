@@ -22,4 +22,10 @@ final class ExitCarTraslator {
         
         return exitCar
     }
+    
+    static func registerCarDTOToExitCar(carDTO: RegisterCarDTO) -> ExitCar {
+        ExitCar(plaqueId: carDTO.plaqueId,
+                registerDay: carDTO.registerDay,
+                exitDate: Date())
+    }
 }

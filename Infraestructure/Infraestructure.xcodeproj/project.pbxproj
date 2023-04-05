@@ -29,7 +29,10 @@
 		E41387E329C4B55B000A07CC /* Infraestructure.h in Headers */ = {isa = PBXBuildFile; fileRef = E41387D729C4B55B000A07CC /* Infraestructure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E42BF07429D463A0008B5F45 /* ExitMotorcycleTraslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF07329D463A0008B5F45 /* ExitMotorcycleTraslator.swift */; };
 		E42BF08529D48120008B5F45 /* RegisterVehicle+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08429D48120008B5F45 /* RegisterVehicle+Inject.swift */; };
-		E42BF08929D483A3008B5F45 /* CarRepositoryCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */; };
+		E42BF08929D483A3008B5F45 /* RegisterVehicleRepositoryCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF08829D483A3008B5F45 /* RegisterVehicleRepositoryCoreDataTest.swift */; };
+		E42C087529DDBCAB008DE986 /* ExitVehicleRepositoryRealmTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C087429DDBCAB008DE986 /* ExitVehicleRepositoryRealmTest.swift */; };
+		E42C087829DDBDE5008DE986 /* RealmManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C087729DDBDE5008DE986 /* RealmManagerStub.swift */; };
+		E42C087A29DDBE6D008DE986 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C087929DDBE6D008DE986 /* RealmManagerProtocol.swift */; };
 		E42C1C1229DB251C0078707A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = E42C1C1129DB251C0078707A /* Factory */; };
 		E42C1C1E29DB5BD50078707A /* RegisterCarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C1C1D29DB5BD50078707A /* RegisterCarDTO.swift */; };
 		E42C1C2229DB5F090078707A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C1C2129DB5F090078707A /* RealmManager.swift */; };
@@ -89,7 +92,10 @@
 		E41387DC29C4B55B000A07CC /* InfraestructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraestructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42BF07329D463A0008B5F45 /* ExitMotorcycleTraslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitMotorcycleTraslator.swift; sourceTree = "<group>"; };
 		E42BF08429D48120008B5F45 /* RegisterVehicle+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterVehicle+Inject.swift"; sourceTree = "<group>"; };
-		E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepositoryCoreDataTest.swift; sourceTree = "<group>"; };
+		E42BF08829D483A3008B5F45 /* RegisterVehicleRepositoryCoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleRepositoryCoreDataTest.swift; sourceTree = "<group>"; };
+		E42C087429DDBCAB008DE986 /* ExitVehicleRepositoryRealmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitVehicleRepositoryRealmTest.swift; sourceTree = "<group>"; };
+		E42C087729DDBDE5008DE986 /* RealmManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerStub.swift; sourceTree = "<group>"; };
+		E42C087929DDBE6D008DE986 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		E42C1C1D29DB5BD50078707A /* RegisterCarDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCarDTO.swift; sourceTree = "<group>"; };
 		E42C1C2129DB5F090078707A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		E42C1C3129DC74B80078707A /* RegisterMotorcycleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMotorcycleDTO.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 		E41387E029C4B55B000A07CC /* InfraestructureTests */ = {
 			isa = PBXGroup;
 			children = (
+				E42C087329DDBB21008DE986 /* ExitVehicle */,
 				E42BF08729D48371008B5F45 /* RegisterVehicle */,
 			);
 			path = InfraestructureTests;
@@ -192,7 +199,7 @@
 		E42BF08729D48371008B5F45 /* RegisterVehicle */ = {
 			isa = PBXGroup;
 			children = (
-				E42BF08829D483A3008B5F45 /* CarRepositoryCoreDataTest.swift */,
+				E42BF08829D483A3008B5F45 /* RegisterVehicleRepositoryCoreDataTest.swift */,
 			);
 			path = RegisterVehicle;
 			sourceTree = "<group>";
@@ -214,10 +221,28 @@
 			path = Vehicle;
 			sourceTree = "<group>";
 		};
+		E42C087329DDBB21008DE986 /* ExitVehicle */ = {
+			isa = PBXGroup;
+			children = (
+				E42C087629DDBDC0008DE986 /* Stub */,
+				E42C087429DDBCAB008DE986 /* ExitVehicleRepositoryRealmTest.swift */,
+			);
+			path = ExitVehicle;
+			sourceTree = "<group>";
+		};
+		E42C087629DDBDC0008DE986 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				E42C087729DDBDE5008DE986 /* RealmManagerStub.swift */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
 		E42C1C1329DB59A70078707A /* RealmDataBase */ = {
 			isa = PBXGroup;
 			children = (
 				E42C1C2129DB5F090078707A /* RealmManager.swift */,
+				E42C087929DDBE6D008DE986 /* RealmManagerProtocol.swift */,
 			);
 			path = RealmDataBase;
 			sourceTree = "<group>";
@@ -493,6 +518,7 @@
 				E404FDE629CE499100DB4F7F /* MotocicleEntity+CoreDataClass.swift in Sources */,
 				E404FD3D29CCAE7E00DB4F7F /* RegisterCarTraslator.swift in Sources */,
 				E404FD2129CB7E1B00DB4F7F /* CustomErrors.swift in Sources */,
+				E42C087A29DDBE6D008DE986 /* RealmManagerProtocol.swift in Sources */,
 				E404FD3429CC9E5C00DB4F7F /* RegisterVehicleRepositoryRealm.swift in Sources */,
 				E404FDE229CE492700DB4F7F /* RegisterMotocicleEntity+CoreDataClass.swift in Sources */,
 				E42C1C2229DB5F090078707A /* RealmManager.swift in Sources */,
@@ -522,7 +548,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42BF08929D483A3008B5F45 /* CarRepositoryCoreDataTest.swift in Sources */,
+				E42C087829DDBDE5008DE986 /* RealmManagerStub.swift in Sources */,
+				E42C087529DDBCAB008DE986 /* ExitVehicleRepositoryRealmTest.swift in Sources */,
+				E42BF08929D483A3008B5F45 /* RegisterVehicleRepositoryCoreDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

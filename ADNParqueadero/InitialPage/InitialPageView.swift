@@ -29,6 +29,7 @@ struct InitialPageView: View {
                         .stroke(Color.gray, lineWidth: 1)
                 )
             })
+        .accessibilityIdentifier("registerNavigationLink")
     }
     
     var paymentNavigationLink: some View {
@@ -47,6 +48,7 @@ struct InitialPageView: View {
                         .stroke(Color.gray, lineWidth: 1)
                 )
             })
+        .accessibilityIdentifier("paymentNavigationLink")
     }
     
     var body: some View {

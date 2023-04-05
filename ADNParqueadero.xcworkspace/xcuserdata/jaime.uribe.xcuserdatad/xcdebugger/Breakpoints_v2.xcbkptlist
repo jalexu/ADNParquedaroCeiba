@@ -1075,6 +1075,21 @@
                   endingLineNumber = "69"
                   offsetFromSymbolStart = "1103">
                </Location>
+               <Location
+                  uuid = "AF8EBEFF-6832-4537-8EC3-13D6DFF55A58 - edc1be85ea09c78b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DomainTests.RegisterVehicleTests.test_initCar_whenIsMondayAndCarHasPlaqueA_ThenRetunException() throws -&gt; ()"
+                  moduleName = "DomainTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jaime.uribe/Documents/IOS/ADNCeiba/adn-parqueadero-front-jaime.uribe/Domain/DomainTests/RegisterVehicle/RegisterVehicleTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1086">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1328,8 +1343,8 @@
             filePath = "Infraestructure/Infraestructure/DataBase/RealmDataBase/RealmManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "delete(plaqueId:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1344,8 +1359,8 @@
             filePath = "Infraestructure/Infraestructure/DataBase/RealmDataBase/RealmManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "delete(plaqueId:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1360,9 +1375,41 @@
             filePath = "Infraestructure/Infraestructure/ExitVehicle/Repository/ExitVehicleRepositoryRealm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "retrieveExitVehicle(numerPlaque:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "91708AE8-6273-4E2E-8BAF-D710D1CFFC99"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Infraestructure/Infraestructure/ExitVehicle/Repository/ExitVehicleRepositoryRealm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "deleteRegisterMotorcycleDTO(plaqueId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "083616B9-81D8-4410-BDF0-5222B9D97ED3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ADNParqueadero/RegisterVehicle/ViewModel/RegisterVehiculeState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "init?(rawValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

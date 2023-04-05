@@ -9,13 +9,6 @@ import Foundation
 import Combine
 @_implementationOnly import RealmSwift
 
-protocol RealmManagerProtocol {
-    func save<T: Object>(dto: T) -> AnyPublisher<Bool, Error>
-    func fetchObjects<T: Object>(_ type: T.Type) -> AnyPublisher<[T], Never>
-    func fetchObject<T: Object>(plaqueId: String, _ type: T.Type) -> AnyPublisher<T?, Never>
-    func delete<T: Object>(plaqueId: String, _ type: T.Type) -> AnyPublisher<Bool, Error>
-}
-
 class RealmManager {
     var realm: Realm?
     

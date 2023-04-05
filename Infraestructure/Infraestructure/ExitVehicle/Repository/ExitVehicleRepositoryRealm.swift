@@ -7,9 +7,6 @@
 
 import Domain
 import Combine
-import CoreData
-
-@_implementationOnly import RealmSwift
 
 final class ExitVehicleRepositoryRealm: ExitVehicleRepositoryProtocol {
     private var realmManager: RealmManagerProtocol
@@ -19,22 +16,18 @@ final class ExitVehicleRepositoryRealm: ExitVehicleRepositoryProtocol {
     }
     
     func retrieveExitVehicle(numerPlaque: String) -> AnyPublisher<Domain.ExitVehicle?, Error> {
+        var exitVehicle: Domain.ExitVehicle?
+        
         return Publishers.Zip(findCarDto(plaqueId: numerPlaque), findMotorcycleDto(plaqueId: numerPlaque))
-            .flatMap { (registerCarDTO, registerMotorcycleDTO)   in
+            .flatMap { (registerCarDTO, registerMotorcycleDTO) in
                 
-                var exitVehicle: Domain.ExitVehicle?
                 if let registerCarDto = registerCarDTO {
-                    exitVehicle = ExitCar(plaqueId: registerCarDto.plaqueId,
-                                          registerDay: registerCarDto.registerDay,
-                                          exitDate: Date())
+                    exitVehicle = ExitCarTraslator.registerCarDTOToExitCar(carDTO: registerCarDto)
                     return CurrentValueSubject<Domain.ExitVehicle?, Error>(exitVehicle)
                 }
                 
                 if let registerMotorcycleDto = registerMotorcycleDTO {
-                    exitVehicle = ExitMotorcycle(plaqueId: registerMotorcycleDto.plaqueId,
-                                                 registerDay: registerMotorcycleDto.registerDay,
-                                                 exitDate: Date(),
-                                                 cylinderCapacity: registerMotorcycleDto.cylinderCapacity)
+                    exitVehicle = ExitMotorcycleTraslator.motorcycleDtoToExitMotorcycle(motorcycleDTO: registerMotorcycleDto)
                     return CurrentValueSubject<Domain.ExitVehicle?, Error>(exitVehicle)
                 }
                 
@@ -43,11 +36,11 @@ final class ExitVehicleRepositoryRealm: ExitVehicleRepositoryProtocol {
             .eraseToAnyPublisher()
     }
     
-    private func findMotorcycleDto(plaqueId: String) -> AnyPublisher<RegisterMotorcycleDTO?, Never> {
+    func findMotorcycleDto(plaqueId: String) -> AnyPublisher<RegisterMotorcycleDTO?, Never> {
         realmManager.fetchObject(plaqueId: plaqueId, RegisterMotorcycleDTO.self)
     }
     
-    private func findCarDto(plaqueId: String) -> AnyPublisher<RegisterCarDTO?, Never> {
+    func findCarDto(plaqueId: String) -> AnyPublisher<RegisterCarDTO?, Never> {
         realmManager.fetchObject(plaqueId: plaqueId, RegisterCarDTO.self)
     }
     

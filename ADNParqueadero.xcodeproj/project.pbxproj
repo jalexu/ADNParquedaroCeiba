@@ -18,6 +18,7 @@
 		E42BF09C29D5EBF6008B5F45 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF09B29D5EBF6008B5F45 /* CircleImageView.swift */; };
 		E42BF09E29D5FB6F008B5F45 /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF09D29D5FB6F008B5F45 /* MotionAnimationView.swift */; };
 		E42BF0A129D61609008B5F45 /* CreateVehicleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BF0A029D61609008B5F45 /* CreateVehicleStrategy.swift */; };
+		E42C087C29DDDE24008DE986 /* RegisterVehicleViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C087B29DDDE24008DE986 /* RegisterVehicleViewUITest.swift */; };
 		E42C1C0F29DB24FE0078707A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = E42C1C0E29DB24FE0078707A /* Factory */; };
 		E4568C3129C9D9610055A8E7 /* RegisterVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */; };
 		E4568C3329C9DB750055A8E7 /* RegisterVehiculeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */; };
@@ -38,7 +39,7 @@
 		E4FA504429C12C1700A11573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FA504329C12C1700A11573 /* Assets.xcassets */; };
 		E4FA504729C12C1700A11573 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FA504629C12C1700A11573 /* Preview Assets.xcassets */; };
 		E4FA505129C12C1700A11573 /* RegisterVehicleViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505029C12C1700A11573 /* RegisterVehicleViewModelTest.swift */; };
-		E4FA505B29C12C1700A11573 /* ADNParqueaderoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */; };
+		E4FA505B29C12C1700A11573 /* InitalPageViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505A29C12C1700A11573 /* InitalPageViewUITests.swift */; };
 		E4FA505D29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		E42BF09B29D5EBF6008B5F45 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		E42BF09D29D5FB6F008B5F45 /* MotionAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimationView.swift; sourceTree = "<group>"; };
 		E42BF0A029D61609008B5F45 /* CreateVehicleStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVehicleStrategy.swift; sourceTree = "<group>"; };
+		E42C087B29DDDE24008DE986 /* RegisterVehicleViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleViewUITest.swift; sourceTree = "<group>"; };
 		E4568C3029C9D9610055A8E7 /* RegisterVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleViewModel.swift; sourceTree = "<group>"; };
 		E4568C3229C9DB750055A8E7 /* RegisterVehiculeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehiculeState.swift; sourceTree = "<group>"; };
 		E4568C3429C9E1710055A8E7 /* RegisterVehiculeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehiculeContract.swift; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 		E4FA504C29C12C1700A11573 /* ADNParqueaderoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNParqueaderoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA505029C12C1700A11573 /* RegisterVehicleViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVehicleViewModelTest.swift; sourceTree = "<group>"; };
 		E4FA505629C12C1700A11573 /* ADNParqueaderoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADNParqueaderoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITests.swift; sourceTree = "<group>"; };
+		E4FA505A29C12C1700A11573 /* InitalPageViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalPageViewUITests.swift; sourceTree = "<group>"; };
 		E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADNParqueaderoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -373,8 +375,9 @@
 		E4FA505929C12C1700A11573 /* ADNParqueaderoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E4FA505A29C12C1700A11573 /* ADNParqueaderoUITests.swift */,
+				E4FA505A29C12C1700A11573 /* InitalPageViewUITests.swift */,
 				E4FA505C29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift */,
+				E42C087B29DDDE24008DE986 /* RegisterVehicleViewUITest.swift */,
 			);
 			path = ADNParqueaderoUITests;
 			sourceTree = "<group>";
@@ -579,8 +582,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42C087C29DDDE24008DE986 /* RegisterVehicleViewUITest.swift in Sources */,
 				E4FA505D29C12C1700A11573 /* ADNParqueaderoUITestsLaunchTests.swift in Sources */,
-				E4FA505B29C12C1700A11573 /* ADNParqueaderoUITests.swift in Sources */,
+				E4FA505B29C12C1700A11573 /* InitalPageViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,6 @@ final class ExitVehicleViewModel: BaseViewModel {
     private let exitVehicleService: ExitVehicleServiceProtocol
     private var subscribers: Set<AnyCancellable> = []
     
-    private var storedData: Date?
-    private var currentData: Date = Date()
-    
     @Published var state = ExitVehicleState()
     
     init(exitVehicleService: ExitVehicleServiceProtocol) {
@@ -53,7 +50,6 @@ final class ExitVehicleViewModel: BaseViewModel {
             subscribers.removeAll()
         }
     }
-    
 }
 
 extension ExitVehicleViewModel: ExitVehicleProtocol {

@@ -1,5 +1,5 @@
 //
-//  CarRepositoryCoreDataTest.swift
+//  RegisterVehicleRepositoryCoreDataTest.swift
 //  InfraestructureTests
 //
 //  Created by Jaime Alexander Uribe Uribe - Ceiba Software on 29/03/23.
@@ -11,7 +11,7 @@ import XCTest
 @testable import Infraestructure
 import CoreData
 
-final class CarRepositoryCoreDataTest: XCTestCase {
+final class RegisterVehicleRepositoryCoreDataTest: XCTestCase {
     
     private var sut: RegisterVehicleRepository!
     private var cancellable: AnyCancellable?
@@ -88,8 +88,6 @@ final class CarRepositoryCoreDataTest: XCTestCase {
         wait(for: [successExpectation, failureExpectation], timeout: 0.5)
         cancellable?.cancel()
     }
-    
-    
     
     func getRegisterDayMock() -> Date {
         let today: Date = Date()
