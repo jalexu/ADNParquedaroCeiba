@@ -22,4 +22,8 @@ extension Container {
     public var injectRegisterVehicleService: Factory<RegisterVehicleServiceProtocol> {
         Factory(self) { RegisterMotorcycleService(registerVehicleRepository: self.injectRegisterVehicleRepository()) }
     }
+    
+    public var injectRegisterCarService: Factory<RegisterVehicleServiceProtocol> {
+        Factory(self) { RegisterCarService(registerVehicleRepository: self.injectRegisterVehicleRepository()) }
+    }
 }
